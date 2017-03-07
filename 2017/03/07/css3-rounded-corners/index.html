@@ -7,7 +7,7 @@
 
     
 
-    <title>CSS | 竹叶青的个人博客</title>
+    <title>CSS3中的圆角效果 | 竹叶青的个人博客</title>
     <meta name="author" content="zhyihui">
     
     <meta name="description" content="真味是淡，至人如常">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    
+    <meta property="og:title" content="CSS3中的圆角效果"/>
     <meta property="og:site_name" content="初心"/>
 
     
@@ -217,30 +217,216 @@
 
     <main>
         <div class="container main-container">
-    
-
-<nav class="page-nav hide-on-small-only">
+    <nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper indigo">
         <span class="breadcrumb">当前位置（分类目录）</span>
         
+            
+    
+    
+    <a class="breadcrumb" href="/categories/前端/">前端</a><a class="breadcrumb" href="/categories/前端/CSS3/">CSS3</a>
+
 
         
-            <a class="breadcrumb" href="/categories/前端/CSS/">CSS</a>
+
         
     </div>
 </nav>
 
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>CSS3中的圆角效果</h1>
+    
 
 
-    <div class="collection mt-0">
+            </div>
+            <time class="pink-link-context" datetime="2017-03-07T01:43:35.000Z"><a href="/2017/03/07/css3-rounded-corners/">2017-03-07</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
         
-            <a href="/2017/03/06/learn-css-box-shadow/" class="collection-item grey-text text-darken-1">
-                <time datetime="2017-03-06T08:27:49.000Z">2017-03-06</time>
-                <span>&nbsp;&nbsp;&nbsp;</span>
-                学习创建CSS盒子阴影效果
-            </a>
+            <a href="/tags/CSS/" class="chip pink lighten-1">CSS</a>
+        
+            <a href="/tags/CSS3/" class="chip pink lighten-1">CSS3</a>
         
     </div>
+
+
+            <div class="toc pink-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#浏览器兼容"><span class="section table-of-contents-text">浏览器兼容</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#CSS3-border-radius-属性"><span class="section table-of-contents-text">CSS3 border-radius 属性</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#设置每个角"><span class="section table-of-contents-text">设置每个角</span></a></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#CSS3-圆角属性"><span class="section table-of-contents-text">CSS3 圆角属性</span></a></li></ol>
+</div>
+
+
+            <div class="entry pink-link-context">
+                <p>参考：<a href="https://www.w3schools.com/css/css3_borders.asp" target="_blank" rel="external">CSS3 Rounded Corners</a></p>
+<blockquote>
+<p>使用CSS3中的<code>border-radius</code>属性，可以在任何元素上实现“圆角效果”。</p>
+</blockquote>
+<hr>
+<h2 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5.0+</td>
+<td style="text-align:center">9.0+</td>
+<td style="text-align:center">4.0+</td>
+<td style="text-align:center">5.0+</td>
+<td style="text-align:center">10.5+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS3-border-radius-属性"><a href="#CSS3-border-radius-属性" class="headerlink" title="CSS3 border-radius 属性"></a>CSS3 border-radius 属性</h2><p>下面是几个圆角效果示例：</p>
+<style type="text/css">
+    .corner {
+        border-radius: 15px;
+        width: 160px;
+        height: 80px;
+        text-align: center !important;
+    }
+    .corner-1 {        
+        background: green !important;
+        color: white !important;
+    }
+    .corner-2 {
+        border: 1px green solid;
+    }
+    .corner-3 {
+        background: url(paper.gif);
+        background-repeat: repeat;
+    }
+</style>
+
+<p class="corner corner-1">圆角一</p><br><p class="corner corner-2">圆角二</p><br><p class="corner corner-3">圆角三</p>
+
+<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-1"</span>&gt;</span>圆角一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-2"</span>&gt;</span>圆角二<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-3"</span>&gt;</span>圆角三<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-1</span> &#123;        </div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-2</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> green solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(paper.gif);</div><div class="line">    <span class="attribute">background-repeat</span>: repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>border-radius</code>属性实际上是<code>border-top-left-radius</code>、<code>border-top-right-radius</code>、<code>border-bottom-right-radius</code>及<code>border-bottom-left-radius</code>这几个属性的缩写属性。</p>
+</blockquote>
+<h2 id="设置每个角"><a href="#设置每个角" class="headerlink" title="设置每个角"></a>设置每个角</h2><p>如果我们只给 <code>border-radius</code> 属性设置一个值，则圆角效果会应用到全部的四个角上。然而如果我们需要，也可以分开指定每个角的圆角属性。</p>
+<p>下面是规则：</p>
+<ul>
+<li>四个值：四个值分别应用到左上、右上、右下、左下（顺时针方向）四个角。</li>
+<li>三个值：第一个值应用到左上角，第二个值应用到右上角和左下角，第三个值应用到右下角。</li>
+<li>两个值：第一个值应用到左上角和右下角，第二个值应用到右上角和左下角。</li>
+<li>一个值：四个角全部应用该值。</li>
+</ul>
+<p>下面是几个示例：</p>
+<style type="text/css">
+    .corner-x {
+        width: 240px;
+        height: 80px;
+        background: green !important;
+        text-align: center !important;
+        color: white !important;
+    }
+    .corner-x1 {
+        border-radius: 15px 40px 25px 5px
+    }
+    .corner-x2 {
+        border-radius: 15px 40px 25px
+    }
+    .corner-x3 {
+        border-radius: 15px 40px
+    }
+</style>
+
+<p class="corner-x corner-x1">四个值15px 40px 25px 5px</p><br><p class="corner-x corner-x2">三个值15px 40px 25px</p><br><p class="corner-x corner-x3">两个值15px 40px</p>
+
+<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x1"</span>&gt;</span>四个值15px 40px 25px 5px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x2"</span>&gt;</span>三个值15px 40px 25px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x3"</span>&gt;</span>两个值15px 40px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner-x</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x1</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span> <span class="number">5px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x2</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x3</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="CSS3-圆角属性"><a href="#CSS3-圆角属性" class="headerlink" title="CSS3 圆角属性"></a>CSS3 圆角属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-radius</td>
+<td>四个border-*-*-radius属性的缩写属性</td>
+</tr>
+<tr>
+<td>border-top-left-radius</td>
+<td>定义左上角边框形状</td>
+</tr>
+<tr>
+<td>border-top-right-radius</td>
+<td>定义右上角边框形状</td>
+</tr>
+<tr>
+<td>border-bottom-right-radius</td>
+<td>定义左下角边框形状</td>
+</tr>
+<tr>
+<td>border-bottom-left-radius</td>
+<td>定义右下角边框形状</td>
+</tr>
+</tbody>
+</table>
+
+                
+
+
+<p class="pink-link-context">
+    <a href="/2017/03/06/learn-css-box-shadow/" rel="next" title="学习创建CSS盒子阴影效果">
+    下一篇：学习创建CSS盒子阴影效果
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div class="card">
+            <div class="card-content">
+                <!-- 多说评论框 start -->
+                <div class="ds-thread" data-thread-key="2017/03/07/css3-rounded-corners/" data-title="CSS3中的圆角效果" data-url="http://yoursite.com/2017/03/07/css3-rounded-corners/"></div>
+                <!-- 多说评论框 end -->
+                <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"zhyihui"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] 
+                         || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- 多说公共JS代码 end -->
+            </div>
+        </div>
+    </section>
+
 
 
 </div>
