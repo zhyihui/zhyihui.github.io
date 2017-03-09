@@ -15,14 +15,15 @@
 
 
 
-<meta name="description" content="参考：CSS3 Rounded Corners
+<meta name="description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+CSS3 Border Images
+CSS3 边框图片详解
+
+浏览器支持
 
 
-浏览器兼容
-
-
+Property
 Chrome
 IE
 Firefox
@@ -32,23 +33,25 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+border-image
+16.0
+11.0
+15.0
+6.0
+15.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3中的圆角效果">
-<meta property="og:url" content="http://yoursite.com/2017/03/07/css3-rounded-corners/index.html">
+<meta property="og:title" content="CSS3学习之边框图片">
+<meta property="og:url" content="http://yoursite.com/2017/03/09/css3-border-images/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="参考：CSS3 Rounded Corners
+<meta property="og:description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+CSS3 Border Images
+CSS3 边框图片详解
+
+浏览器支持
 
 
-浏览器兼容
-
-
+Property
 Chrome
 IE
 Firefox
@@ -58,22 +61,34 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
-<meta property="og:updated_time" content="2017-03-09T07:19:38.987Z">
+border-image
+16.0
+11.0
+15.0
+6.0
+15.0">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/border.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/border.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-01.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-02.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-03.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-04.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice.gif">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-result.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-demo-01.png">
+<meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-demo-02.png">
+<meta property="og:updated_time" content="2017-03-09T07:13:08.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3中的圆角效果">
-<meta name="twitter:description" content="参考：CSS3 Rounded Corners
+<meta name="twitter:title" content="CSS3学习之边框图片">
+<meta name="twitter:description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+CSS3 Border Images
+CSS3 边框图片详解
+
+浏览器支持
 
 
-浏览器兼容
-
-
+Property
 Chrome
 IE
 Firefox
@@ -83,11 +98,13 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+border-image
+16.0
+11.0
+15.0
+6.0
+15.0">
+<meta name="twitter:image" content="http://yoursite.com/2017/03/09/css3-border-images/border.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -119,7 +136,7 @@ Opera
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>CSS3中的圆角效果 | 初心</title>
+<title>CSS3学习之边框图片 | 初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -327,11 +344,11 @@ Opera
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css3-rounded-corners" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css3-border-images" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/07/css3-rounded-corners/" class="article-date">
-      <time datetime="2017-03-07T01:43:35.000Z" itemprop="datePublished">2017-03-07</time>
+      <a href="/2017/03/09/css3-border-images/" class="article-date">
+      <time datetime="2017-03-09T02:07:57.000Z" itemprop="datePublished">2017-03-09</time>
 </a>
 
 
@@ -346,7 +363,7 @@ Opera
         
   
     <h1 class="article-title" itemprop="name">
-      CSS3中的圆角效果
+      CSS3学习之边框图片
     </h1>
   
 
@@ -361,7 +378,7 @@ Opera
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -371,14 +388,15 @@ Opera
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考：<a href="https://www.w3schools.com/css/css3_borders.asp" target="_blank" rel="external">CSS3 Rounded Corners</a></p>
-<blockquote>
-<p>使用CSS3中的<code>border-radius</code>属性，可以在任何元素上实现“圆角效果”。</p>
-</blockquote>
-<hr>
-<h2 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h2><table>
+        <p>使用CSS3的<code>border-image</code>属性，可以设置图片作为元素的边框。</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css3_border_images.asp" target="_blank" rel="external">CSS3 Border Images</a></li>
+<li><a href="http://www.360doc.com/content/14/1016/13/2792772_417403574.shtml" target="_blank" rel="external">CSS3 边框图片详解</a></li>
+</ul>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><table>
 <thead>
 <tr>
+<th>Property</th>
 <th style="text-align:center">Chrome</th>
 <th style="text-align:center">IE</th>
 <th style="text-align:center">Firefox</th>
@@ -388,105 +406,86 @@ Opera
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">9.0+</td>
-<td style="text-align:center">4.0+</td>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">10.5+</td>
+<td>border-image</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">11.0</td>
+<td style="text-align:center">15.0</td>
+<td style="text-align:center">6.0</td>
+<td style="text-align:center">15.0</td>
 </tr>
 </tbody>
 </table>
 <a id="more"></a>
-<h2 id="CSS3-border-radius-属性"><a href="#CSS3-border-radius-属性" class="headerlink" title="CSS3 border-radius 属性"></a>CSS3 border-radius 属性</h2><p>下面是几个圆角效果示例：</p>
-<style type="text/css">
-    .corner {
-        border-radius: 15px;
-        width: 160px;
-        height: 80px;
-        text-align: center !important;
-    }
-    .corner-1 {        
-        background: green !important;
-        color: white !important;
-    }
-    .corner-2 {
-        border: 1px green solid;
-    }
-    .corner-3 {
-        background: url(paper.gif);
-        background-repeat: repeat;
-    }
-</style>
-
-<p class="corner corner-1">圆角一</p><br><p class="corner corner-2">圆角二</p><br><p class="corner corner-3">圆角三</p>
-
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-1"</span>&gt;</span>圆角一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-2"</span>&gt;</span>圆角二<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-3"</span>&gt;</span>圆角三<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-1</span> &#123;        </div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-2</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> green solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(paper.gif);</div><div class="line">    <span class="attribute">background-repeat</span>: repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="CSS3-border-image-属性"><a href="#CSS3-border-image-属性" class="headerlink" title="CSS3 border-image 属性"></a>CSS3 border-image 属性</h2><p>CSS3中的<code>border-image</code>属性允许我们使用指定的图片作为围绕元素的边框，该属性有三个部分：</p>
+<ol>
+<li>作为边框的图片</li>
+<li>从哪里切开图片</li>
+<li>定义中间部分是重复还是拉伸</li>
+</ol>
+<p><code>border-image</code>属性会将图片切成9个部分，就像一个井字棋盘；然后将9个部分中的角放在元素边框的角上，中间部分根据我们的设置重复或拉伸。</p>
 <blockquote>
-<p><code>border-radius</code>属性实际上是<code>border-top-left-radius</code>、<code>border-top-right-radius</code>、<code>border-bottom-right-radius</code>及<code>border-bottom-left-radius</code>这几个属性的缩写属性。</p>
+<p>注意，想要<code>border-image</code>正常工作，元素的<code>border</code>属性也需要设置。</p>
 </blockquote>
-<h2 id="设置每个角"><a href="#设置每个角" class="headerlink" title="设置每个角"></a>设置每个角</h2><p>如果我们只给 <code>border-radius</code> 属性设置一个值，则圆角效果会应用到全部的四个角上。然而如果我们需要，也可以分开指定每个角的圆角属性。</p>
-<p>下面是规则：</p>
-<ul>
-<li>四个值：四个值分别应用到左上、右上、右下、左下（顺时针方向）四个角。</li>
-<li>三个值：第一个值应用到左上角，第二个值应用到右上角和左下角，第三个值应用到右下角。</li>
-<li>两个值：第一个值应用到左上角和右下角，第二个值应用到右上角和左下角。</li>
-<li>一个值：四个角全部应用该值。</li>
-</ul>
-<p>下面是几个示例：</p>
+<p>本部分示例所使用的用于边框的图片<br><img src="/2017/03/09/css3-border-images/border.png" alt=""></p>
+<p>示例</p>
 <style type="text/css">
-    .corner-x {
-        width: 240px;
-        height: 80px;
-        background: green !important;
-        text-align: center !important;
-        color: white !important;
+    .border-image-repeat {
+        border: 10px solid transparent;
+        padding: 16px;
+        border-image: url(border.png) 30 round;
     }
-    .corner-x1 {
-        border-radius: 15px 40px 25px 5px
-    }
-    .corner-x2 {
-        border-radius: 15px 40px 25px
-    }
-    .corner-x3 {
-        border-radius: 15px 40px
+    .border-image-stretch {
+        border: 10px solid transparent;
+        padding: 16px;
+        border-image: url(border.png) 30 stretch;
     }
 </style>
 
-<p class="corner-x corner-x1">四个值15px 40px 25px 5px</p><br><p class="corner-x corner-x2">三个值15px 40px 25px</p><br><p class="corner-x corner-x3">两个值15px 40px</p>
+<p class="border-image-repeat">图片边框，中间重复</p><br><p class="border-image-stretch">图片边框，中间拉伸</p>
 
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x1"</span>&gt;</span>四个值15px 40px 25px 5px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x2"</span>&gt;</span>三个值15px 40px 25px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x3"</span>&gt;</span>两个值15px 40px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner-x</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x1</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span> <span class="number">5px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x2</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x3</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="CSS3-圆角属性"><a href="#CSS3-圆角属性" class="headerlink" title="CSS3 圆角属性"></a>CSS3 圆角属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>border-radius</td>
-<td>四个border-*-*-radius属性的缩写属性</td>
-</tr>
-<tr>
-<td>border-top-left-radius</td>
-<td>定义左上角边框形状</td>
-</tr>
-<tr>
-<td>border-top-right-radius</td>
-<td>定义右上角边框形状</td>
-</tr>
-<tr>
-<td>border-bottom-right-radius</td>
-<td>定义左下角边框形状</td>
-</tr>
-<tr>
-<td>border-bottom-left-radius</td>
-<td>定义右下角边框形状</td>
-</tr>
-</tbody>
-</table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border-image-repeat</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.png) <span class="number">30</span> round;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.border-image-stretch</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.png) <span class="number">30</span> stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，<code>border-image</code>属性实际上是<code>border-image-source</code>、<code>border-image-slice</code>、<code>border-image-width</code>、<code>border-image-outset</code>和<code>border-image-repeat</code>这几个属性的简写属性。</p>
+</blockquote>
+<h2 id="border-image-不同的切片取值"><a href="#border-image-不同的切片取值" class="headerlink" title="border-image 不同的切片取值"></a>border-image 不同的切片取值</h2><h2 id="border-image-source"><a href="#border-image-source" class="headerlink" title="border-image-source"></a>border-image-source</h2><p>指定用于边框图片的地址，如果设置为none，那么盒子边框就会应用 <code>border-style</code> 的值。</p>
+<h2 id="border-image-slice"><a href="#border-image-slice" class="headerlink" title="border-image-slice"></a>border-image-slice</h2><p><code>border-image-slice</code>把边框图像切成9个区域：4个角、4个边区域和一个中间部位（九宫格，或者理解为“井”字棋盘）。</p>
+<p>属性值格式：<code>[ number | percentage ]{1,4} &amp;&amp; fill?</code></p>
+<p><code>number</code>即纯数字（不能使用任何单位）；<code>percentage</code>即百分比；<code>{1,4}</code>表示前面的数字或百分比最少出现一次，最多出现4次，这里与<code>margin</code>等属性类似；fill为可选属性值，如果指定则中间第九块不是透明块，如果不指定则作为透明图片处理。</p>
+<p>下面是属性工作机制解释，这里使用了w3c的一张示例图片：<br><img src="/2017/03/09/css3-border-images/border.png" alt=""><br>该图片是一张长宽均为81px的正方形位图，包含9个菱形图案，每个菱形都是边长27px的小正方形；四个角为4个橙色菱形，四个边部区域为4个土黄色菱形，中间块（简称第九区）为透明块。</p>
+<p>假如我们这样设置了属性值：<code>border-image-slice:27 27 27 27</code>，那么意思是距离顶部内偏移区域27px处横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-01.png" alt=""><br>接着距离右边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-02.png" alt=""><br>然后距离底部内偏移区域27px横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-03.png" alt=""><br>最后距离左边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-04.png" alt=""><br>下面是该系列动作的完整动态图：<br><img src="/2017/03/09/css3-border-images/slice.gif" alt=""><br>经过切分，最终形成下面图示的九宫格：<br><img src="/2017/03/09/css3-border-images/slice-result.png" alt=""><br>被切割的部分都分布在盒子边框这9个相对应的位置，对应的，被分隔的图像只能在边框宽度（border-width）内活动。比如盒子边框为<code>border-width:54px</code>，分割图片为<code>border-image-slice:27</code>，因为图像4个顶角的宽度和高度都只有27px，但是盒子的边框是54px，因此图片就要被水平方向和垂直方向拉伸到切好跟盒子边框宽度等同，即27px的图像拉伸到54px。</p>
+<ul>
+<li>示例一：当盒子边框宽度比被切图片边框大时<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.border-image &#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    border:54px solid #000;  //盒子边框为54px</div><div class="line">    border-image-source:url(border.png); </div><div class="line">    border-image-slice:27 27 27 27; // 4个顶角的大小为27*27px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<style type="text/css">
+    .border-image-demo01 { 
+        width: 200px;
+        height: 200px;
+        border: 54px solid #000;
+        border-image-source: url(border.png); 
+        border-image-slice: 27 27 27 27;
+    }
+</style>
+
+<p class="border-image-demo01">border-image-slice:27</p>
+
+<p><img src="/2017/03/09/css3-border-images/slice-demo-01.png" alt=""></p>
+<ul>
+<li>示例二：当盒子边框宽度比被切图片边框小时<style type="text/css">
+  .border-image-demo02 {
+      width: 200px;
+      height: 200px; 
+      border: 14px solid #000;
+      border-image-source: url(border.png); 
+      border-image-slice: 27 27 27 27;
+  }
+</style>
+
+</li>
+</ul>
+<p class="border-image-demo02">border-image-slice:27</p>
+
+<p><img src="/2017/03/09/css3-border-images/slice-demo-02.png" alt=""></p>
 
       
     </div>
@@ -495,13 +494,13 @@ Opera
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
-        <p><span>发布时间:</span>2017-03-07, 09:43:35</p>
-        <p><span>最后更新:</span>2017-03-09, 15:19:38</p>
+        <p><span>发布时间:</span>2017-03-09, 10:07:57</p>
+        <p><span>最后更新:</span>2017-03-09, 15:13:08</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/07/css3-rounded-corners/" title="CSS3中的圆角效果">http://yoursite.com/2017/03/07/css3-rounded-corners/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/07/css3-rounded-corners/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/09/css3-border-images/" title="CSS3学习之边框图片">http://yoursite.com/2017/03/09/css3-border-images/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/09/css3-border-images/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -513,16 +512,10 @@ Opera
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/07/css3-background/">
-                    CSS3 背景
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/06/learn-css-box-shadow/">
-                    学习创建CSS盒子阴影效果
+                <a href="/2017/03/08/css3-colors/">
+                    CSS3 中的颜色
                 </a>
             </div>
         
@@ -534,7 +527,7 @@ Opera
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-radius-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-radius 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置每个角"><span class="toc-number">3.</span> <span class="toc-text">设置每个角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-圆角属性"><span class="toc-number">4.</span> <span class="toc-text">CSS3 圆角属性</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持"><span class="toc-number">1.</span> <span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-image-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-image 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-不同的切片取值"><span class="toc-number">3.</span> <span class="toc-text">border-image 不同的切片取值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-source"><span class="toc-number">4.</span> <span class="toc-text">border-image-source</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-slice"><span class="toc-number">5.</span> <span class="toc-text">border-image-slice</span></a></li></ol>
         
     </div>
     <style>
@@ -570,7 +563,7 @@ Opera
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"CSS3中的圆角效果　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"CSS3学习之边框图片　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -586,7 +579,7 @@ Opera
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/07/css3-rounded-corners/" data-title="CSS3中的圆角效果" data-url="http://yoursite.com/2017/03/07/css3-rounded-corners/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/09/css3-border-images/" data-title="CSS3学习之边框图片" data-url="http://yoursite.com/2017/03/09/css3-border-images/"></div>
     <script>
         var duoshuoQuery = {short_name:"zhyihui"};
         var loadComment = function(){
@@ -609,15 +602,13 @@ Opera
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/07/css3-background/" title="上一篇: CSS3 背景">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/06/learn-css-box-shadow/" title="下一篇: 学习创建CSS盒子阴影效果">
+            <a href="/2017/03/08/css3-colors/" title="下一篇: CSS3 中的颜色">
                 <i class="fa fa-angle-right"></i>
             </a>
         
