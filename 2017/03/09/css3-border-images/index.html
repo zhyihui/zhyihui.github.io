@@ -15,7 +15,7 @@
 
 
 
-<meta name="description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
+<meta name="description" content="使用CSS3的 border-image 属性，可以设置图片作为元素的边框。
 
 CSS3 Border Images
 CSS3 边框图片详解
@@ -43,7 +43,7 @@ border-image
 <meta property="og:title" content="CSS3学习之边框图片">
 <meta property="og:url" content="http://yoursite.com/2017/03/09/css3-border-images/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
+<meta property="og:description" content="使用CSS3的 border-image 属性，可以设置图片作为元素的边框。
 
 CSS3 Border Images
 CSS3 边框图片详解
@@ -77,10 +77,10 @@ border-image
 <meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-result.png">
 <meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-demo-01.png">
 <meta property="og:image" content="http://yoursite.com/2017/03/09/css3-border-images/slice-demo-02.png">
-<meta property="og:updated_time" content="2017-03-09T07:13:08.515Z">
+<meta property="og:updated_time" content="2017-03-09T09:57:02.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习之边框图片">
-<meta name="twitter:description" content="使用CSS3的border-image属性，可以设置图片作为元素的边框。
+<meta name="twitter:description" content="使用CSS3的 border-image 属性，可以设置图片作为元素的边框。
 
 CSS3 Border Images
 CSS3 边框图片详解
@@ -157,13 +157,17 @@ border-image
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
     <script> yiliaConfig.rootUrl = "\/";</script>
 
 
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c109fa772a9ba7"></script>
 
 
 
@@ -288,7 +292,7 @@ border-image
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
                 </section>
                 
             </div>
@@ -388,7 +392,7 @@ border-image
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>使用CSS3的<code>border-image</code>属性，可以设置图片作为元素的边框。</p>
+        <p>使用CSS3的 <code>border-image</code> 属性，可以设置图片作为元素的边框。</p>
 <ul>
 <li><a href="https://www.w3schools.com/css/css3_border_images.asp" target="_blank" rel="external">CSS3 Border Images</a></li>
 <li><a href="http://www.360doc.com/content/14/1016/13/2792772_417403574.shtml" target="_blank" rel="external">CSS3 边框图片详解</a></li>
@@ -416,15 +420,15 @@ border-image
 </tbody>
 </table>
 <a id="more"></a>
-<h2 id="CSS3-border-image-属性"><a href="#CSS3-border-image-属性" class="headerlink" title="CSS3 border-image 属性"></a>CSS3 border-image 属性</h2><p>CSS3中的<code>border-image</code>属性允许我们使用指定的图片作为围绕元素的边框，该属性有三个部分：</p>
+<h2 id="CSS3-border-image-属性"><a href="#CSS3-border-image-属性" class="headerlink" title="CSS3 border-image 属性"></a>CSS3 border-image 属性</h2><p>CSS3中的 <code>border-image</code> 属性允许我们使用指定的图片作为围绕元素的边框，该属性有三个部分：</p>
 <ol>
 <li>作为边框的图片</li>
 <li>从哪里切开图片</li>
 <li>定义中间部分是重复还是拉伸</li>
 </ol>
-<p><code>border-image</code>属性会将图片切成9个部分，就像一个井字棋盘；然后将9个部分中的角放在元素边框的角上，中间部分根据我们的设置重复或拉伸。</p>
+<p><code>border-image</code> 属性会将图片切成9个部分，就像一个井字棋盘；然后将9个部分中的角放在元素边框的角上，中间部分根据我们的设置重复或拉伸。</p>
 <blockquote>
-<p>注意，想要<code>border-image</code>正常工作，元素的<code>border</code>属性也需要设置。</p>
+<p>注意，想要 <code>border-image</code> 正常工作，元素的 <code>border</code> 属性也需要设置。</p>
 </blockquote>
 <p>本部分示例所使用的用于边框的图片<br><img src="/2017/03/09/css3-border-images/border.png" alt=""></p>
 <p>示例</p>
@@ -445,22 +449,22 @@ border-image
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border-image-repeat</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.png) <span class="number">30</span> round;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.border-image-stretch</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">10px</span> solid transparent;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">16px</span>;</div><div class="line">    <span class="attribute">border-image</span>: <span class="built_in">url</span>(border.png) <span class="number">30</span> stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>注意，<code>border-image</code>属性实际上是<code>border-image-source</code>、<code>border-image-slice</code>、<code>border-image-width</code>、<code>border-image-outset</code>和<code>border-image-repeat</code>这几个属性的简写属性。</p>
+<p>注意，<code>border-image</code> 属性实际上是 <code>border-image-source</code>、<code>border-image-slice</code>、<code>border-image-width</code>、<code>border-image-outset</code> 和 <code>border-image-repeat</code> 这几个属性的简写属性。</p>
 </blockquote>
-<h2 id="border-image-不同的切片取值"><a href="#border-image-不同的切片取值" class="headerlink" title="border-image 不同的切片取值"></a>border-image 不同的切片取值</h2><h2 id="border-image-source"><a href="#border-image-source" class="headerlink" title="border-image-source"></a>border-image-source</h2><p>指定用于边框图片的地址，如果设置为none，那么盒子边框就会应用 <code>border-style</code> 的值。</p>
-<h2 id="border-image-slice"><a href="#border-image-slice" class="headerlink" title="border-image-slice"></a>border-image-slice</h2><p><code>border-image-slice</code>把边框图像切成9个区域：4个角、4个边区域和一个中间部位（九宫格，或者理解为“井”字棋盘）。</p>
+<h2 id="border-image-source"><a href="#border-image-source" class="headerlink" title="border-image-source"></a>border-image-source</h2><p>指定用于边框图片的地址，如果设置为none，那么盒子边框就会应用 <code>border-style</code> 的值。</p>
+<h2 id="border-image-slice"><a href="#border-image-slice" class="headerlink" title="border-image-slice"></a>border-image-slice</h2><p><code>border-image-slice</code> 把边框图像切成9个区域：4个角、4个边区域和一个中间部位（九宫格，或者理解为“井”字棋盘）。</p>
 <p>属性值格式：<code>[ number | percentage ]{1,4} &amp;&amp; fill?</code></p>
-<p><code>number</code>即纯数字（不能使用任何单位）；<code>percentage</code>即百分比；<code>{1,4}</code>表示前面的数字或百分比最少出现一次，最多出现4次，这里与<code>margin</code>等属性类似；fill为可选属性值，如果指定则中间第九块不是透明块，如果不指定则作为透明图片处理。</p>
+<p><code>number</code> 即纯数字（不能使用任何单位）；<code>percentage</code> 即百分比；<code>{1,4}</code>表示前面的数字或百分比最少出现一次，最多出现4次，这里与 <code>margin</code> 等属性类似；fill为可选属性值，如果指定则中间第九块不是透明块，如果不指定则作为透明图片处理。</p>
 <p>下面是属性工作机制解释，这里使用了w3c的一张示例图片：<br><img src="/2017/03/09/css3-border-images/border.png" alt=""><br>该图片是一张长宽均为81px的正方形位图，包含9个菱形图案，每个菱形都是边长27px的小正方形；四个角为4个橙色菱形，四个边部区域为4个土黄色菱形，中间块（简称第九区）为透明块。</p>
-<p>假如我们这样设置了属性值：<code>border-image-slice:27 27 27 27</code>，那么意思是距离顶部内偏移区域27px处横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-01.png" alt=""><br>接着距离右边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-02.png" alt=""><br>然后距离底部内偏移区域27px横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-03.png" alt=""><br>最后距离左边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-04.png" alt=""><br>下面是该系列动作的完整动态图：<br><img src="/2017/03/09/css3-border-images/slice.gif" alt=""><br>经过切分，最终形成下面图示的九宫格：<br><img src="/2017/03/09/css3-border-images/slice-result.png" alt=""><br>被切割的部分都分布在盒子边框这9个相对应的位置，对应的，被分隔的图像只能在边框宽度（border-width）内活动。比如盒子边框为<code>border-width:54px</code>，分割图片为<code>border-image-slice:27</code>，因为图像4个顶角的宽度和高度都只有27px，但是盒子的边框是54px，因此图片就要被水平方向和垂直方向拉伸到切好跟盒子边框宽度等同，即27px的图像拉伸到54px。</p>
+<p>假如我们这样设置了属性值：<code>border-image-slice:27 27 27 27</code>，那么意思是距离顶部内偏移区域27px处横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-01.png" alt=""><br>接着距离右边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-02.png" alt=""><br>然后距离底部内偏移区域27px横切一刀：<br><img src="/2017/03/09/css3-border-images/slice-03.png" alt=""><br>最后距离左边内偏移区域27px竖切一刀：<br><img src="/2017/03/09/css3-border-images/slice-04.png" alt=""><br>下面是该系列动作的完整动态图：<br><img src="/2017/03/09/css3-border-images/slice.gif" alt=""><br>经过切分，最终形成下面图示的九宫格：<br><img src="/2017/03/09/css3-border-images/slice-result.png" alt=""><br>被切割的部分都分布在盒子边框这9个相对应的位置，对应的，被分隔的图像只能在边框宽度（border-width）内活动。比如盒子边框为 <code>border-width:54px</code>，分割图片为 <code>border-image-slice:27</code>，因为图像4个顶角的宽度和高度都只有27px，但是盒子的边框是54px，因此图片就要被水平方向和垂直方向拉伸到切好跟盒子边框宽度等同，即27px的图像拉伸到54px。</p>
 <ul>
-<li>示例一：当盒子边框宽度比被切图片边框大时<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.border-image &#123;</div><div class="line">    width: 200px;</div><div class="line">    height: 200px;</div><div class="line">    border:54px solid #000;  //盒子边框为54px</div><div class="line">    border-image-source:url(border.png); </div><div class="line">    border-image-slice:27 27 27 27; // 4个顶角的大小为27*27px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>示例一：当盒子边框宽度比被切图片边框大时<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.border-image &#123;</div><div class="line">    width: 160px;</div><div class="line">    height: 160px;</div><div class="line">    border:54px solid #000;  //盒子边框为54px</div><div class="line">    border-image-source:url(border.png); </div><div class="line">    border-image-slice:27 27 27 27; // 4个顶角的大小为27*27px</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <style type="text/css">
     .border-image-demo01 { 
-        width: 200px;
-        height: 200px;
+        width: 160px;
+        height: 160px;
         border: 54px solid #000;
         border-image-source: url(border.png); 
         border-image-slice: 27 27 27 27;
@@ -471,22 +475,111 @@ border-image
 
 <p><img src="/2017/03/09/css3-border-images/slice-demo-01.png" alt=""></p>
 <ul>
-<li>示例二：当盒子边框宽度比被切图片边框小时<style type="text/css">
-  .border-image-demo02 {
-      width: 200px;
-      height: 200px; 
-      border: 14px solid #000;
-      border-image-source: url(border.png); 
-      border-image-slice: 27 27 27 27;
-  }
-</style>
-
+<li>示例二：当盒子边框宽度比被切图片边框小时<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border-image-demo02</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">160px</span>; </div><div class="line">    <span class="attribute">border</span>: <span class="number">14px</span> solid <span class="number">#000</span>;</div><div class="line">    <span class="attribute">border-image-source</span>: <span class="built_in">url</span>(border.png); </div><div class="line">    <span class="attribute">border-image-slice</span>: <span class="number">27</span> <span class="number">27</span> <span class="number">27</span> <span class="number">27</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<style type="text/css">
+    .border-image-demo02 {
+        width: 160px;
+        height: 160px; 
+        border: 14px solid #000;
+        border-image-source: url(border.png); 
+        border-image-slice: 27 27 27 27;
+    }
+</style>
+
 <p class="border-image-demo02">border-image-slice:27</p>
 
-<p><img src="/2017/03/09/css3-border-images/slice-demo-02.png" alt=""></p>
+<p><img src="/2017/03/09/css3-border-images/slice-demo-02.png" alt=""><br>以上两个示例说明四个顶角的变化其实是带有拉伸功能的，当然假如说盒子边框和被切图片宽度相等，那么这样就不会有拉伸的效果。</p>
+<p><em>注意</em></p>
+<ol>
+<li>slice不允许设置负值，设置负值和设置大于盒子的高度或宽度都被100%</li>
+<li>slice切过的区域可能会重叠，如果右切和左切的值之和≥盒子宽度，那么顶部区域(5号)和底部区域（7号）为空白，反之亦然。</li>
+</ol>
+<h2 id="border-image-width"><a href="#border-image-width" class="headerlink" title="border-image-width"></a>border-image-width</h2><p><code>border-image-width</code> 属性的作用就是代替盒子本身的边框宽度 <code>border-width</code> 属性；如果设置了则边框图片宽度就由 <code>border-image-width</code> 来定，如果没有设置则边框图片宽度就由盒子边框宽度来定（也就是 <code>border-width</code>)。</p>
+<p>属性值设置格式：<code>[ &lt;length&gt; | &lt;percentage&gt; | &lt;number&gt; | auto ]{1,4}</code>，可以用具体像素、数字（表示几倍）和百分比来表示，最少1个值，最多4个值，分别代表上右下左图片边框宽度。</p>
+<style type="text/css">
+    .border-image-width-demo {
+        height: 160px;
+        width: 160px;
+        border: 20px green solid;
+        border-image-source: url(border.png);
+        border-image-slice: 27;
+        border-image-width: 27px 2 15% 27px;
+    }
+</style>
 
+<p class="border-image-width-demo">border-image-width: 28px 1 10% 1.5</p>
+
+<p>示例代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.border-image-width-demo</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">20px</span> green solid;</div><div class="line">    <span class="attribute">border-image-source</span>: <span class="built_in">url</span>(border.png);</div><div class="line">    <span class="attribute">border-image-slice</span>: <span class="number">27</span>;</div><div class="line">    <span class="attribute">border-image-width</span>: <span class="number">27px</span> <span class="number">2</span> <span class="number">10%</span> <span class="number">27px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果 <code>border-image-width</code> 用百分比表示，指的是相对盒子对应方向（宽或高）尺寸的百分比。</p>
+</blockquote>
+<h2 id="border-image-outset"><a href="#border-image-outset" class="headerlink" title="border-image-outset"></a>border-image-outset</h2><p><code>border-image-outset</code> 属性的作用就让边框图片延伸到盒子外；设置格式 <code>[ &lt;length&gt; | &lt;number&gt; ]{1,4}</code>，可以是具体像素和数字，同样可以设置1-4个，分别代表上右下左四个方向图片边框向外延伸的距离。</p>
+<style type="text/css">
+    .outset-demo {
+        height: 90px;
+        width: 90px;
+        border: 27px green solid;
+        border-image-source: url(border.png);
+        border-image-slice: 27;
+    }
+    .outset-demo-1 {
+        border-image-outset: 27px;
+    }
+</style>
+
+<p class="outset-demo">不延伸</p><br><p class="outset-demo outset-demo-1">延伸27px</p>
+
+<p>从上面两个对比效果来看，第二个在每个方向都向外延伸了27像素，看起来比第一个大一圈，但边框图片距离内容区域还有一定距离，这是由 <code>border-width</code> 属性定义的实际边框（也是27px）。</p>
+<p>相关代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.outset-demo</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">90px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">90px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">27px</span> green solid;</div><div class="line">    <span class="attribute">border-image-source</span>: <span class="built_in">url</span>(border.png);</div><div class="line">    <span class="attribute">border-image-slice</span>: <span class="number">27</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.outset-demo-1</span> &#123;</div><div class="line">    <span class="attribute">border-image-outset</span>: <span class="number">27px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"outset-demo"</span>&gt;</span>不延伸<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"outset-demo outset-demo-1"</span>&gt;</span>延伸27px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="border-image-repeat"><a href="#border-image-repeat" class="headerlink" title="border-image-repeat"></a>border-image-repeat</h2><p><code>border-image-repeat</code> 属性的作用是指定边框图片是否重复，设置格式：<code>[ stretch | repeat | round ]{1,2}</code>；可以设置1个或2个值，设置为1个值表示在所有方向上均采用同一种模式，设置为2个值分别表示在水平和垂直方向应用指定的平铺模式。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Value</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">stretch</td>
+<td>默认值，最好理解，将九宫格四个边块拉伸来填充边框</td>
+</tr>
+<tr>
+<td style="text-align:center">repeat</td>
+<td>反复平铺图像，当不能正好收纳图像时，图像剩余部分将被切除</td>
+</tr>
+<tr>
+<td style="text-align:center">round</td>
+<td>反复平铺图像，当不能正好容纳图像时，根据情况在相应方向上拉伸或压缩图像</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>此处说的平铺方式并不影响九宫格四个角，四个角根据情况（边框宽度与四个角大小关系）放大或缩小来填充边框的对应角；这里只影响上下左右四个区块如何填充边框对应部分。</p>
+</blockquote>
+<style type="text/css">
+    .repeat-demo {
+        height: 100px;
+        width: 144px;
+        border: 24px green solid;
+        border-image-source: url(border.png);
+        border-image-slice: 27;
+    }
+    .repeat-demo-repeat {
+        border-image-repeat: repeat;
+    }
+    .repeat-demo-round {
+        border-image-repeat: round;
+    }
+</style>
+
+<p class="repeat-demo">stretch(默认)</p><br><p class="repeat-demo repeat-demo-repeat">repeat</p><br><p class="repeat-demo repeat-demo-round">round</p>
+
+<p>对应代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"repeat-demo"</span>&gt;</span>stretch(默认)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"repeat-demo repeat-demo-repeat"</span>&gt;</span>repeat<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"repeat-demo repeat-demo-round"</span>&gt;</span>round<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.repeat-demo</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">24px</span> green solid;</div><div class="line">    <span class="attribute">border-image-source</span>: <span class="built_in">url</span>(border.png);</div><div class="line">    <span class="attribute">border-image-slice</span>: <span class="number">27</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.repeat-demo-repeat</span> &#123;</div><div class="line">    <span class="attribute">border-image-repeat</span>: repeat;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.repeat-demo-round</span> &#123;</div><div class="line">    <span class="attribute">border-image-repeat</span>: round;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -497,7 +590,7 @@ border-image
         <p><span>本文标题:</span><a href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-09, 10:07:57</p>
-        <p><span>最后更新:</span>2017-03-09, 15:13:08</p>
+        <p><span>最后更新:</span>2017-03-09, 17:57:02</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/09/css3-border-images/" title="CSS3学习之边框图片">http://yoursite.com/2017/03/09/css3-border-images/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/09/css3-border-images/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -527,7 +620,7 @@ border-image
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持"><span class="toc-number">1.</span> <span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-image-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-image 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-不同的切片取值"><span class="toc-number">3.</span> <span class="toc-text">border-image 不同的切片取值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-source"><span class="toc-number">4.</span> <span class="toc-text">border-image-source</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-slice"><span class="toc-number">5.</span> <span class="toc-text">border-image-slice</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器支持"><span class="toc-number">1.</span> <span class="toc-text">浏览器支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-image-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-image 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-source"><span class="toc-number">3.</span> <span class="toc-text">border-image-source</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-slice"><span class="toc-number">4.</span> <span class="toc-text">border-image-slice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-width"><span class="toc-number">5.</span> <span class="toc-text">border-image-width</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-outset"><span class="toc-number">6.</span> <span class="toc-text">border-image-outset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#border-image-repeat"><span class="toc-number">7.</span> <span class="toc-text">border-image-repeat</span></a></li></ol>
         
     </div>
     <style>
@@ -552,21 +645,9 @@ border-image
     
 <div class="share">
     
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"CSS3学习之边框图片　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
 
+    
+        <div class="addthis_sharing_toolbox"></div>
     
 </div>
 
