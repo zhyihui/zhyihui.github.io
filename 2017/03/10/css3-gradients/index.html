@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="CSS3 Gradients
+再说CSS3渐变——线性渐变
+再说CSS3渐变——径向渐变
+
+
+一直以来，我们只能使用图形设计软件来实现Web页面中的渐变效果；现在W3C组织将渐变设计收入到CSS3标准中，可以让我们显示两种或多种指定颜色的平滑过渡，使用CSS3渐变后可以减少图片下载所耗费的时间和流量；另外，使用渐变的元素在缩放时会有更好的视觉效果，因为渐变是由浏览器生成的。
+最早支持CSS3渐变">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习之渐变">
+<meta property="og:url" content="http://yoursite.com/2017/03/10/css3-gradients/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="CSS3 Gradients
+再说CSS3渐变——线性渐变
+再说CSS3渐变——径向渐变
+
+
+一直以来，我们只能使用图形设计软件来实现Web页面中的渐变效果；现在W3C组织将渐变设计收入到CSS3标准中，可以让我们显示两种或多种指定颜色的平滑过渡，使用CSS3渐变后可以减少图片下载所耗费的时间和流量；另外，使用渐变的元素在缩放时会有更好的视觉效果，因为渐变是由浏览器生成的。
+最早支持CSS3渐变">
+<meta property="og:updated_time" content="2017-03-10T08:48:28.105Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习之渐变">
+<meta name="twitter:description" content="CSS3 Gradients
+再说CSS3渐变——线性渐变
+再说CSS3渐变——径向渐变
+
+
+一直以来，我们只能使用图形设计软件来实现Web页面中的渐变效果；现在W3C组织将渐变设计收入到CSS3标准中，可以让我们显示两种或多种指定颜色的平滑过渡，使用CSS3渐变后可以减少图片下载所耗费的时间和流量；另外，使用渐变的元素在缩放时会有更好的视觉效果，因为渐变是由浏览器生成的。
+最早支持CSS3渐变">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS3学习之渐变 | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c109fa772a9ba7"></script>
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css3-gradients" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/10/css3-gradients/" class="article-date">
+      <time datetime="2017-03-10T01:27:35.000Z" itemprop="datePublished">2017-03-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3学习之渐变
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li><a href="https://www.w3schools.com/css/css3_gradients.asp" target="_blank" rel="external">CSS3 Gradients</a></li>
+<li><a href="http://www.w3cplus.com/css3/new-css3-linear-gradient.html" target="_blank" rel="external">再说CSS3渐变——线性渐变</a></li>
+<li><a href="http://www.w3cplus.com/css3/new-css3-radial-gradient.html" target="_blank" rel="external">再说CSS3渐变——径向渐变</a></li>
+</ul>
+<hr>
+<p>一直以来，我们只能使用图形设计软件来实现Web页面中的渐变效果；现在W3C组织将渐变设计收入到CSS3标准中，可以让我们显示两种或多种指定颜色的平滑过渡，使用CSS3渐变后可以减少图片下载所耗费的时间和流量；另外，使用渐变的元素在缩放时会有更好的视觉效果，因为渐变是由浏览器生成的。</p>
+<p>最早支持CSS3渐变的是基于Webkit内核的浏览器，随后在Firefox和Opera等浏览器都得到支持，但是众浏览器之间没有统一的标准，用法差异很大。不同的渲染引擎实现渐变的语法也不同，在各浏览器下使用都需要带上自己的前缀，给前端设计师们带来极大的不便。</p>
+<p>现在，各大浏览器最新版本已经完全支持W3C的标准语法（见下面的“浏览器兼容情况”部分）。</p>
+<p>CSS3定义了以下两种渐变：</p>
+<ul>
+<li>线性渐变</li>
+<li>径向渐变</li>
+</ul>
+<a id="more"></a>
+<h2 id="浏览器兼容情况"><a href="#浏览器兼容情况" class="headerlink" title="浏览器兼容情况"></a>浏览器兼容情况</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">linear-gradient</td>
+<td style="text-align:center">26.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">6.1</td>
+<td style="text-align:center">12.1</td>
+</tr>
+<tr>
+<td style="text-align:center">radial-gradient</td>
+<td style="text-align:center">26.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">6.1</td>
+<td style="text-align:center">12.1</td>
+</tr>
+<tr>
+<td style="text-align:center">repeating-linear-gradient</td>
+<td style="text-align:center">26.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">6.1</td>
+<td style="text-align:center">12.1</td>
+</tr>
+<tr>
+<td style="text-align:center">repeating-radial-gradient</td>
+<td style="text-align:center">26.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">6.1</td>
+<td style="text-align:center">12.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS3-线性渐变"><a href="#CSS3-线性渐变" class="headerlink" title="CSS3 线性渐变"></a>CSS3 线性渐变</h2><p>在线性渐变过程中，颜色沿着一条直线过渡：从左侧到右侧、从右侧到左侧、从顶部到底部、从底部到顶部或着沿任何任意轴。</p>
+<p>CSS3制作渐变效果，其实和使用制作软件中的渐变工具没有什么差别。首先需要指定一个渐变的方向、渐变的起始颜色、渐变的结束颜色。具有这三个参数就可以制作一个最简单、最普通的渐变效果。如果你需要制作一个复杂的多色渐变效果，就需要在同一个渐变方向增添多个色标。具备这些渐变参数（至少三个），各浏览器就会绘制与渐变线垂直的颜色结来填充整个容器。浏览器渲染出来的效果就类似于制作软件设计出来的渐变图像，从一种颜色到另一种颜色的平滑淡出，沿所指的线性渐变方向实现颜色渐变效果。</p>
+<h3 id="语法与参数"><a href="#语法与参数" class="headerlink" title="语法与参数"></a>语法与参数</h3><p>W3C组织于2012年04月发布了CSS3线性渐变的CR版本（候选人推荐版本）。这一次发布的CSS3渐变属性有着很大的变化，使用语法较前面的版本要简单多，容易理解的多。最让大家感到高兴的是，现在所有现代浏览器都支持W3C的标准语法，包括曾经令人讨厌的IE浏览器，也在IE10中支持了标准语法。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">linear-gradient</span>(<span class="selector-attr">[[&lt;angle&gt; | to &lt;side-or-corner&gt; ]</span>,]?&lt;<span class="selector-tag">color-stop</span>&gt;<span class="selector-attr">[,&lt;color-stop&gt;]</span>+)</div></pre></td></tr></table></figure>
+<p>W3C标准线性渐变语法包括三个主要参数：第一个参数指定了渐变的方向，同时决定了渐变颜色的停止位置。这个参数值可以省略，当省略不写的时候其取值为“to bottom”（即默认为自上向下）；第二个和第三个参数，表示颜色的起始点和结束点。</p>
+<p>其实上面语法中的 <code>&lt;color-stop&gt;</code> 类似于PS等图形设计软件中渐变的色标块，可以添加多个值（至少2个），当该颜色参数多于2个时则形成多色渐变。</p>
+<p>关于渐变方向参数，有两种方法来指定：</p>
+<ul>
+<li><code>&lt;angle&gt;</code>：通过角度来表示渐变方向，0度表示从下向上；正数表示逆时针方向，负数表示顺时间方向；如90度是自左向右，-90度表示自右向左。</li>
+<li><code>关键词</code>：通过关键词表示渐变的方向，比如“to top”、“to right”、“to bottom”和“to left”，这些关键词分别对应的角度值为“0deg”、“90deg”、“180deg”和“270deg”。另外，还可以使用“to top left”右下角到左上角、“to top right”左下角到右上角等，根据关键词语义很容易理解其方向。</li>
+</ul>
+<h3 id="双色渐变示例"><a href="#双色渐变示例" class="headerlink" title="双色渐变示例"></a>双色渐变示例</h3><blockquote>
+<p>以下渐变示例均是由黄色向红色的双色渐变</p>
+<style type="text/css">
+    .linear-demo {
+        height: 60px;
+        width: 50%;
+        padding: 8px;
+    }
+    .linear-demo-1 {
+        background: linear-gradient(yellow, red)
+    }
+    .linear-demo-2 {
+        background: linear-gradient(to left, yellow, red)
+    }
+    .linear-demo-3 {
+        background: linear-gradient(to top left, yellow, red)
+    }
+    .linear-demo-4 {
+        background: linear-gradient(0deg, yellow, red)
+    }
+    .linear-demo-5 {
+        background: linear-gradient(90deg, yellow, red)
+    }
+    .linear-demo-6 {
+        background: linear-gradient(-90deg, yellow, red)
+    }
+</style>
+
+</blockquote>
+<p class="linear-demo linear-demo-1">不写方向（自上向下）</p><br><p class="linear-demo linear-demo-2">方向：to left（自右向左）</p><br><p class="linear-demo linear-demo-3">方向：to top left（自右下角向左上角）</p><br><p class="linear-demo linear-demo-4">方向：0度（自下向上）</p><br><p class="linear-demo linear-demo-5">方向：90度（顺时针90度，变成自左向右）</p><br><p class="linear-demo linear-demo-6">方向：-90度（逆时针90度，变成自右向左）</p>
+
+<p>代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.linear-demo</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">8px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-1</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(yellow, red)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-2</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to left, yellow, red)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to top left, yellow, red)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-4</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(0deg, yellow, red)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-5</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(90deg, yellow, red)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-6</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-90deg, yellow, red)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="多色渐变示例"><a href="#多色渐变示例" class="headerlink" title="多色渐变示例"></a>多色渐变示例</h3><p>多色渐变与双色渐变唯一的区别就是多加几个颜色参数，如下所示：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.linear-demo-7</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to top, yellow, red, green, orange)</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.linear-demo-8</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-90deg, indigo, red, yellow, orange)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    .linear-demo-7 {
+        background: linear-gradient(to top, yellow, red, green, orange)
+    }
+    .linear-demo-8 {
+        background: linear-gradient(-90deg, indigo, red, yellow, orange)
+    }
+</style>
+
+<p class="linear-demo linear-demo-7">自下向上：yellow, red, green, orange</p><br><p class="linear-demo linear-demo-8">-90度：indigo, red, yellow, orange</p>
+
+<h3 id="lt-color-stop-gt-（色标）位置比例"><a href="#lt-color-stop-gt-（色标）位置比例" class="headerlink" title="&lt;color-stop&gt;（色标）位置比例"></a>&lt;color-stop&gt;（色标）位置比例</h3><p>前面的示例中 <code>color-stop</code> 都只指定了颜色，这样不管是双色渐变还是多色渐变，所有渐变色在渐变方向都是均分元素尺寸的；其实每个 <code>color-stop（色标）</code> 的颜色后面还可以带一个0~100%之间的百分数，用于指定色标在渐变方向上的位置比例，其用法与Photoshop中的值线渐变工具用法相似。</p>
+<p>看下面这个示例：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.linear-demo-9</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to left, indigo, red 10%, yellow 50%, orange);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    .linear-demo-9 {
+        width: 100%;
+        background: linear-gradient(to left, indigo, red 10%, yellow 50%, orange);
+    }
+</style>
+
+<p class="linear-demo linear-demo-9">自右向左：indigo, red 10%, yellow 50%, orange</p>
+
+<p>上面这个例子渐变色从右至左分别是紫蓝色、红色、黄色和橙色，其中红色指定位于元素10%处，黄色位于水平中点（50%）处；紫蓝色和橙色没有指定位置，分别表示起点（0）和终点（100%）；其余部分都用渐变色填充。</p>
+<h2 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h2><p>CSS3径向渐变是圆形或椭圆形渐变。颜色不再沿着一条直线轴变化，而是从一个起点朝所有方向混合。径向渐变相对线性渐变来说要复杂一些。</p>
+<h3 id="语法与参数-1"><a href="#语法与参数-1" class="headerlink" title="语法与参数"></a>语法与参数</h3><p>2013年04年，W3C为CSS3径向渐变推出最新的语法格式。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">radial-gradient([[&lt;shape&gt; || &lt;size&gt;] [at &lt;position&gt;]?,| at &lt;position&gt;,]?&lt;color-stop&gt;[,&lt;color-stop&gt;]+);</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-03-10, 09:27:35</p>
+        <p><span>最后更新:</span>2017-03-10, 16:48:28</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/10/css3-gradients/" title="CSS3学习之渐变">http://yoursite.com/2017/03/10/css3-gradients/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/10/css3-gradients/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/09/css3-border-images/">
+                    CSS3学习之边框图片
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容情况"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-线性渐变"><span class="toc-number">2.</span> <span class="toc-text">CSS3 线性渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数"><span class="toc-number">2.1.</span> <span class="toc-text">语法与参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双色渐变示例"><span class="toc-number">2.2.</span> <span class="toc-text">双色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多色渐变示例"><span class="toc-number">2.3.</span> <span class="toc-text">多色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-color-stop-gt-（色标）位置比例"><span class="toc-number">2.4.</span> <span class="toc-text"><color-stop>（色标）位置比例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#径向渐变"><span class="toc-number">3.</span> <span class="toc-text">径向渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数-1"><span class="toc-number">3.1.</span> <span class="toc-text">语法与参数</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+
+    
+        <div class="addthis_sharing_toolbox"></div>
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/10/css3-gradients/" data-title="CSS3学习之渐变" data-url="http://yoursite.com/2017/03/10/css3-gradients/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"zhyihui"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/09/css3-border-images/" title="下一篇: CSS3学习之边框图片">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
