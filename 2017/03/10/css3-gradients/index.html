@@ -36,7 +36,15 @@
 <meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/gradient-circle.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/gradient-ellipse.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-relation.jpg">
-<meta property="og:updated_time" content="2017-03-12T14:04:12.810Z">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-2.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-3.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-4.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-5.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-6.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-7.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/03/10/css3-gradients/radial-gradient-8.jpg">
+<meta property="og:updated_time" content="2017-03-12T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习之渐变">
 <meta name="twitter:description" content="CSS3 Gradients
@@ -481,10 +489,10 @@
 <blockquote>
 <p><code>&lt;shape&gt;</code>：主要用来定义径向渐变的形状</p>
 </blockquote>
-<p>其主要包括两个值 <code>circle</code> 和 <code>ellipse</code> ：</p>
+<p>其主要包括两个值 <code>circle</code> 和 <code>ellipse</code> ，默认值是 <code>ellipse</code> ：</p>
 <ul>
 <li><code>circle</code>：如果 <code>&lt;size&gt;</code> 和 <code>&lt;length&gt;</code> 大小相等，那么径向渐变是一个圆形，也就是用来指定圆形的径向渐变</li>
-<li><code>ellipse</code>：如果 <code>&lt;size&gt;</code> 和 <code>&lt;length&gt;</code> 大小不相等，那么径向渐变是一个椭圆形，也就是用来指定椭圆形的径向渐变。</li>
+<li><code>ellipse</code>：<em>默认值</em>，如果 <code>&lt;size&gt;</code> 和 <code>&lt;length&gt;</code> 大小不相等，那么径向渐变是一个椭圆形，也就是用来指定椭圆形的径向渐变。</li>
 </ul>
 <blockquote>
 <p><code>&lt;size&gt;</code>：主要用来确定径向渐变的结束形状大小</p>
@@ -502,6 +510,9 @@
 <p><code>&lt;color-stop&gt;</code>：径向渐变线上的停止颜色</p>
 </blockquote>
 <p>类似于线性渐变的 <code>&lt;color-stop&gt;</code>。径向渐变的为渐变线从中心点向右扩散。其中0%表示渐变线的起始点，100%表示渐变线的与渐变容器相交结束的位置。而且其颜色停止可以定义一个负值。</p>
+<blockquote>
+<p>Radial Gradient - Evenly Spaced Color Stops (this is default)，即默认所有渐变色平均分配元素尺寸。</p>
+</blockquote>
 <h3 id="径向渐变示例"><a href="#径向渐变示例" class="headerlink" title="径向渐变示例"></a>径向渐变示例</h3><p>虽然径向渐变要比线性渐变更为复杂，但只要了解其基本语法以及相关属性参数的作用，适应起来也并不是特别难。下面通过一些示例来理解径向渐变的语法及相关属性参数，所有例子都在一个宽为360像素，高为200像素的容器中实现。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.radial-box</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">360px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="built_in">hsla</span>(60,50%,80%,.8);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>先看一个最简单的径向渐变，圆心在容器正中心，除了颜色外其他均为默认值：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.raidal-demo-00</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(hsla(120, 70%, 60%, .9), <span class="built_in">hsla</span>(360, 60%, 60%, .9))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -567,9 +578,91 @@
 <div class="radial-box raidal-demo-04"></div>
 
 <blockquote>
-<p>这里的位置关键词包括 <code>center</code>、<code>top</code>、<code>right</code>、<code>bottom</code> 和 <code>left</code>，以及它们的组合 <code>top left</code>、<code>top right</code>、<code>bottom left</code> 和 <code>bottom right</code> 等，<code>top left</code> 也可以写作 <code>left top</code>，其它组合亦然。</p>
+<p>这里可以使用的位置关键词包括 <code>center</code>、<code>top</code>、<code>right</code>、<code>bottom</code> 和 <code>left</code>，以及它们的组合 <code>top left</code>、<code>top right</code>、<code>bottom left</code> 和 <code>bottom right</code> 等，<code>top left</code> 也可以写作 <code>left top</code>，其它组合亦然。</p>
 </blockquote>
 <p>用来设置元素径向渐变圆心的所有可用关键词对照的位置关系，可以浏览下图：<br><img src="/2017/03/10/css3-gradients/radial-gradient-relation.jpg" alt=""></p>
+<hr>
+<p>前面主要说的是使用 <code>&lt;size&gt;</code> 、渐变类型关键词以及渐变类型配合关键词制作的径向渐变效果。除了上述方法可以制作一些径向渐变效果之外，还可以使用 <code>&lt;size&gt;</code> 、渐变类型以及圆心关键词结合制作一些径向渐变效果。</p>
+<p>当给元素显式的设置了径向渐变的大小，这两个值设置了径向渐变的水平和垂直半径。如果一个径向渐变包含径向渐变类型“circle”和一个单一的大小值，您就可以实现一个圆形的径向渐变。如果一个径向渐变包含了径向渐变类型“ellipse”和两个值，或者只是两个值，您就可以实现一个椭圆形的径向渐变。在设置径向半径大小值时，可以使用任何CSS的单位长度值。</p>
+<p>下面几个示例共用样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="built_in">hsla</span>(60, 50% 80%, .8)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    .box {
+        width: 160px;
+        height: 160px;
+        border-radius: 100%;
+        border: 5px solid hsla(60, 50%, 80%, .8)
+    }
+    .circle-demo-1 {
+        background: radial-gradient(20px circle, hsla(220, 89%, 100%, 1), hsla(30, 60%, 60%, .9))
+    }
+    .circle-demo-2 {
+        background: radial-gradient(6em circle at right bottom, hsla(220, 89%, 100%, 1), hsla(30, 60%, 60%, .9))
+    }
+</style>
+
+<ul>
+<li>使用 <code>20px circle</code> 制作一个径向半径为20px的圆形径向渐变：</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.circle-demo-1</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(20px circle, hsla(220, 89%, 100%, 1), <span class="built_in">hsla</span>(30, 60%, 60%, .9))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="box circle-demo-1"></div>
+
+<ul>
+<li>使用 <code>6em circle at right bottom</code> 制作一个圆形径向渐变，其半径为6em，圆心在 right bottom 处。</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.circle-demo-2</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(6em circle at right bottom, hsla(220, 89%, 100%, 1), <span class="built_in">hsla</span>(30, 60%, 60%, .9))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="box circle-demo-2"></div>
+
+<p>除了通过 <code>&lt;size&gt;</code> 给径向渐变显式的设置大小之外，我们还可以通过关键词隐式的为径向渐变设置大小。其中的每个关键词指定径向渐变大小的算法，也就是通过圆心指向径向渐变的边或者角来确定径向渐变的大小。不过在圆形和椭圆形的径向渐变之中，他们算出来的大小略有不同。</p>
+<blockquote>
+<p><code>closest-side</code> </p>
+</blockquote>
+<p><code>closest-side</code> 设置一个圆形径向渐变大小时，主要是通过径向边缘与离元素最近边缘的切点到圆心之间的直线距离大决定；设置椭圆形径向渐变大小时，主要通过径向渐变水平与垂直边缘与离最近边缘切点到圆心的直线距离大小决定。如下图所示：<br><img src="/2017/03/10/css3-gradients/radial-gradient-1.jpg" width="25%"><br><img src="/2017/03/10/css3-gradients/radial-gradient-2.jpg" width="25%"></p>
+<blockquote>
+<p><code>closest-corner</code> </p>
+</blockquote>
+<p><code>closest-corner</code> 设置圆形径向渐变大小时，主要通过渐变边缘与到元素最近顶角交接点到圆心直线距离决定；设置椭圆形径向渐变大小时，主要通过径向渐变边缘与到元素最近顶角交接点到圆心的直线距离大小决定。如下图所示：<br><img src="/2017/03/10/css3-gradients/radial-gradient-3.jpg" width="25%"><br><img src="/2017/03/10/css3-gradients/radial-gradient-4.jpg" width="25%"></p>
+<blockquote>
+<p><code>farthest-side</code> </p>
+</blockquote>
+<p><code>farthest-side</code> 设置圆形径向渐变大小时，主要通过径向渐变边缘与元素最远边的切点到圆心的直线距离大小决定著作权归作者所有；设置椭圆形径向渐变大小时，主要通过径向渐变与元素最远边切点到圆心的直线距离大小决定。如下图所示：<br><img src="/2017/03/10/css3-gradients/radial-gradient-5.jpg" width="25%"><br><img src="/2017/03/10/css3-gradients/radial-gradient-6.jpg" width="25%"></p>
+<blockquote>
+<p><code>farthest-corner</code> </p>
+</blockquote>
+<p><code>farthest-corner</code> 设置圆形径渐变的大小时，主要通过径向渐变边缘与元素最远顶角交点到圆心的直线距离决定；设置椭圆形径向渐变时，主要通过渐变边缘与元素最远顶点的交接点到圆心的直线距离决定。如下图所示：<br><img src="/2017/03/10/css3-gradients/radial-gradient-7.jpg" width="25%"><br><img src="/2017/03/10/css3-gradients/radial-gradient-8.jpg" width="25%"></p>
+<p><strong><em>本部分示例可以到文首参考资料中查看</em></strong><br><a href="http://codepen.io/airen/pen/fxvCw" target="_blank" rel="external">CodePen案例</a></p>
+<h3 id="多色径向渐变"><a href="#多色径向渐变" class="headerlink" title="多色径向渐变"></a>多色径向渐变</h3><p>在径向渐变中，除了能设置径向渐变的圆心位置、半径大小之外，还可以设置径向渐的颜色，前面说的都是双色径向渐变，下面做一个多色径向渐变的示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.multi-colors-demo-1</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(red, green, yellow)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .multi-colors-demo-1 {
+        background: radial-gradient(red, green, yellow)
+    }
+</style>
+
+<div class="box multi-colors-demo-1"></div>
+
+<p>上面的示例是一个简单的三色径向渐变，只是通过设置三个颜色，从容器的中心向外由红色（red）、绿色（green）到黄色(yellow)。这可以说是最简单的了多色径向渐变了，除此之外，我们还可以给每个颜色设置具体的显示位置：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.multi-colors-demo-2</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(red 15%, green 60%, yellow 80%)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .multi-colors-demo-2 {
+        background: radial-gradient(red 15%, green 60%, yellow 80%)
+    }
+</style>
+
+<div class="box multi-colors-demo-2"></div>
+
+<p>在径向渐变中的渐变颜色，我们可以使用<code>任何表示颜色的格式</code>，并且确定渐变颜色的位置可以使用<code>任何表示长度的单位值</code>，同时<code>颜色数量不会做任何限制</code>，而且前面介绍有关于径向渐变的属性参数都可以配合多种颜色，制作出一些更特殊的径向渐变效果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.multi-colors-demo-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(farthest-side ellipse at top left, red 15%, green 60%, yellow 80%)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .multi-colors-demo-3 {
+        background: radial-gradient(farthest-side ellipse at top left, red 15%, green 60%, yellow 80%)
+    }
+</style>
+
+<div class="box multi-colors-demo-3"></div>
+
+<blockquote>
+<p>多色彩渐变及色标位置与线性渐变中的相关概念类似</p>
+</blockquote>
 <h2 id="重复渐变"><a href="#重复渐变" class="headerlink" title="重复渐变"></a>重复渐变</h2><p>线性渐变和径向渐变都属于CSS中背景属性中的背景图片（background-image）属性。有时候我们希望创建一种在一个元素的背景上重复的渐变“模式”。在没有重复渐变的属性之前，主要通过重复背景图像（使用 <code>background-repeat</code>）创建线性重复渐变，但是没有创建重复的径向渐变的类似方式。幸运的是，CSS3通过 <code>repeating-linear-gradient</code> 和 <code>repeating-radial-gradient</code> 语法提供了补救方法。可以直接实现重复的渐变效果。</p>
 <h3 id="重复线性渐变"><a href="#重复线性渐变" class="headerlink" title="重复线性渐变"></a>重复线性渐变</h3><p>我们可以使用重复线性渐变 <code>repeating-linear-gradient</code> 属性来代替线性渐变 <code>linear-gradient</code>。他们采取相同的值，但色标在两个方向上都无限重复。不过使用百分比设置色标的位置没有多大的意义，但使用像素和其他的单位，重复线性渐变可以创建一些很酷的效果。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.repeat-linear-demo</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">repeating-linear-gradient</span>(to right, red, green 36px, orange 72px)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -622,7 +715,7 @@
         <p><span>本文标题:</span><a href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-10, 09:27:35</p>
-        <p><span>最后更新:</span>2017-03-12, 22:04:12</p>
+        <p><span>最后更新:</span>2017-03-13, 00:00:00</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/10/css3-gradients/" title="CSS3学习之渐变">http://yoursite.com/2017/03/10/css3-gradients/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/03/10/css3-gradients/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -652,7 +745,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容情况"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-线性渐变"><span class="toc-number">2.</span> <span class="toc-text">CSS3 线性渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数"><span class="toc-number">2.1.</span> <span class="toc-text">语法与参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双色渐变示例"><span class="toc-number">2.2.</span> <span class="toc-text">双色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多色渐变示例"><span class="toc-number">2.3.</span> <span class="toc-text">多色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-color-stop-gt-（色标）位置比例"><span class="toc-number">2.4.</span> <span class="toc-text"><color-stop>（色标）位置比例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#径向渐变"><span class="toc-number">3.</span> <span class="toc-text">径向渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数-1"><span class="toc-number">3.1.</span> <span class="toc-text">语法与参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#径向渐变示例"><span class="toc-number">3.2.</span> <span class="toc-text">径向渐变示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复渐变"><span class="toc-number">4.</span> <span class="toc-text">重复渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重复线性渐变"><span class="toc-number">4.1.</span> <span class="toc-text">重复线性渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重复径向渐变"><span class="toc-number">4.2.</span> <span class="toc-text">重复径向渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#制作记事本纸张效果"><span class="toc-number">4.3.</span> <span class="toc-text">制作记事本纸张效果</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容情况"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-线性渐变"><span class="toc-number">2.</span> <span class="toc-text">CSS3 线性渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数"><span class="toc-number">2.1.</span> <span class="toc-text">语法与参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#双色渐变示例"><span class="toc-number">2.2.</span> <span class="toc-text">双色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多色渐变示例"><span class="toc-number">2.3.</span> <span class="toc-text">多色渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lt-color-stop-gt-（色标）位置比例"><span class="toc-number">2.4.</span> <span class="toc-text"><color-stop>（色标）位置比例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#径向渐变"><span class="toc-number">3.</span> <span class="toc-text">径向渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语法与参数-1"><span class="toc-number">3.1.</span> <span class="toc-text">语法与参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#径向渐变示例"><span class="toc-number">3.2.</span> <span class="toc-text">径向渐变示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多色径向渐变"><span class="toc-number">3.3.</span> <span class="toc-text">多色径向渐变</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复渐变"><span class="toc-number">4.</span> <span class="toc-text">重复渐变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重复线性渐变"><span class="toc-number">4.1.</span> <span class="toc-text">重复线性渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重复径向渐变"><span class="toc-number">4.2.</span> <span class="toc-text">重复径向渐变</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#制作记事本纸张效果"><span class="toc-number">4.3.</span> <span class="toc-text">制作记事本纸张效果</span></a></li></ol></li></ol>
         
     </div>
     <style>
