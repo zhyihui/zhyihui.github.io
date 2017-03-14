@@ -15,25 +15,25 @@
 
 
 
-<meta name="description" content="Learn How To Create Different CSS Box Shadow Effects
-CSS 盒子阴影box-shadow 属性允许我们通过指定颜色、大小、模糊和偏移等值很简单地在盒元素上创建多个阴影效果。
-box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方向上的偏移，可选选项有延伸距离和颜色。
-1box-shadow: inset horizontal">
+<meta name="description" content="Transform就是转换的意思，通过CSS3转换，我们能够对元素进行移动、缩放、转动或拉伸；CSS3 支持 2D 和 3D 转换。
+CSS3 Transformtransform 属性语法1transform: none|&amp;lt;transform-function&amp;gt;[&amp;lt;transform-function&amp;gt;]*|initial|inherit;
+
+none: 表示不进行变换">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习创建CSS盒子阴影效果">
-<meta property="og:url" content="http://zhyihui.github.io/2017/03/06/learn-css-box-shadow/index.html">
+<meta property="og:title" content="CSS3学习之Transform">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/14/css3-transform/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="Learn How To Create Different CSS Box Shadow Effects
-CSS 盒子阴影box-shadow 属性允许我们通过指定颜色、大小、模糊和偏移等值很简单地在盒元素上创建多个阴影效果。
-box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方向上的偏移，可选选项有延伸距离和颜色。
-1box-shadow: inset horizontal">
-<meta property="og:updated_time" content="2017-03-06T09:48:44.735Z">
+<meta property="og:description" content="Transform就是转换的意思，通过CSS3转换，我们能够对元素进行移动、缩放、转动或拉伸；CSS3 支持 2D 和 3D 转换。
+CSS3 Transformtransform 属性语法1transform: none|&amp;lt;transform-function&amp;gt;[&amp;lt;transform-function&amp;gt;]*|initial|inherit;
+
+none: 表示不进行变换">
+<meta property="og:updated_time" content="2017-03-14T12:52:22.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习创建CSS盒子阴影效果">
-<meta name="twitter:description" content="Learn How To Create Different CSS Box Shadow Effects
-CSS 盒子阴影box-shadow 属性允许我们通过指定颜色、大小、模糊和偏移等值很简单地在盒元素上创建多个阴影效果。
-box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方向上的偏移，可选选项有延伸距离和颜色。
-1box-shadow: inset horizontal">
+<meta name="twitter:title" content="CSS3学习之Transform">
+<meta name="twitter:description" content="Transform就是转换的意思，通过CSS3转换，我们能够对元素进行移动、缩放、转动或拉伸；CSS3 支持 2D 和 3D 转换。
+CSS3 Transformtransform 属性语法1transform: none|&amp;lt;transform-function&amp;gt;[&amp;lt;transform-function&amp;gt;]*|initial|inherit;
+
+none: 表示不进行变换">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +65,7 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>学习创建CSS盒子阴影效果 | 初心</title>
+<title>CSS3学习之Transform | 初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -277,11 +277,11 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-learn-css-box-shadow" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css3-transform" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/06/learn-css-box-shadow/" class="article-date">
-      <time datetime="2017-03-06T08:27:49.000Z" itemprop="datePublished">2017-03-06</time>
+      <a href="/2017/03/14/css3-transform/" class="article-date">
+      <time datetime="2017-03-14T02:46:29.000Z" itemprop="datePublished">2017-03-14</time>
 </a>
 
 
@@ -296,7 +296,7 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
         
   
     <h1 class="article-title" itemprop="name">
-      学习创建CSS盒子阴影效果
+      CSS3学习之Transform
     </h1>
   
 
@@ -305,13 +305,13 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS/">CSS</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -321,27 +321,163 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><a href="https://paulund.co.uk/learn-css-box-shadow" target="_blank" rel="external">Learn How To Create Different CSS Box Shadow Effects</a></p>
-<h2 id="CSS-盒子阴影"><a href="#CSS-盒子阴影" class="headerlink" title="CSS 盒子阴影"></a>CSS 盒子阴影</h2><p>box-shadow 属性允许我们通过指定颜色、大小、模糊和偏移等值很简单地在盒元素上创建多个阴影效果。</p>
-<p>box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方向上的偏移，可选选项有延伸距离和颜色。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">inset</span> <span class="selector-tag">horizontal</span> <span class="selector-tag">vertical</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">colour</span>;</div></pre></td></tr></table></figure>
-<p>示例<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">box-shadow</span>: 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> <span class="selector-id">#888</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: <span class="selector-tag">inset</span> 2<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> <span class="selector-tag">black</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: 10<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> <span class="selector-id">#888</span>, <span class="selector-tag">-10px</span> <span class="selector-tag">-10px</span> <span class="selector-id">#f4f4f4</span>, 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> <span class="selector-id">#cc6600</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>所有主流浏览器的最新版都已经支持了 box-shadow 属性。</p>
+        <p>Transform就是转换的意思，通过CSS3转换，我们能够对元素进行移动、缩放、转动或拉伸；CSS3 支持 2D 和 3D 转换。</p>
+<h2 id="CSS3-Transform"><a href="#CSS3-Transform" class="headerlink" title="CSS3 Transform"></a>CSS3 Transform</h2><h3 id="transform-属性语法"><a href="#transform-属性语法" class="headerlink" title="transform 属性语法"></a>transform 属性语法</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform: none|&lt;transform-function&gt;[&lt;transform-function&gt;]*|initial|inherit;</div></pre></td></tr></table></figure>
 <ul>
-<li>Internet Explorer 9.0 and higher</li>
-<li>Firefox 3.5 and higher</li>
-<li>Chrome 1 and higher</li>
-<li>Safari 3 and higher</li>
-<li>Opera 10.5 and higher</li>
+<li><code>none</code>: 表示不进行变换</li>
+<li><code>&lt;transform-function&gt;</code>：表示一个或多个变换函数，以空格分开；就是说可以同时对一个元素应用多种变换函数。</li>
 </ul>
-<h2 id="示例效果"><a href="#示例效果" class="headerlink" title="示例效果"></a>示例效果</h2><p>以下例子共同的代码</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box effect1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>阴影效果一<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">h3</span>&#123;</div><div class="line">    <span class="attribute">text-align</span>:center;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">    <span class="attribute">top</span>:<span class="number">80px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">width</span>:<span class="number">70%</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#FFF</span>;</div><div class="line">    <span class="attribute">margin</span>:<span class="number">40px</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS-阴影效果一"><a href="#CSS-阴影效果一" class="headerlink" title="CSS 阴影效果一"></a>CSS 阴影效果一</h3><p>这会创建一个标准的盒子阴影效果，阴影移到元素下来创建一个看似升起的盒子。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*==================================================</span></div><div class="line"> * Effect 1</div><div class="line"> * ===============================================*/</div><div class="line"><span class="selector-class">.effect1</span>&#123;</div><div class="line">     <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">10px</span> <span class="number">6px</span> -<span class="number">6px</span> <span class="number">#777</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS-阴影效果二"><a href="#CSS-阴影效果二" class="headerlink" title="CSS 阴影效果二"></a>CSS 阴影效果二</h3><p>本效果会将阴影添加到盒子元素的右下角和右下角，用以创造一个盒子两个底部角翘起的视觉效果；该效果使用了:before和:after伪元素来创建新的元素放在盒子的两个角上。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*==================================================</span></div><div class="line"> * Effect 2</div><div class="line"> * ===============================================*/</div><div class="line"><span class="selector-class">.effect2</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.effect2</span><span class="selector-pseudo">:before</span>, <span class="selector-class">.effect2</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">  <span class="attribute">bottom</span>: <span class="number">15px</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">80%</span>;</div><div class="line">  <span class="attribute">max-width</span>:<span class="number">300px</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#777</span>;</div><div class="line">  <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">15px</span> <span class="number">10px</span> <span class="number">#777</span>;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-3deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.effect2</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(3deg);</div><div class="line">  <span class="attribute">right</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">left</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS-阴影效果三"><a href="#CSS-阴影效果三" class="headerlink" title="CSS 阴影效果三"></a>CSS 阴影效果三</h3>
+<blockquote>
+<p>transform中使用多个变换函数时需要用空格隔开，而不是以往使用叠加效果时所使用的逗号</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="浏览器兼容情况"><a href="#浏览器兼容情况" class="headerlink" title="浏览器兼容情况"></a>浏览器兼容情况</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">transform (2D)</td>
+<td style="text-align:center">36.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">23.0</td>
+</tr>
+<tr>
+<td style="text-align:center">transform (3D)</td>
+<td style="text-align:center">36.0</td>
+<td style="text-align:center">12.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">23.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="CSS3-2D-Transform"><a href="#CSS3-2D-Transform" class="headerlink" title="CSS3 2D Transform"></a>CSS3 2D Transform</h2><p>在CSS3中 <code>2D Transform</code> 主要包括以下几种：<code>rotate（旋转）</code>、<code>skew（扭曲）</code>、<code>scale（缩放）</code> 和 <code>translate（移动）</code> 以及 <code>matrix（矩阵变形）</code>。</p>
+<p>这几种变换对应函数如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>matrix(n,n,n,n,n,n)</td>
+<td>定义 2D 转换，使用六个值的矩阵。</td>
+</tr>
+<tr>
+<td>rotate(angle)</td>
+<td>定义 2D 旋转，在参数中规定角度。</td>
+</tr>
+<tr>
+<td>translate(x,y)</td>
+<td>定义 2D 转换，沿着 X 和 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td>translateX(n)</td>
+<td>定义 2D 转换，沿着 X 轴移动元素。</td>
+</tr>
+<tr>
+<td>translateY(n)</td>
+<td>定义 2D 转换，沿着 Y 轴移动元素。</td>
+</tr>
+<tr>
+<td>scale(x,y)</td>
+<td>定义 2D 缩放转换，改变元素的宽度和高度。</td>
+</tr>
+<tr>
+<td>scaleX(n)</td>
+<td>定义 2D 缩放转换，改变元素的宽度。</td>
+</tr>
+<tr>
+<td>scaleY(n)</td>
+<td>定义 2D 缩放转换，改变元素的高度。</td>
+</tr>
+<tr>
+<td>skew(x-angle,y-angle)</td>
+<td>定义 2D 倾斜转换，沿着 X 和 Y 轴。</td>
+</tr>
+<tr>
+<td>skewX(angle)</td>
+<td>定义 2D 倾斜转换，沿着 X 轴。</td>
+</tr>
+<tr>
+<td>skewY(angle)</td>
+<td>定义 2D 倾斜转换，沿着 Y 轴。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotate（旋转）"><a href="#rotate（旋转）" class="headerlink" title="rotate（旋转）"></a>rotate（旋转）</h3><p>通过 <code>rotate(&lt;angle&gt;)</code> 方法，元素将根据给定角度进行一个2D旋转，角度为正值则顺时针旋转，角度为负值则逆时针旋转。</p>
+<p>下面是两个简单的旋转示例：</p>
+<style type="text/css">
+    .box-2d {
+        width: 160px;
+        height: 90px;
+        background-color: greenyellow;
+        padding: 4px;
+        box-shadow: 4px 2px 4px rgba(0, 0, 0, .4);
+    }
+    .rotate-demo-1 {
+        transform: rotate(15deg);
+    }
+    .rotate-demo-2 {
+        transform: rotate(-15deg);
+    }
+</style>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box-2d</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">90px</span>;</div><div class="line">    <span class="attribute">background-color</span>: greenyellow;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">4px</span> <span class="number">2px</span> <span class="number">4px</span> <span class="built_in">rgba</span>(0, 0, 0, .4);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate-demo-1</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(15deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate-demo-2</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-15deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="box-2d rotate-demo-1">顺时针旋转</div><br><div class="box-2d rotate-demo-2">逆时针旋转</div>
+
+<h3 id="translate（移动）"><a href="#translate（移动）" class="headerlink" title="translate（移动）"></a>translate（移动）</h3><p><code>translate（移动）</code> 共分为三种情况：</p>
+<ul>
+<li><code>translate(x, y)</code> 水平方向和垂直方向同时移动（X轴和Y轴同时移动）</li>
+<li><code>translateX(x)</code> 仅水平方向移动（X轴上移动）</li>
+<li><code>translateY(y)</code> 仅垂直方向移动（Y轴上移动）</li>
+</ul>
+<p>在上面三个函数中，x和y都可以为正值和负值；x为正值则元素向右移动，为负值则向左移动；y为正值则元素向下移动，为负值则向上移动。</p>
+<style type="text/css">
+    .translate-demo-1 {
+        transform: translate(-40px, -20px);
+    }
+</style>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.translate-demo-1</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-40px, -20px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="box-2d translate-demo-1">向左向上移动</div>
+
+<h3 id="scale（缩放）"><a href="#scale（缩放）" class="headerlink" title="scale（缩放）"></a>scale（缩放）</h3><p><code>scale（缩放）</code> 和 <code>translate（移动）</code> 极其相似，也具有三种情况：</p>
+<ul>
+<li><code>scale(x[,y])</code> 使元素水平和垂直方向同时缩放，若只提供x参数，则y取与x一样的值</li>
+<li><code>scaleX(x)</code> 元素仅水平方向缩放（X轴缩放）</li>
+<li><code>scaleY(y)</code> 元素仅垂直方向缩放（Y轴缩放）</li>
+</ul>
+<p>它们具有相同的缩放基点和缩放基数，缩放基点默认是元素的中心位置，可以通过 <code>transform-origin</code> 属性来改变（见下面示例）；缩放基数默认为1，如果x和y的值大于1元素就放大，反之其值小于1，元素缩小。</p>
+<p>scale*() 函数的参数相对于缩放基数来说是个倍数关系，比如2表示放大2倍，0.5表示缩小到原尺寸的50%等。</p>
+<p>考虑下面两个示例：</p>
+<style type="text/css">
+    .scale-demo-1 {
+        transform: scale(1.5, 1);
+    }
+    .scale-demo-2 {
+        transform: scale(3, 1);
+        transform-origin: left top;
+    }
+</style>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.scale-demo-1</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(1.5, 1);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.scale-demo-2</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(3, 1);</div><div class="line">    <span class="attribute">transform-origin</span>: left top;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="box-2d">原始DIV</div><br><div class="box-2d scale-demo-1">基点不动，水平扩大1.5倍</div><br><div class="box-2d scale-demo-2">基点在左上角，水平扩大3倍</div>
+
+<p>从第二个DIV效果可以看到如果不指定 <code>transform-origin</code> 属性值，那么DIV元素的基点在中心位置，会在左右两个方向上平均扩大；指定基点为左上角时，只向右扩大。</p>
+<h3 id="skew（扭曲）"><a href="#skew（扭曲）" class="headerlink" title="skew（扭曲）"></a>skew（扭曲）</h3>
       
     </div>
     
@@ -349,13 +485,13 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/14/css3-transform/">CSS3学习之Transform</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
-        <p><span>发布时间:</span>2017-03-06, 16:27:49</p>
-        <p><span>最后更新:</span>2017-03-06, 17:48:44</p>
+        <p><span>发布时间:</span>2017-03-14, 10:46:29</p>
+        <p><span>最后更新:</span>2017-03-14, 20:52:22</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/06/learn-css-box-shadow/" title="学习创建CSS盒子阴影效果">http://zhyihui.github.io/2017/03/06/learn-css-box-shadow/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/06/learn-css-box-shadow/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/14/css3-transform/" title="CSS3学习之Transform">http://zhyihui.github.io/2017/03/14/css3-transform/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/14/css3-transform/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -367,12 +503,12 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/07/css3-rounded-corners/">
-                    CSS3中的圆角效果
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/13/css3-shadows/">
+                    CSS3学习之阴影
                 </a>
             </div>
-        
         
     </nav>
 
@@ -382,7 +518,7 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-盒子阴影"><span class="toc-number">1.</span> <span class="toc-text">CSS 盒子阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器支持"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例效果"><span class="toc-number">2.</span> <span class="toc-text">示例效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-阴影效果一"><span class="toc-number">2.1.</span> <span class="toc-text">CSS 阴影效果一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-阴影效果二"><span class="toc-number">2.2.</span> <span class="toc-text">CSS 阴影效果二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-阴影效果三"><span class="toc-number">2.3.</span> <span class="toc-text">CSS 阴影效果三</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-Transform"><span class="toc-number">1.</span> <span class="toc-text">CSS3 Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transform-属性语法"><span class="toc-number">1.1.</span> <span class="toc-text">transform 属性语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器兼容情况"><span class="toc-number">1.2.</span> <span class="toc-text">浏览器兼容情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-2D-Transform"><span class="toc-number">2.</span> <span class="toc-text">CSS3 2D Transform</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rotate（旋转）"><span class="toc-number">2.1.</span> <span class="toc-text">rotate（旋转）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#translate（移动）"><span class="toc-number">2.2.</span> <span class="toc-text">translate（移动）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scale（缩放）"><span class="toc-number">2.3.</span> <span class="toc-text">scale（缩放）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#skew（扭曲）"><span class="toc-number">2.4.</span> <span class="toc-text">skew（扭曲）</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -422,7 +558,7 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/06/learn-css-box-shadow/" data-title="学习创建CSS盒子阴影效果" data-url="http://zhyihui.github.io/2017/03/06/learn-css-box-shadow/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/14/css3-transform/" data-title="CSS3学习之Transform" data-url="http://zhyihui.github.io/2017/03/14/css3-transform/"></div>
     <script>
         var duoshuoQuery = {short_name:"zhyihui"};
         var loadComment = function(){
@@ -445,15 +581,15 @@ box-shadow 属性可以接受2-6个属性，必须的选项有水平和垂直方
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/07/css3-rounded-corners/" title="上一篇: CSS3中的圆角效果">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/03/13/css3-shadows/" title="下一篇: CSS3学习之阴影">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

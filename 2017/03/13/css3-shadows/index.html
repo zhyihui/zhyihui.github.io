@@ -15,14 +15,19 @@
 
 
 
-<meta name="description" content="参考：CSS3 Rounded Corners
+<meta name="description" content="CSS3 Shadow Effects
+CSS3的文字阴影—text-shadow
+CSS3 box-shadow
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+使用CSS3我们可以方便地给文本和元素添加阴影效果，涉及到的属性：
 
+text-shadow
+box-shadow
 
 浏览器兼容
 
 
+Property
 Chrome
 IE
 Firefox
@@ -32,23 +37,28 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+text-shadow
+4.0
+10.0
+3.5
+4.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3中的圆角效果">
-<meta property="og:url" content="http://zhyihui.github.io/2017/03/07/css3-rounded-corners/index.html">
+<meta property="og:title" content="CSS3学习之阴影">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/13/css3-shadows/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="参考：CSS3 Rounded Corners
+<meta property="og:description" content="CSS3 Shadow Effects
+CSS3的文字阴影—text-shadow
+CSS3 box-shadow
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+使用CSS3我们可以方便地给文本和元素添加阴影效果，涉及到的属性：
 
+text-shadow
+box-shadow
 
 浏览器兼容
 
 
+Property
 Chrome
 IE
 Firefox
@@ -58,22 +68,27 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
-<meta property="og:updated_time" content="2017-03-09T07:19:38.987Z">
+text-shadow
+4.0
+10.0
+3.5
+4.0">
+<meta property="og:updated_time" content="2017-03-14T02:22:36.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3中的圆角效果">
-<meta name="twitter:description" content="参考：CSS3 Rounded Corners
+<meta name="twitter:title" content="CSS3学习之阴影">
+<meta name="twitter:description" content="CSS3 Shadow Effects
+CSS3的文字阴影—text-shadow
+CSS3 box-shadow
 
-使用CSS3中的border-radius属性，可以在任何元素上实现“圆角效果”。
+使用CSS3我们可以方便地给文本和元素添加阴影效果，涉及到的属性：
 
+text-shadow
+box-shadow
 
 浏览器兼容
 
 
+Property
 Chrome
 IE
 Firefox
@@ -83,11 +98,11 @@ Opera
 
 
 
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+text-shadow
+4.0
+10.0
+3.5
+4.0">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -119,7 +134,7 @@ Opera
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>CSS3中的圆角效果 | 初心</title>
+<title>CSS3学习之阴影 | 初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -331,11 +346,11 @@ Opera
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css3-rounded-corners" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css3-shadows" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/07/css3-rounded-corners/" class="article-date">
-      <time datetime="2017-03-07T01:43:35.000Z" itemprop="datePublished">2017-03-07</time>
+      <a href="/2017/03/13/css3-shadows/" class="article-date">
+      <time datetime="2017-03-13T08:33:06.000Z" itemprop="datePublished">2017-03-13</time>
 </a>
 
 
@@ -350,7 +365,7 @@ Opera
         
   
     <h1 class="article-title" itemprop="name">
-      CSS3中的圆角效果
+      CSS3学习之阴影
     </h1>
   
 
@@ -365,7 +380,7 @@ Opera
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -375,14 +390,20 @@ Opera
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考：<a href="https://www.w3schools.com/css/css3_borders.asp" target="_blank" rel="external">CSS3 Rounded Corners</a></p>
-<blockquote>
-<p>使用CSS3中的<code>border-radius</code>属性，可以在任何元素上实现“圆角效果”。</p>
-</blockquote>
-<hr>
-<h2 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h2><table>
+        <ul>
+<li><a href="https://www.w3schools.com/css/css3_shadows.asp" target="_blank" rel="external">CSS3 Shadow Effects</a></li>
+<li><a href="http://www.w3cplus.com/blog/52.html" target="_blank" rel="external">CSS3的文字阴影—text-shadow</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-box-shadow" target="_blank" rel="external">CSS3 box-shadow</a></li>
+</ul>
+<p>使用CSS3我们可以方便地给文本和元素添加阴影效果，涉及到的属性：</p>
+<ul>
+<li>text-shadow</li>
+<li>box-shadow</li>
+</ul>
+<h3 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h3><table>
 <thead>
 <tr>
+<th style="text-align:center">Property</th>
 <th style="text-align:center">Chrome</th>
 <th style="text-align:center">IE</th>
 <th style="text-align:center">Firefox</th>
@@ -392,106 +413,155 @@ Opera
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">9.0+</td>
-<td style="text-align:center">4.0+</td>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">10.5+</td>
+<td style="text-align:center">text-shadow</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">3.5</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">9.6</td>
+</tr>
+<tr>
+<td style="text-align:center">box-shadow</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">5.1</td>
+<td style="text-align:center">10.5</td>
 </tr>
 </tbody>
 </table>
 <a id="more"></a>
-<h2 id="CSS3-border-radius-属性"><a href="#CSS3-border-radius-属性" class="headerlink" title="CSS3 border-radius 属性"></a>CSS3 border-radius 属性</h2><p>下面是几个圆角效果示例：</p>
-<style type="text/css">
-    .corner {
-        border-radius: 15px;
-        width: 160px;
-        height: 80px;
-        text-align: center !important;
-    }
-    .corner-1 {        
-        background: green !important;
-        color: white !important;
-    }
-    .corner-2 {
-        border: 1px green solid;
-    }
-    .corner-3 {
-        background: url(paper.gif);
-        background-repeat: repeat;
-    }
-</style>
-
-<p class="corner corner-1">圆角一</p><br><p class="corner corner-2">圆角二</p><br><p class="corner corner-3">圆角三</p>
-
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-1"</span>&gt;</span>圆角一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-2"</span>&gt;</span>圆角二<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-3"</span>&gt;</span>圆角三<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-1</span> &#123;        </div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-2</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> green solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(paper.gif);</div><div class="line">    <span class="attribute">background-repeat</span>: repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="CSS3-文本阴影"><a href="#CSS3-文本阴影" class="headerlink" title="CSS3 文本阴影"></a>CSS3 文本阴影</h3><p>CSS3中的 <code>text-shadow</code> 属性有两个作用：产生阴影和模糊主体，这样在不使用图片时能给文字增加质感。text-shadow曾经在css2中就出现过，但在css2.1版本中又被抛弃了，现在css3.0版本又重新捡回来了。</p>
+<p>其语法如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;</div></pre></td></tr></table></figure>
 <blockquote>
-<p><code>border-radius</code>属性实际上是<code>border-top-left-radius</code>、<code>border-top-right-radius</code>、<code>border-bottom-right-radius</code>及<code>border-bottom-left-radius</code>这几个属性的缩写属性。</p>
+<p>如果要添加多个阴影，用逗号分隔开多个阴影效果即可</p>
 </blockquote>
-<h2 id="设置每个角"><a href="#设置每个角" class="headerlink" title="设置每个角"></a>设置每个角</h2><p>如果我们只给 <code>border-radius</code> 属性设置一个值，则圆角效果会应用到全部的四个角上。然而如果我们需要，也可以分开指定每个角的圆角属性。</p>
-<p>下面是规则：</p>
 <ul>
-<li>四个值：四个值分别应用到左上、右上、右下、左下（顺时针方向）四个角。</li>
-<li>三个值：第一个值应用到左上角，第二个值应用到右上角和左下角，第三个值应用到右下角。</li>
-<li>两个值：第一个值应用到左上角和右下角，第二个值应用到右上角和左下角。</li>
-<li>一个值：四个角全部应用该值。</li>
+<li><code>h-shadow</code> 必须，水平偏移距离；正值时阴影向右偏移，负值时阴影向左偏移</li>
+<li><code>v-shadow</code> 必须，垂直偏移距离；正值时阴影向下偏移，负值时阴影向上偏移</li>
+<li><code>blur-radius</code> 可选，阴影的模糊程度，不能是负值，值越大阴影越模糊，反之阴影越清晰，不需要阴影模糊可以将Blur值设置为0，默认为0</li>
+<li><code>color</code> 可选，阴影的颜色，所有CSS3支持的颜色都可以使用</li>
+<li><code>none</code> 默认值，表示不使用阴影效果</li>
 </ul>
-<p>下面是几个示例：</p>
+<p>下面是几个简单地文本阴影示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.text-shadow-demo-1</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">3px</span> <span class="number">#EE3300</span>, <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">#0033EE</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.text-shadow-demo-2</span> &#123;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</div><div class="line">    <span class="attribute">text-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> <span class="number">2px</span> black, <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span> blue, <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> darkblue;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.text-shadow-demo-3</span> &#123;</div><div class="line">    <span class="attribute">color</span>: yellow;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</div><div class="line">    <span class="attribute">text-shadow</span>: -<span class="number">1px</span> <span class="number">0</span> black, <span class="number">0</span> <span class="number">1px</span> black, <span class="number">1px</span> <span class="number">0</span> black, <span class="number">0</span> -<span class="number">1px</span> black;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <style type="text/css">
-    .corner-x {
-        width: 240px;
-        height: 80px;
-        background: green !important;
-        text-align: center !important;
-        color: white !important;
+    .text-shadow-demo-1 {
+        font-size: 24px;
+        text-shadow: 0 0 3px #EE3300, 0 0 5px #0033EE;
     }
-    .corner-x1 {
-        border-radius: 15px 40px 25px 5px
+    .text-shadow-demo-2 {
+        color: white;
+        font-size: 24px;
+        text-shadow: 1px 1px 2px black, 0 0 20px blue, 0 0 5px darkblue;
     }
-    .corner-x2 {
-        border-radius: 15px 40px 25px
-    }
-    .corner-x3 {
-        border-radius: 15px 40px
+    .text-shadow-demo-3 {
+        color: yellow;
+        font-size: 24px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     }
 </style>
 
-<p class="corner-x corner-x1">四个值15px 40px 25px 5px</p><br><p class="corner-x corner-x2">三个值15px 40px 25px</p><br><p class="corner-x corner-x3">两个值15px 40px</p>
-
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x1"</span>&gt;</span>四个值15px 40px 25px 5px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x2"</span>&gt;</span>三个值15px 40px 25px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x3"</span>&gt;</span>两个值15px 40px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner-x</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x1</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span> <span class="number">5px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x2</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x3</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="CSS3-圆角属性"><a href="#CSS3-圆角属性" class="headerlink" title="CSS3 圆角属性"></a>CSS3 圆角属性</h2><table>
+<p><span class="text-shadow-demo-1">文本阴影效果</span><br><span class="text-shadow-demo-2">文本阴影效果</span><br><span class="text-shadow-demo-3">文本描边效果</span></p>
+<p><em>更多示例可参看文首的参考资料</em></p>
+<h3 id="CSS3-盒子阴影"><a href="#CSS3-盒子阴影" class="headerlink" title="CSS3 盒子阴影"></a>CSS3 盒子阴影</h3><p><code>box-shadow</code> 属性用来给HTML元素添加阴影效果，用法与 <code>text-shadow</code> 类似，其语法如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">box-shadow: none|h-shadow v-shadow blur spread color |inset|initial|inherit;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>box-shadow</code> 和 <code>text-shadow</code> 一样可以使用一个或多个投影，如果使用多个投影时必须需要用逗号“，”分开</p>
+</blockquote>
+<table>
 <thead>
 <tr>
-<th>属性</th>
-<th>描述</th>
+<th style="text-align:center">属性值</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>border-radius</td>
-<td>四个border-*-*-radius属性的缩写属性</td>
+<td style="text-align:center">none</td>
+<td>默认值，不使用阴影效果</td>
 </tr>
 <tr>
-<td>border-top-left-radius</td>
-<td>定义左上角边框形状</td>
+<td style="text-align:center">h-shadow</td>
+<td>必须，阴影水平偏移量，正值阴影在对象右边，负值阴影在对象左边</td>
 </tr>
 <tr>
-<td>border-top-right-radius</td>
-<td>定义右上角边框形状</td>
+<td style="text-align:center">v-shadow</td>
+<td>必须，阴影垂直偏移量，正值阴影在对象下边，负值阴影在对象上边</td>
 </tr>
 <tr>
-<td>border-bottom-right-radius</td>
-<td>定义左下角边框形状</td>
+<td style="text-align:center">blur</td>
+<td>可选，阴影模糊半径，只能为正值，值越大阴影的边缘就越模糊</td>
 </tr>
 <tr>
-<td>border-bottom-left-radius</td>
-<td>定义右下角边框形状</td>
+<td style="text-align:center">spread</td>
+<td>可选，阴影扩展半径，如果值为正，则整个阴影都延展扩大，值为负则缩小</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td>可选，如果不设定任何颜色时，浏览器会取默认色</td>
+</tr>
+<tr>
+<td style="text-align:center">inset</td>
+<td>可选，默认投影方式是外阴影，如果取其唯一值“inset”，则将外阴影变成内阴影</td>
 </tr>
 </tbody>
 </table>
+<p>下面是几个示例共用CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">background</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    .box {
+        height: 60px;
+        width: 300px;
+        padding: 8px;
+        background: yellow;
+    }
+    .box-shadow-1 {
+        box-shadow: 6px 6px;
+    }
+</style>
 
+<p>最简单的阴影效果，只有水平和垂直方向上的偏移：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box-shadow-1</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">6px</span> <span class="number">6px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<div class="box box-shadow-1">只指定阴影水平和垂直偏移</div>
+
+<p>给阴影指定一个颜色：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box-shadow-2</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">6px</span> <span class="number">6px</span> <span class="number">#336633</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .box-shadow-2 {
+        box-shadow: 6px 6px #339933;
+    }
+</style>
+
+<div class="box box-shadow-2">指定阴影颜色</div>
+
+<p>再加一个模糊效果：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box-shadow-3</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">6px</span> <span class="number">6px</span> <span class="number">5px</span> <span class="number">#336633</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    .box-shadow-3 {
+        box-shadow: 6px 6px 5px #339933;
+    }
+</style>
+
+<div class="box box-shadow-3">指定阴影模糊效果</div>
+
+<p>下面是一个比较常见的卡片效果：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-class">.card</span> &#123;</div><div class="line">    <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">4px</span> <span class="number">8px</span> <span class="number">0</span> <span class="built_in">rgba</span>(0, 0, 0, .2), <span class="number">0</span> <span class="number">6px</span> <span class="number">20px</span> <span class="number">0</span> <span class="built_in">rgba</span>(0, 0, 0, .19);</div><div class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-class">.header</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#4CAF50</span>;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<style type="text/css">
+    div.card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+        width: 240px;
+        text-align: center;
+    }
+    div.header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        font-size: 40px;
+    }
+    div.container {
+        padding: 10px;
+    }
+</style>
+
+<div class="card"><div class="header"><p>1</p></div><div class="container"><p>January 1, 2017</p></div></div>
       
     </div>
     
@@ -499,13 +569,13 @@ Opera
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
-        <p><span>发布时间:</span>2017-03-07, 09:43:35</p>
-        <p><span>最后更新:</span>2017-03-09, 15:19:38</p>
+        <p><span>发布时间:</span>2017-03-13, 16:33:06</p>
+        <p><span>最后更新:</span>2017-03-14, 10:22:36</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/07/css3-rounded-corners/" title="CSS3中的圆角效果">http://zhyihui.github.io/2017/03/07/css3-rounded-corners/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/07/css3-rounded-corners/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/13/css3-shadows/" title="CSS3学习之阴影">http://zhyihui.github.io/2017/03/13/css3-shadows/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/13/css3-shadows/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -518,15 +588,15 @@ Opera
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/07/css3-background/">
-                    CSS3 背景
+                <a href="/2017/03/14/css3-transform/">
+                    CSS3学习之Transform
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/06/learn-css-box-shadow/">
-                    学习创建CSS盒子阴影效果
+                <a href="/2017/03/13/css3-fonts-and-text/">
+                    CSS3学习之字体与文本
                 </a>
             </div>
         
@@ -538,7 +608,7 @@ Opera
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-radius-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-radius 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置每个角"><span class="toc-number">3.</span> <span class="toc-text">设置每个角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-圆角属性"><span class="toc-number">4.</span> <span class="toc-text">CSS3 圆角属性</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器兼容"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-文本阴影"><span class="toc-number">2.</span> <span class="toc-text">CSS3 文本阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-盒子阴影"><span class="toc-number">3.</span> <span class="toc-text">CSS3 盒子阴影</span></a></li></ol>
         
     </div>
     <style>
@@ -578,7 +648,7 @@ Opera
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/07/css3-rounded-corners/" data-title="CSS3中的圆角效果" data-url="http://zhyihui.github.io/2017/03/07/css3-rounded-corners/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/13/css3-shadows/" data-title="CSS3学习之阴影" data-url="http://zhyihui.github.io/2017/03/13/css3-shadows/"></div>
     <script>
         var duoshuoQuery = {short_name:"zhyihui"};
         var loadComment = function(){
@@ -601,7 +671,7 @@ Opera
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/07/css3-background/" title="上一篇: CSS3 背景">
+            <a href="/2017/03/14/css3-transform/" title="上一篇: CSS3学习之Transform">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -609,7 +679,7 @@ Opera
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/06/learn-css-box-shadow/" title="下一篇: 学习创建CSS盒子阴影效果">
+            <a href="/2017/03/13/css3-fonts-and-text/" title="下一篇: CSS3学习之字体与文本">
                 <i class="fa fa-angle-right"></i>
             </a>
         
