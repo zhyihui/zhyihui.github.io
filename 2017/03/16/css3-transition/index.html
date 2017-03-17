@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="CSS3 transitions
+CSS3 Transition
+
+W3C 标准中对 css3 的 transition 这是样描述的：“css的 transition 允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。”
+
+CSS Transitions allows property chan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习之Transition">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/16/css3-transition/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="CSS3 transitions
+CSS3 Transition
+
+W3C 标准中对 css3 的 transition 这是样描述的：“css的 transition 允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。”
+
+CSS Transitions allows property chan">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/16/css3-transition/transition-timing-function.png">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/16/css3-transition/cubic-bezier.png">
+<meta property="og:updated_time" content="2017-03-17T06:34:16.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习之Transition">
+<meta name="twitter:description" content="CSS3 transitions
+CSS3 Transition
+
+W3C 标准中对 css3 的 transition 这是样描述的：“css的 transition 允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。”
+
+CSS Transitions allows property chan">
+<meta name="twitter:image" content="http://zhyihui.github.io/2017/03/16/css3-transition/transition-timing-function.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS3学习之Transition | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c109fa772a9ba7"></script>
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css3-transition" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/16/css3-transition/" class="article-date">
+      <time datetime="2017-03-16T06:40:34.000Z" itemprop="datePublished">2017-03-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3学习之Transition
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li><a href="https://www.w3.org/TR/css3-transitions/" target="_blank" rel="external">CSS3 transitions</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-transition" target="_blank" rel="external">CSS3 Transition</a></li>
+</ul>
+<p><a href="http://www.w3.org/" target="_blank" rel="external">W3C</a> 标准中对 <a href="http://www.w3.org/TR/css3-roadmap/" target="_blank" rel="external">css3</a> 的 <a href="https://www.w3.org/TR/css3-transitions/" target="_blank" rel="external">transition</a> 这是样描述的：“css的 <code>transition</code> 允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。”</p>
+<blockquote>
+<p>CSS Transitions allows property changes in CSS values to occur smoothly over a specified duration.</p>
+</blockquote>
+<h2 id="transition-属性"><a href="#transition-属性" class="headerlink" title="transition 属性"></a>transition 属性</h2><p>在CSS3中，我们可以在不使用Flash和JavaScript的情况下，在元素从一种样式变为另一种样式时添加过渡效果。<code>transition</code> 是一个简写属性，它用来设置以下四个属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transition-property</td>
+<td>规定设置过渡效果的 CSS 属性的名称，默认是所有属性</td>
+</tr>
+<tr>
+<td>transition-duration</td>
+<td>过渡持续时间，设置完成过渡效果需要多少秒或毫秒，默认为0</td>
+</tr>
+<tr>
+<td>transition-timing-function</td>
+<td>设置过渡效果的速率函数，默认是“ease”</td>
+</tr>
+<tr>
+<td>transition-delay</td>
+<td>过渡延时，定义过渡效果何时开始，默认为0</td>
+</tr>
+</tbody>
+</table>
+<p><code>transition</code> 属性语法如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">property</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span>;</div></pre></td></tr></table></figure></p>
+<p><code>transition</code> 属性的四个属性值分别对应上面表格中四个单独属性，下面会对四个属性分别介绍；<code>transition</code> 属性可以对一个元素同时应用多个过渡效果，多个过渡效果之间用逗号分隔，后面 <a href="#使用-CSS3-Transitions">使用 CSS3 Transitions</a> 部分有相关示例，代码与演示效果联合起来更容易理解。</p>
+<a id="more"></a>
+<h3 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">transition</td>
+<td style="text-align:center">26.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>4.0 -moz-</td>
+<td style="text-align:center">6.1<br>3.1 -webkit-</td>
+<td style="text-align:center">12.1<br>10.5 -o-</td>
+</tr>
+</tbody>
+</table>
+<p>上面是 <code>transition</code> 属性的浏览器兼容情况，其所表示的 <code>transition-property</code> 、<code>transition-duration</code> 、<code>transition-timing-function</code> 和 <code>transition-delay</code> 四个属性兼容情况与其完全一样，这里没有一一列举。</p>
+<p>表格中的数字表示完全支持该属性的第一个浏览器版本，后面带有 <code>-webkit-</code> 等后缀的数字（如 <code>4.0 -webkit-</code> ）的意思是从4.0版本开始可以使用 <code>-webkit-</code> 前缀启用对该属性的支持，其它浏览器类似，只是前缀不同。</p>
+<h3 id="transition-property"><a href="#transition-property" class="headerlink" title="transition-property"></a>transition-property</h3><p><code>transition-property</code> 是用来指定元素transition效果所应用的属性，语法如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transition-property: none|all|property;</div></pre></td></tr></table></figure>
+<ul>
+<li>none 表示没有任何属性应用过渡效果；</li>
+<li>all 表示所有属性应用过渡效果，这也是默认值；</li>
+<li>property 指定应用过渡效果的元素属性名，多个属性用逗号分隔</li>
+</ul>
+<p>并不是所有的CSS属性都能应用过渡，在W3C官网中列出了所有可以实现 transition 效果的CSS属性值以及值的类型，下面表格列出了所有可用 transition 效果的CSS属性，但有点杂乱无章，详情可以点<a href="http://www.w3.org/TR/css3-transitions/#properties-from-css-" target="_blank" rel="external">这里(Properties from CSS)</a>查看详情。</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background-color、color</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-color" target="_blank" rel="external">color</a> 通过红、绿、蓝和透明度组件变换（每个数值处理）</td>
+</tr>
+<tr>
+<td>background-position</td>
+<td></td>
+</tr>
+<tr>
+<td>border-*-color</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-color" target="_blank" rel="external">color</a> 通过红、绿、蓝和透明度组件变换（每个数值处理）</td>
+</tr>
+<tr>
+<td>border-*-width</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>border-spacing</td>
+<td></td>
+</tr>
+<tr>
+<td>clip</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-rect" target="_blank" rel="external">rectangle</a></td>
+</tr>
+<tr>
+<td>top、bottom、left、right</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-lpcalc" target="_blank" rel="external">length, percentage, or calc</a></td>
+</tr>
+<tr>
+<td>width、height</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>font-size</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-font-weight" target="_blank" rel="external">font weight</a></td>
+</tr>
+<tr>
+<td>letter-spacing</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>line-height</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-number" target="_blank" rel="external">number</a> 或者 <a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>margin-*、padding-*</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>max-*、min-*</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-lpcalc" target="_blank" rel="external">length, percentage, or calc</a></td>
+</tr>
+<tr>
+<td>opacity</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-number" target="_blank" rel="external">number</a> 真实的（浮点型）数值</td>
+</tr>
+<tr>
+<td>outline-color</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-color" target="_blank" rel="external">color</a> 通过红、绿、蓝和透明度组件变换（每个数值处理）</td>
+</tr>
+<tr>
+<td>outline-width</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-lpcalc" target="_blank" rel="external">length, percentage, or calc</a></td>
+</tr>
+<tr>
+<td>text-shadow</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-shadow-list" target="_blank" rel="external">shadow list</a></td>
+</tr>
+<tr>
+<td>vertical-align</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>visibility</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-visibility" target="_blank" rel="external">visibility</a></td>
+</tr>
+<tr>
+<td>word-spacing</td>
+<td><a href="https://www.w3.org/TR/css3-transitions/#animtype-length" target="_blank" rel="external">length</a></td>
+</tr>
+<tr>
+<td>z-index</td>
+<td><a href="">integer</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="transition-duration"><a href="#transition-duration" class="headerlink" title="transition-duration"></a>transition-duration</h3><p><code>transition-duration</code> 是用来指定元素过渡持续时间，语法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transition-duration</span> ： &lt;<span class="selector-tag">time</span>&gt; <span class="selector-attr">[, &lt;time&gt;]</span>*</div></pre></td></tr></table></figure>
+<p>参数值time为数值，单位为s（秒）或者ms（毫秒），可以作用于所有元素，包括:before和:after伪元素。其默认值是0，也就是变换时是即时的。</p>
+<h3 id="transition-timing-function"><a href="#transition-timing-function" class="headerlink" title="transition-timing-function"></a>transition-timing-function</h3><p><code>transition-timing-function</code> 属性用来描述过渡过程中的中间值如何计算出来，它允许过渡在整个持续时间内改变变化速率，这一般叫做 <code>easing</code> 函数；</p>
+<blockquote>
+<p><code>transition-timing-function</code> 属性其实就是描述一个速度曲线</p>
+</blockquote>
+<p><code>transition-timing-function</code> 属性可取的值如下：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ease（逐渐变慢）</td>
+<td>默认值，等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0).</td>
+</tr>
+<tr>
+<td>linear（匀速）</td>
+<td>等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0).</td>
+</tr>
+<tr>
+<td>ease-in（加速）</td>
+<td>等同于贝塞尔曲线(0.42, 0, 1.0, 1.0).</td>
+</tr>
+<tr>
+<td>ease-out（减速）</td>
+<td>等同于贝塞尔曲线(0, 0, 0.58, 1.0).</td>
+</tr>
+<tr>
+<td>ease-in-out（先加速后减速）</td>
+<td>等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)</td>
+</tr>
+<tr>
+<td>cubic-bezier(x1, y1, x2, y2)</td>
+<td>使用 <code>cubic-bezier</code> 函数自定义时间曲线</td>
+</tr>
+</tbody>
+</table>
+<p>上面列表中前五种函数的曲线如下：<br><img src="/2017/03/16/css3-transition/transition-timing-function.png" alt=""><br>至于 <code>cubic-bezier(x1, y1, x2, y2)</code> 函数，也可以用图形描述如下：<br><img src="/2017/03/16/css3-transition/cubic-bezier.png" alt=""><br>如上图所示， <code>cubic-bezier(x1, y1, x2, y2)</code> 函数中的四个参数其实就是用来指定P1、P2两个点坐标的，即P1(x1,y1)、P2(x2,y2)，所有值都要在[0,1]区间内，否则无效。</p>
+<h3 id="transition-delay"><a href="#transition-delay" class="headerlink" title="transition-delay"></a>transition-delay</h3><p><code>transition-delay</code> 属性用来指定transition开始执行的延迟时间，也就是说，当改变元素属性值后多长时间开始执行transition效果，单位为秒（s）或者毫秒（ms）；用法与 <code>transition-duration</code> 属性一样，默认值为“0”，也就是没有延迟，元素属性改变后立即执行。</p>
+<h2 id="使用-CSS3-Transitions"><a href="#使用-CSS3-Transitions" class="headerlink" title="使用 CSS3 Transitions"></a>使用 CSS3 Transitions</h2><p>要创建一个过渡效果，我们至少需要定义两件事情：</p>
+<ul>
+<li>应用过渡效果的CSS属性，默认是all</li>
+<li>过渡效果的持续时间</li>
+</ul>
+<blockquote>
+<p>如果持续时间没有指定，那么过渡效果不会生效，因为持续时间默认值为0</p>
+</blockquote>
+<p>也就是说最简单的 transition 定义应该仅是一个持续时间，其它值都可以使用默认值。</p>
+<h3 id="简单的示例"><a href="#简单的示例" class="headerlink" title="简单的示例"></a>简单的示例</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transition-demo</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">120px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">60px</span>;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">margin-right</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-1</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">2s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-2</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: width <span class="number">2s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-3</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: all <span class="number">2s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-1</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.transition-demo-2</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.transition-demo-3</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">320px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .transition-demo {
+        width: 120px;
+        height: 60px;
+        background-color: red;
+        color: white;
+        float: left;
+        margin-right: 5px;
+    }
+    .transition-demo-1 {
+        transition: 2s;
+    }
+    .transition-demo-2 {
+        transition: width 2s;
+    }
+    .transition-demo-3 {
+        transition: all 2s;
+    }
+    .transition-demo-1:hover,.transition-demo-2:hover,.transition-demo-3:hover {
+        width: 320px;
+    }
+</style>
+
+<div class="transition-demo transition-demo-1">用鼠标摸我</div><div class="transition-demo transition-demo-2">用鼠标摸我</div><div class="transition-demo transition-demo-3">用鼠标摸我</div><div style="clear: both;"></div>
+
+<p>上面的示例展示了一个DIV宽度变化的过渡效果，初始为120px*80px的元素，在鼠标经过时宽度逐渐变为320px；我们用三种方式定义该效果，由于鼠标经过时只改变了元素的宽度，因此这几种方式最终效果是完全一样的：</p>
+<ul>
+<li>只指定持续时间（默认是all）</li>
+<li>指定特定属性（width）和质疑时间</li>
+<li>指定所有属性（all）和持续时间</li>
+</ul>
+<blockquote>
+<p>当鼠标离开元素时，该属性值会逐渐地变回其原来的值。</p>
+</blockquote>
+<h3 id="应用多个过渡"><a href="#应用多个过渡" class="headerlink" title="应用多个过渡"></a>应用多个过渡</h3><p><code>transition</code> 属性同时应用多个过渡效果的示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transition-demo-4</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: background-color <span class="number">1s</span>, width <span class="number">2s</span>, height <span class="number">3s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-5</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo-4</span><span class="selector-pseudo">:hover</span>,<span class="selector-class">.transition-demo-5</span><span class="selector-pseudo">:hover</span>  &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">320px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">120px</span>;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .transition-demo-4 {
+        transition: background-color 1s, width 2s, height 3s;
+    }
+    .transition-demo-5 {
+        transition: 3s;
+    }
+    .transition-demo-4:hover,.transition-demo-5:hover  {
+        width: 320px;
+        height: 120px;
+        background-color: green;
+    }
+</style>
+
+<div class="transition-demo transition-demo-4">用鼠标摸我</div><div class="transition-demo transition-demo-5">用鼠标摸我</div><div style="clear: both;"></div>
+
+<p>上面两个例子在鼠标经过时改变了三个属性，第一个例子颜色改变持续1秒，宽度改变持续2s，高度改变持续3s，所以第一个元素的颜色、宽度、高度过渡依次完成；第二个例子只指定了过渡持续3秒，没有指定什么属性会应用过渡，但由于 <code>transition-property</code> 属性默认值是all，所以元素所有改变的属性都启用了过渡效果并同时完成。</p>
+<h3 id="不同的时间函数"><a href="#不同的时间函数" class="headerlink" title="不同的时间函数"></a>不同的时间函数</h3><p>下面用示例测试一下 <code>transition-time-function</code> 不同值的效果，从上面的介绍得知该属性有5种预置函数和一种自定义函数，下面分别来测试一下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transition-demo3-6</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: all <span class="number">3s</span> ease;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo3-7</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span> ease-in;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo3-8</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span> ease-out;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo3-9</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span> ease-in-out;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo3-10</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span> linear;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo3-11</span> &#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">3s</span> <span class="built_in">cubic-bezier</span>(.75,.08,.08,.75);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.transition-demo</span><span class="selector-attr">[class*="transition-demo3"]</span><span class="selector-pseudo">:hover</span>  &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">280px</span>;</div><div class="line">    <span class="comment">/*height: 120px;*/</span></div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .transition-demo3-6 {
+        transition: all 3s ease;
+    }
+    .transition-demo3-7 {
+        transition: 3s ease-in;
+    }
+    .transition-demo3-8 {
+        transition: 3s ease-out;
+    }
+    .transition-demo3-9 {
+        transition: 3s ease-in-out;
+    }
+    .transition-demo3-10 {
+        transition: 3s linear;
+    }
+    .transition-demo3-11 {
+        transition: 3s cubic-bezier(.75,.08,.08,.75);
+    }
+    .transition-demo[class*="transition-demo3"]:hover  {
+        width: 280px;
+        /*height: 120px;*/
+        background-color: green;
+    }
+</style>
+
+<div class="transition-demo transition-demo3-6">ease（默认）</div><div class="transition-demo transition-demo3-7">ease-in</div><div class="transition-demo transition-demo3-8">ease-out</div><div class="transition-demo transition-demo3-9">ease-in-out</div><div class="transition-demo transition-demo3-10">linear</div><div class="transition-demo transition-demo3-11">cubic-bezier</div><div style="clear: both;"></div>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>相对于 CSS3 Transform（转换） 来说，CSS3 Transition（过渡） 还是比较简单的，无非就是理解 <code>transition-property</code> 、<code>transition-duration</code> 、<code>transition-timing-function</code> 和 <code>transition-delay</code> 四个属性的概念与用法，以及它们的组合属性 <code>transition</code> 的语法格式。</p>
+<p>这里面比较困难的就是哪些CSS属性可应用 transition 效果，这个也不必强记下来，真是遇到难以判断的属性时去查找 <a href="https://www.w3.org" target="_blank" rel="external">W3C</a> 的官方文档 <a href="https://www.w3.org/TR/css3-transitions" target="_blank" rel="external">CSS Transitions</a> 就是了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-03-16, 14:40:34</p>
+        <p><span>最后更新:</span>2017-03-17, 14:34:16</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/16/css3-transition/" title="CSS3学习之Transition">http://zhyihui.github.io/2017/03/16/css3-transition/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/16/css3-transition/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/03/17/css3-animation/">
+                    CSS3学习之Animation
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/16/css3-3d-transform-property/">
+                    css3-transform-property
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#transition-属性"><span class="toc-number">1.</span> <span class="toc-text">transition 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器兼容"><span class="toc-number">1.1.</span> <span class="toc-text">浏览器兼容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-property"><span class="toc-number">1.2.</span> <span class="toc-text">transition-property</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-duration"><span class="toc-number">1.3.</span> <span class="toc-text">transition-duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-timing-function"><span class="toc-number">1.4.</span> <span class="toc-text">transition-timing-function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transition-delay"><span class="toc-number">1.5.</span> <span class="toc-text">transition-delay</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-CSS3-Transitions"><span class="toc-number">2.</span> <span class="toc-text">使用 CSS3 Transitions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的示例"><span class="toc-number">2.1.</span> <span class="toc-text">简单的示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用多个过渡"><span class="toc-number">2.2.</span> <span class="toc-text">应用多个过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同的时间函数"><span class="toc-number">2.3.</span> <span class="toc-text">不同的时间函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+
+    
+        <div class="addthis_sharing_toolbox"></div>
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/16/css3-transition/" data-title="CSS3学习之Transition" data-url="http://zhyihui.github.io/2017/03/16/css3-transition/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"zhyihui"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/03/17/css3-animation/" title="上一篇: CSS3学习之Animation">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/16/css3-3d-transform-property/" title="下一篇: css3-transform-property">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-3d-transform-property/">css3-transform-property</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/css3-2d-transform/">CSS3学习之2D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="CSS3 3D Transform
+Transform-style和Perspective属性
+CSS3 3D transform变换不过如此
+
+CSS3 3D Transform三维变换使用基于二维变换的相同属性，如果熟悉了二维变换，我们会发现3D变换的功能和2D变换的功能相当类似。CSS3中的3D变换主要包括以下几种功能函数：
+
+3D位移：CSS3中的3D位移主要包括 translateZ(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习之3D Transform">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/15/css3-3d-transform/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="CSS3 3D Transform
+Transform-style和Perspective属性
+CSS3 3D transform变换不过如此
+
+CSS3 3D Transform三维变换使用基于二维变换的相同属性，如果熟悉了二维变换，我们会发现3D变换的功能和2D变换的功能相当类似。CSS3中的3D变换主要包括以下几种功能函数：
+
+3D位移：CSS3中的3D位移主要包括 translateZ(">
+<meta property="og:updated_time" content="2017-03-16T06:56:29.798Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习之3D Transform">
+<meta name="twitter:description" content="CSS3 3D Transform
+Transform-style和Perspective属性
+CSS3 3D transform变换不过如此
+
+CSS3 3D Transform三维变换使用基于二维变换的相同属性，如果熟悉了二维变换，我们会发现3D变换的功能和2D变换的功能相当类似。CSS3中的3D变换主要包括以下几种功能函数：
+
+3D位移：CSS3中的3D位移主要包括 translateZ(">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS3学习之3D Transform | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c109fa772a9ba7"></script>
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css3-3d-transform" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/15/css3-3d-transform/" class="article-date">
+      <time datetime="2017-03-15T07:41:52.000Z" itemprop="datePublished">2017-03-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3学习之3D Transform
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li><a href="http://www.w3cplus.com/css3/css3-3d-transform.html" target="_blank" rel="external">CSS3 3D Transform</a></li>
+<li><a href="http://www.w3cplus.com/css3/transform-basic-property.html" target="_blank" rel="external">Transform-style和Perspective属性</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/" target="_blank" rel="external">CSS3 3D transform变换不过如此</a></li>
+</ul>
+<h2 id="CSS3-3D-Transform"><a href="#CSS3-3D-Transform" class="headerlink" title="CSS3 3D Transform"></a>CSS3 3D Transform</h2><p>三维变换使用基于二维变换的相同属性，如果熟悉了二维变换，我们会发现3D变换的功能和2D变换的功能相当类似。CSS3中的3D变换主要包括以下几种功能函数：</p>
+<ul>
+<li>3D位移：CSS3中的3D位移主要包括 <code>translateZ()</code> 和 <code>translate3d()</code> 两个功能函数；</li>
+<li>3D旋转：CSS3中的3D旋转主要包括 <code>rotateX()</code>、<code>rotateY()</code>、<code>rotateZ()</code> 和 <code>rotate3d()</code> 四个功能函数；</li>
+<li>3D缩放：CSS3中的3D缩放主要包括 <code>scaleZ()</code> 和 <code>scale3d()</code> 两个功能函数；</li>
+<li>3D矩阵：CSS3中3D变形中和2D变形一样也有一个3D矩阵功能函数 <code>matrix3d()</code>。</li>
+</ul>
+<p>与 2D Transform 类似，3D Transform 也可以使用多重变形，他们之间使用空格分隔，语法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span>: &lt;<span class="selector-tag">transform-function</span>&gt; <span class="selector-attr">[&lt;transform-function&gt;]</span>*</div></pre></td></tr></table></figure>
+<h2 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">transform</td>
+<td style="text-align:center">36.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">23.0</td>
+</tr>
+<tr>
+<td style="text-align:center">transform-origin</td>
+<td style="text-align:center">36.0</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">23.0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>transform</code> 和 <code>transform-origin</code> 两个CSS属性与 2D Transform 一样</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="3D-转换函数"><a href="#3D-转换函数" class="headerlink" title="3D 转换函数"></a>3D 转换函数</h2><p>首先放一下下面示例所用到的公共代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transform3d</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(bg.jpg) repeat center center;</div><div class="line">    <span class="attribute">perspective</span>: <span class="number">1200px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> <span class="selector-class">.pic</span> &#123;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">35px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: -<span class="number">50px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">70px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(card-king.png) no-repeat center center;</div><div class="line">    <span class="attribute">background-size</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"transform3d"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"pic"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<style type="text/css">
+    .transform3d {
+        width: 300px;
+        height: 240px;
+        position: relative;
+        background: url(bg.jpg) repeat center center;
+        perspective: 1200px;
+        float: left;
+        margin: 5px;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+    }
+    .container .pic {
+        position: absolute;
+        margin-left: -35px;
+        margin-top: -50px;
+        width: 70px;
+        height: 100px;
+        background: url(card-king.png) no-repeat center center;
+        background-size: 100%;
+    }
+    .transform3d .pic:nth-child(1){
+        opacity: .6;
+    }
+    .clear {
+        clear: both;
+    }
+</style>
+
+<p>这两段代码形成的效果如下：</p>
+<div class="transform3d"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="clear"></div>
+
+<p>其实这是两张扑克牌叠放在一起，看起来像一张似的，可以通过开发者工具查看；这样做是为了让3D转换效果看起来更明显，第一张作为对比，一般不动，3D转换时将效果应用在第二张上。另外还将第一张图片调为半透明，方便观察转换效果。</p>
+<h3 id="CSS3-3D-位移"><a href="#CSS3-3D-位移" class="headerlink" title="CSS3 3D 位移"></a>CSS3 3D 位移</h3><p>在CSS3中3D位移主要包括 <code>translateZ()</code> 和 <code>translate3d()</code> 两个函数：</p>
+<ul>
+<li><code>translateZ(tz)</code> ：可以让元素沿Z轴进行位移，当其值为负值时，元素在Z轴越移越远，导致元素变得较小。反之，当其值为正值时，元素在Z轴越移越近，导致元素变得较大。</li>
+<li><code>translate3d(tx, ty, tz)</code> ：使一个元素在三维空间移动。这种变形的特点是，使用三维向量的坐标定义元素在每个方向移动多少</li>
+</ul>
+<blockquote>
+<p>上面两个方法的tz参数表示元素沿Z轴位移的长度，不能用百分比值，因为元素在Z轴上没有尺寸</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.translate3d-1</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(30px, 30px, 200px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.translate3d-2</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">translate3d</span>(30px, 30px, -200px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .translate3d-1 .pic:nth-child(2):hover {
+        transform: translate3d(30px, 30px, 200px);
+    }
+    .translate3d-2 .pic:nth-child(2):hover {
+        transform: translate3d(30px, 30px, -200px);
+    }
+</style>
+
+<div class="transform3d translate3d-1"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="transform3d translate3d-2"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="clear"></div>
+
+<p>参照上面两个使用 <code>translate3d</code> 转换函数的示例效果，第一个例子在Z轴移动200px，由于正值会向上移动，导致该元素放大；第二个例子在Z轴上移动-200px，导致第二个图片元素向下移动到第一个图片后面，并缩小。</p>
+<p><code>translateZ(tz)</code> 函数相当于 <code>translate(0,0,tz)</code> 的效果，表示仅在Z轴上移动，在视觉上仅是放大缩小，放大时完全遮盖第一个元素，缩小时完全被第一个元素遮盖，可在别处测试，采用第一个元素半透明来查看效果。</p>
+<p>另外，仅从视觉效果上看，<code>translateZ()</code> 和 <code>translate3d(0,0,tz)</code> 函数功能非常类似于二维空间的 <code>scale()</code> 缩放函数，但实际上完全不同，它们的变形是发生在Z轴上，而不是X轴和Y轴。</p>
+<h3 id="CSS3-3D-旋转"><a href="#CSS3-3D-旋转" class="headerlink" title="CSS3 3D 旋转"></a>CSS3 3D 旋转</h3><p>在 3D Transform 中，我们可以让元素沿任何一个轴旋转，CSS3 中新增的旋转函数有 <code>rotateX(a)</code> 、<code>rotateY(a)</code> 、<code>rotateZ(a)</code> 和 <code>rotate3d(x,y,z,a)</code> 四个。</p>
+<p><code>rotateX()</code> 和 <code>rotateY()</code> 函数分别指定一个元素围绕X轴和Y轴旋转，旋转的量是一个角度值；如果值为正值，元素顺时针旋转；反之，如果值为负值，元素逆时针旋转。</p>
+<p><code>rotateZ()</code> 函数与 <code>rotateX()</code> 和 <code>rotateY()</code> 函数功能是一样的；不同的是它指定元素围绕Z轴旋转，如果仅从视觉角度上看，<code>rotateZ()</code> 函数让元素顺时针或逆时针旋转，并且效果和 <code>rotate()</code> 效果等同，但他不是在2D平面的旋转。</p>
+<p><code>rotate3d(x,y,z,a)</code> 与其它三个函数有一定的不同，参数中的x/y/z是一个0-1之间的数字，分别用来描述围绕X/Y/Z轴旋转的矢量值，参数a与其它三个函数中的角度一样，用来指定元素在3D空间旋转的角度，正值顺时针旋转，负值逆时针旋转。</p>
+<ul>
+<li><code>rotateX(a)</code> 函数功能等同于 <code>rotate3d(1,0,0,a)</code></li>
+<li><code>rotateY(a)</code> 函数功能等同于 <code>rotate3d(0,1,0,a)</code></li>
+<li><code>rotateZ(a)</code> 函数功能等同于 <code>rotate3d(0,0,1,a)</code></li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.rotate3d-1</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(50deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate3d-2</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate3d-3</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate3d-4</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(35deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate3d-5</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:nth-child(2)</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate3d</span>(.6, 1, .6, 45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate3d-6</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">opacity</span>: <span class="number">1</span>;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate3d</span>(.6, 1, .6, 45deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .rotate3d-1 .pic:nth-child(2):hover {
+        transform: rotateX(50deg);
+    }
+    .rotate3d-2 .pic:hover {
+        opacity: 1;
+        transform: rotateX(45deg);
+    }
+    .rotate3d-3 .pic:nth-child(2):hover {
+        transform: rotateY(45deg);
+    }
+    .rotate3d-4 .pic:nth-child(2):hover {
+        transform: rotateZ(35deg);
+    }
+    .rotate3d-5 .pic:nth-child(2):hover {
+        transform: rotate3d(.6, 1, .6, 45deg);
+    }
+    .rotate3d-6 .pic:hover {
+        opacity: 1;
+        transform: rotate3d(.6, 1, .6, 45deg);
+    }
+</style>
+
+<div class="transform3d rotate3d-1"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="transform3d rotate3d-2"><div class="container"><div class="pic"></div></div></div><div class="transform3d rotate3d-3"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="transform3d rotate3d-4"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="transform3d rotate3d-5"><div class="container"><div class="pic"></div><div class="pic"></div></div></div><div class="transform3d rotate3d-6"><div class="container"><div class="pic"></div></div></div><div class="clear"></div>
+
+<p>上面的示例可以很好的演示3D旋转效果，前两个例子是沿X轴旋转，第三、四个例子分别沿Y轴、Z轴旋转，最后两个使用了 <code>rotate3d()</code> 函数；其中，第二个和第六个例子只保留了一个DIV，为了不使半透明的DIV影响效果，其它效果可联想一下。</p>
+<h3 id="CSS3-3D-缩放"><a href="#CSS3-3D-缩放" class="headerlink" title="CSS3 3D 缩放"></a>CSS3 3D 缩放</h3><p>CSS3 3D变形中的缩放主要有 <code>scaleZ(s)</code> 和 <code>scale3d(sx, sy, sz)</code> 两个函数，当 <code>scale3d(sx, sy, sz)</code>中X轴和Y轴参数同时为1（即 <code>scale3d(1, 1, sz)</code>），其效果等同于 <code>scaleZ(sz)</code>。</p>
+<p><code>scaleZ(s)</code> 和 <code>scale3d(sx, sy, sz)</code> 函数的参数是一个缩放比例，不能为负值，当其值大于1时，元素放大，小于1时则缩小；这两个函数单独使用时没有任何效果，需要配合其他的变形函数一起使用才会有效果。</p>
+<p>下面两个示例都在X轴上旋转45度，然后在Z轴上缩放：</p>
+<style type="text/css">
+    .scale3d-1 .pic:hover {
+        transform: scaleZ(15) rotateX(45deg);
+    }
+    .scale3d-2 .pic:hover {
+        transform: rotateX(45deg) scale3d(1, 1, .25);
+    }
+</style>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.scale3d-1</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleZ</span>(15) <span class="built_in">rotateX</span>(45deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.scale3d-2</span> <span class="selector-class">.pic</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(45deg) <span class="built_in">scale3d</span>(1, 1, .25);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="transform3d scale3d-1"><div class="container"><div class="pic"></div></div></div><div class="transform3d scale3d-2"><div class="container"><div class="pic"></div></div></div><div class="clear"></div>
+
+<h3 id="CSS3-3D-倾斜和矩阵"><a href="#CSS3-3D-倾斜和矩阵" class="headerlink" title="CSS3 3D 倾斜和矩阵"></a>CSS3 3D 倾斜和矩阵</h3><p>CSS3中的3D矩阵要比2D中的矩阵复杂的多了，先不去研究。</p>
+<p>倾斜是二维变形，不能在三维空间变形。元素可能会在X轴和Y轴倾斜，然后转化为三维，但它们不能在Z轴倾斜。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-03-15, 15:41:52</p>
+        <p><span>最后更新:</span>2017-03-16, 14:56:29</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/15/css3-3d-transform/" title="CSS3学习之3D Transform">http://zhyihui.github.io/2017/03/15/css3-3d-transform/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/15/css3-3d-transform/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/03/16/css3-3d-transform-property/">
+                    css3-transform-property
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/14/css3-2d-transform/">
+                    CSS3学习之2D Transform
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-3D-Transform"><span class="toc-number">1.</span> <span class="toc-text">CSS3 3D Transform</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容性"><span class="toc-number">2.</span> <span class="toc-text">浏览器兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D-转换函数"><span class="toc-number">3.</span> <span class="toc-text">3D 转换函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-3D-位移"><span class="toc-number">3.1.</span> <span class="toc-text">CSS3 3D 位移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-3D-旋转"><span class="toc-number">3.2.</span> <span class="toc-text">CSS3 3D 旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-3D-缩放"><span class="toc-number">3.3.</span> <span class="toc-text">CSS3 3D 缩放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS3-3D-倾斜和矩阵"><span class="toc-number">3.4.</span> <span class="toc-text">CSS3 3D 倾斜和矩阵</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+
+    
+        <div class="addthis_sharing_toolbox"></div>
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/15/css3-3d-transform/" data-title="CSS3学习之3D Transform" data-url="http://zhyihui.github.io/2017/03/15/css3-3d-transform/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"zhyihui"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/03/16/css3-3d-transform-property/" title="上一篇: css3-transform-property">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/14/css3-2d-transform/" title="下一篇: CSS3学习之2D Transform">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-3d-transform-property/">css3-transform-property</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/css3-2d-transform/">CSS3学习之2D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
