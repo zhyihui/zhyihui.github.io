@@ -15,16 +15,28 @@
 
 
 
-<meta name="description" content="CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。">
+<meta name="description" content="CSS Animations
+CSS3 Animation
+
+CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。
+CSS3 AnimationsCSS动画实际上就是将计算得到的属性值应用到目标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3学习之Animation">
 <meta property="og:url" content="http://zhyihui.github.io/2017/03/17/css3-animation/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。">
-<meta property="og:updated_time" content="2017-03-17T06:46:02.177Z">
+<meta property="og:description" content="CSS Animations
+CSS3 Animation
+
+CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。
+CSS3 AnimationsCSS动画实际上就是将计算得到的属性值应用到目标">
+<meta property="og:updated_time" content="2017-03-20T01:04:30.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习之Animation">
-<meta name="twitter:description" content="CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。">
+<meta name="twitter:description" content="CSS Animations
+CSS3 Animation
+
+CSS3中的 Animation 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 Animation 效果只能应用在已存在的HTML DOM元素上。
+CSS3 AnimationsCSS动画实际上就是将计算得到的属性值应用到目标">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -312,8 +324,255 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>CSS3中的 <code>Animation</code> 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 <code>Animation</code> 效果只能应用在已存在的HTML DOM元素上。</p>
-
+        <ul>
+<li><a href="https://www.w3.org/TR/css3-animations/" target="_blank" rel="external">CSS Animations</a></li>
+<li><a href="http://www.w3cplus.com/content/css3-animation" target="_blank" rel="external">CSS3 Animation</a></li>
+</ul>
+<p>CSS3中的 <code>Animation</code> 可以让我们脱离Flash/js/jQuery等作一些简单的动画效果，虽然相对来说可能粗糙一些；另外，与HTML5中的canvas绘制的动画不同，CSS3的 <code>Animation</code> 效果只能应用在已存在的HTML DOM元素上。</p>
+<h2 id="CSS3-Animations"><a href="#CSS3-Animations" class="headerlink" title="CSS3 Animations"></a>CSS3 Animations</h2><p>CSS动画实际上就是将计算得到的属性值应用到目标元素上，在整个动画的执行过程中，属性值的计算由动画控制，计算得到的属性值会覆盖普通样式系统（如CSS样式）先前的定义，动画会覆盖所由的样式规则，除了指定了 <code>!important</code> 的样式。</p>
+<p>CSS3动画涉及到两个CSS属性：<code>animation</code> 和 <code>@keyframes</code> ，它们的浏览器兼容情况如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">animation</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-<br>12.0 -o-</td>
+</tr>
+<tr>
+<td style="text-align:center">@keyframes</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-<br>12.0 -o-</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><p>与 <code>transition</code> 属性类似，CSS3动画中的 <code>animation</code> 属性也是一个简写属性，它们的作用都是随着时间改变元素的属性值；主要区别是 <code>transition</code> 需要触发一个事件(hover或click事件等)才会随时间改变其css属性，而 <code>animation</code> 不需要触发任何事件也可以显式的随着时间变化来改变元素的css属性值，从而达到一种动画的效果。</p>
+<p><code>animation</code> 属性相对来说更复杂一些，其语法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">animation</span>: <span class="selector-tag">name</span> <span class="selector-tag">duration</span> <span class="selector-tag">timing-function</span> <span class="selector-tag">delay</span> <span class="selector-tag">iteration-count</span> <span class="selector-tag">direction</span> <span class="selector-tag">fill-mode</span> <span class="selector-tag">play-state</span>;</div></pre></td></tr></table></figure>
+<p>既然 <code>animation</code> 属性也是一个简写属性，那么其属性值也有一一对应的独立属性，后面的章节会详细介绍这些属性，在这只是简单地列举说明一下：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>animation-name</td>
+<td>指定动画名称，在 <code>@Keyframes</code> 中定义</td>
+</tr>
+<tr>
+<td>animation-duration</td>
+<td>元素播放动画所持续的时间，单位为s（秒）默认值为“0”</td>
+</tr>
+<tr>
+<td>animation-timing-function</td>
+<td>指定时间曲线函数，与 <code>transition-time-function</code> 用法一样</td>
+</tr>
+<tr>
+<td>animation-delay</td>
+<td>指定动画开始的延迟，默认值为0</td>
+</tr>
+<tr>
+<td>animation-iteration-count</td>
+<td>指定元素播放动画的循环次数，默认值为1</td>
+</tr>
+<tr>
+<td>animation-direction</td>
+<td>指定元素动画播放的方向，默认值为normal</td>
+</tr>
+<tr>
+<td>animation-fill-mode</td>
+<td></td>
+</tr>
+<tr>
+<td>animation-play-state</td>
+<td>用来控制元素动画的播放状态，默认值为running</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>使用CSS3动画时，一定要指定 <code>animation-duration</code> 属性，否则因为其默认值为0，动画永远也不会执行</p>
+</blockquote>
+<h3 id="keyframes"><a href="#keyframes" class="headerlink" title="keyframes"></a>keyframes</h3><p><a href="https://www.w3.org/TR/css3-animations/" target="_blank" rel="external">keyframes</a> 是CSS3 Animation中的一个重要概念，可以理解为“关键帧”，这与Flash中的“关键帧”是一个意思。</p>
+<p>keyframes用来指定在动画持续时间内的多个时间点上参与动画的属性值，keyframes指定了一个动画周期的行为，animation属性将该动画迭代一次或多次。</p>
+<p>keyframes使用专门的规则来定义，其命名由 <code>@keyframes</code> 开头，后面紧接着是“动画名称”（该名称会被 <code>animation-name</code> 属性引用）和一对花括号“{}”，括号中就是一些不同时间段样式规则，其语法如下所示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@keyframes animation-name &#123;keyframes-selector &#123;css-styles;&#125;&#125;</div></pre></td></tr></table></figure>
+<p>上面的语法伪代码中，所有值都是必须的，其中 <code>animation-name</code> 用来指定动画名字；<code>css-styles</code> 指定一个或多个变化的CSS属性；比较难理解的只有 <code>keyframes-selector</code>,是用来分隔动画持续时间的。</p>
+<p><code>keyframes-selector</code> 其实是动画持续时间的百分比，即把整个动画分成多段，其取值要在[0%,100%]区间内，负值或大于100%的数会被忽略；除了百分比外还可以使用“from”和“to”关键字，其中“from”等于“0%”，“to”等于“100%”。</p>
+<blockquote>
+<p><code>keyframes-selector</code> 使用百分比时，“%”号是必须的，即使是“0%”也不能丢掉“%”号</p>
+</blockquote>
+<p>我们可以这样理解，每个 <code>keyframes-selector</code> 其实是一个时间点，从动画开始到结束，在每个时间点对目标元素指定不同的CSS样式；这些时间点将动画持续时间切分成多段，每段从起点到终点都有样式上的变化，也就是从起点到终点这段时间内，根据指定的计算函数（贝塞尔曲线）计算CSS样式值，然后应用到元素上，从而产生动画的效果。</p>
+<p>就像百米赛跑，我们把100米分成三段0~30、30~80、80~100，共涉及到百米跑道上的四个位置点：0%、30%、80%和100%（这里的四个位置点可以想像成动画中的 <code>keyframes</code>）。第一段我们的速度是从0开始，加速到一定速度后稳定下来，中间50以稳定的速度跑下来，80米后要冲刺了，使出来吃奶的劲再加速，最后冲线。</p>
+<h2 id="animation-属性"><a href="#animation-属性" class="headerlink" title="animation-* 属性"></a>animation-* 属性</h2><p><code>animation-*</code> 各属性的浏览器兼容情况如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">animation-name</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-duration</td>
+<td style="text-align:center">43.0<br>3.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-timing-function</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-delay</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-iteration-count</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-direction</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-fill-mode</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">4.0 -webkit-</td>
+<td style="text-align:center">15.0 -webkit-<br>12.1</td>
+</tr>
+<tr>
+<td style="text-align:center">animation-play-state</td>
+<td style="text-align:center">43.0<br>4.0 -webkit-</td>
+<td style="text-align:center">10.0</td>
+<td style="text-align:center">16.0<br>5.0 -moz-</td>
+<td style="text-align:center">9.0<br>4.0 -webkit-</td>
+<td style="text-align:center">30.0<br>15.0 -webkit-</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Opera 浏览器从12.0开始可以通过加 <code>-o-</code> 前缀启动所有属性，这里没有展示</p>
+</blockquote>
+<h3 id="animation-name"><a href="#animation-name" class="headerlink" title="animation-name"></a>animation-name</h3><p><code>animation-name</code> 用来指定动画名称，默认为none，表示不采用动画效果；可以指定 <code>@keyframes</code> 定义的动画，如果名字匹配不到，那么元素将不会有动画效果。可以指定多个动画名称，之间用逗号分隔。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">animation-name</span>: &lt;<span class="selector-tag">single-animation-name</span>&gt; <span class="selector-attr">[ ‘,’ &lt;single-animation-name&gt; ]</span>*</div></pre></td></tr></table></figure>
+<h3 id="animation-duration"><a href="#animation-duration" class="headerlink" title="animation-duration"></a>animation-duration</h3><p><code>animation-duration</code> 指定动画执行一个完整周期所持续的时间，默认值为“0s”，不能为负值。</p>
+<h3 id="animation-timing-function"><a href="#animation-timing-function" class="headerlink" title="animation-timing-function"></a>animation-timing-function</h3><p><code>animation-timing-function</code> 用来指定动画过程中CSS属性的变化速率曲线函数，与 <code>transition-timing-function</code> 基本上完全一样，不同之处就是 <code>animation-timing-function</code> 应用在keyframes分隔的每个时间段中，而不是整个动画。具体情况可参考 <a href="http://www.w3cplus.com/content/css3-transition#transition-timing-function" target="_blank" rel="external">transition-timing-function</a></p>
+<h3 id="animation-delay"><a href="#animation-delay" class="headerlink" title="animation-delay"></a>animation-delay</h3><p><code>animation-delay</code> 属性用来指定动画开始的时间，属性值是一个数值，单位是秒（s)，表示动画应用后多久后开始执行动画，默认值“0s”表示动画立即开始。</p>
+<h3 id="animation-iteration-count"><a href="#animation-iteration-count" class="headerlink" title="animation-iteration-count"></a>animation-iteration-count</h3><p><code>animation-iteration-count</code> 属性用来指定动画周期执行的次数，默认值为“1”，表示动画执行一次后就再执行了；除了设置为具体整数表示执行次数外，还可以使用“infinite”关键字，表示动画将一直循环，永不停歇；设置为小数会导致动画中途停止；负值是不被允许使用的。</p>
+<p>此属性经常配合 <code>animation-direction</code> 值设置为 <code>alternate</code> 时一起使用，这会产生动画正向和反向交替进行的效果。</p>
+<h3 id="animation-direction"><a href="#animation-direction" class="headerlink" title="animation-direction"></a>animation-direction</h3><p><code>animation-direction</code> 属性用来指定动画播放的“方向”，这里的“方向”意思是 <code>Keyframes</code> 中定义的动画顺序，“正向”表示按 <code>Keyframes</code> 中定义的动画顺序执行，即0%执行到100%，“反向”表示按与 <code>Keyframes</code> 定义相反的动画顺序执行。</p>
+<p><code>animation-direction</code> 属性可以设置为以下值：</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>默认值，动画每次播放都“正向”播放</td>
+</tr>
+<tr>
+<td>alternate</td>
+<td>动画播放时，奇数次“正向”播放，偶数次“反向”播放</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>与 <code>normal</code> 相反，动画每次播放都“反向”播放</td>
+</tr>
+<tr>
+<td>alternate-reverse</td>
+<td>与 <code>alternate</code> 相反，奇数次“反向”播放，偶数次“正向”播放</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>迭代从 1 开始计数</p>
+</blockquote>
+<h3 id="animation-fill-mode"><a href="#animation-fill-mode" class="headerlink" title="animation-fill-mode"></a>animation-fill-mode</h3><p><code>animation-fill-mode</code> 属性指定动画没有执行时（动画完成后或执行前）元素的样式，默认情况下，CSS动画在被应用（<code>animation-name</code> 属性被设置到元素上）到开始运行期间（这段时间由 <code>animation-delay</code>来定义）和动画运行结束后这两个时间不会给元素应用任何样式，而 <code>animation-fill-mode</code> 属性可以覆盖这种行为。</p>
+<p><code>animation-fill-mode</code> 属性可以设置为以下值：</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认值，动画不会对动画等待和动画完成时的元素样式产生改变</td>
+</tr>
+<tr>
+<td>forwards</td>
+<td>动画结束后，元素的样式将设置为动画的最后一帧的样式</td>
+</tr>
+<tr>
+<td>backwards</td>
+<td>动画等待执行的时间内，元素的样式将设置为动画第一帧的样式</td>
+</tr>
+<tr>
+<td>both</td>
+<td>同时应用forwards和backwards两个属性值的效果，意味着在动画等待和动画结束状态，元素将分别应用动画第一帧和最后一帧的样式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animation-play-state"><a href="#animation-play-state" class="headerlink" title="animation-play-state"></a>animation-play-state</h3><p><code>animation-play-state</code> 属性定义动画的播放状态（“运行中”或“暂停”），它只有两种状态：<code>running</code>、<code>paused</code>,默认值是”running”；运行中的动画可以通过设置该属性值为”paused”来暂停动画，恢复暂停的动画可以将属性值设置为”running”。</p>
+<p>暂停的动画可以从元素当前状态恢复运行，就像时间静止了一样，也就是说，当暂停的动画恢复时，它会从暂时时的状态继续播放，而不是从动画的初始状态重新播放。</p>
+<h2 id="CSS动画示例"><a href="#CSS动画示例" class="headerlink" title="CSS动画示例"></a>CSS动画示例</h2>
       
     </div>
     
@@ -324,7 +583,7 @@
         <p><span>本文标题:</span><a href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-17, 14:40:49</p>
-        <p><span>最后更新:</span>2017-03-17, 14:46:02</p>
+        <p><span>最后更新:</span>2017-03-20, 09:04:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/17/css3-animation/" title="CSS3学习之Animation">http://zhyihui.github.io/2017/03/17/css3-animation/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/17/css3-animation/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -354,7 +613,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-Animations"><span class="toc-number">1.</span> <span class="toc-text">CSS3 Animations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#animation"><span class="toc-number">1.1.</span> <span class="toc-text">animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keyframes"><span class="toc-number">1.2.</span> <span class="toc-text">keyframes</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#animation-属性"><span class="toc-number">2.</span> <span class="toc-text">animation-* 属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-name"><span class="toc-number">2.1.</span> <span class="toc-text">animation-name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-duration"><span class="toc-number">2.2.</span> <span class="toc-text">animation-duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-timing-function"><span class="toc-number">2.3.</span> <span class="toc-text">animation-timing-function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-delay"><span class="toc-number">2.4.</span> <span class="toc-text">animation-delay</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-iteration-count"><span class="toc-number">2.5.</span> <span class="toc-text">animation-iteration-count</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-direction"><span class="toc-number">2.6.</span> <span class="toc-text">animation-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-fill-mode"><span class="toc-number">2.7.</span> <span class="toc-text">animation-fill-mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#animation-play-state"><span class="toc-number">2.8.</span> <span class="toc-text">animation-play-state</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS动画示例"><span class="toc-number">3.</span> <span class="toc-text">CSS动画示例</span></a></li></ol>
         
     </div>
     <style>
