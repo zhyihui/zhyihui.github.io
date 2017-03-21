@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="CSS Selector Reference
+CSS3 选择器——基本选择器
+CSS3 选择器——属性选择器
+CSS3 选择器——伪类选择器
+这30类 CSS 选择器，你必须理解
+
+
+本文标题虽然取了 CSS3学习之选择器 ，但不会只说CSS3新增的选择器；除了CSS3新增选择器外，还会将自己不熟悉的选择器都介绍和测试一下
+
+目前在CSS中一共定义了52种选择器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习之选择器">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/20/css3-selectors/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="CSS Selector Reference
+CSS3 选择器——基本选择器
+CSS3 选择器——属性选择器
+CSS3 选择器——伪类选择器
+这30类 CSS 选择器，你必须理解
+
+
+本文标题虽然取了 CSS3学习之选择器 ，但不会只说CSS3新增的选择器；除了CSS3新增选择器外，还会将自己不熟悉的选择器都介绍和测试一下
+
+目前在CSS中一共定义了52种选择器。">
+<meta property="og:updated_time" content="2017-03-21T09:12:06.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习之选择器">
+<meta name="twitter:description" content="CSS Selector Reference
+CSS3 选择器——基本选择器
+CSS3 选择器——属性选择器
+CSS3 选择器——伪类选择器
+这30类 CSS 选择器，你必须理解
+
+
+本文标题虽然取了 CSS3学习之选择器 ，但不会只说CSS3新增的选择器；除了CSS3新增选择器外，还会将自己不熟悉的选择器都介绍和测试一下
+
+目前在CSS中一共定义了52种选择器。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS3学习之选择器 | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58c109fa772a9ba7"></script>
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css3-selectors" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/20/css3-selectors/" class="article-date">
+      <time datetime="2017-03-20T09:33:26.000Z" itemprop="datePublished">2017-03-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3学习之选择器
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li><a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank" rel="external">CSS Selector Reference</a></li>
+<li><a href="http://www.w3cplus.com/css3/basic-selectors" target="_blank" rel="external">CSS3 选择器——基本选择器</a></li>
+<li><a href="http://www.w3cplus.com/css3/attribute-selectors" target="_blank" rel="external">CSS3 选择器——属性选择器</a></li>
+<li><a href="http://www.w3cplus.com/css3/pseudo-class-selector" target="_blank" rel="external">CSS3 选择器——伪类选择器</a></li>
+<li><a href="http://www.cnblogs.com/Mtime/p/5184690.html" target="_blank" rel="external">这30类 CSS 选择器，你必须理解</a></li>
+</ul>
+<blockquote>
+<p>本文标题虽然取了 <code>CSS3学习之选择器</code> ，但不会只说CSS3新增的选择器；除了CSS3新增选择器外，还会将自己不熟悉的选择器都介绍和测试一下</p>
+</blockquote>
+<p>目前在CSS中一共定义了52种选择器。</p>
+<a id="more"></a>
+<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.class</td>
+<td>类选择器，选择带有指定类名的元素</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>ID选择器</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>*</td>
+<td>通配符选择器，选择所有元素，也可以选择某元素下的所有元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>E</td>
+<td>元素选择器，其实就是文档的元素，如html,body,p,div等</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>E,F</td>
+<td>群组选择器，对一组选择器应用相同的样式</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h1><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E F</td>
+<td>后代选择器，F不管是E的子元素还是孙元素还是更深层次的关系，都将被选中</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>E&gt;F</td>
+<td>子元素选择器，只选择子元素，不包括孙子元素或更深层次的元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>E+F</td>
+<td>相邻兄弟元素选择器，选择紧跟在E后面的F元素，且它们具有共同父元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>E~F</td>
+<td>通用兄弟选择器，选择E元素后面的所有F兄弟元素，E和F属于同一父元素之内，且F元素在E元素之后</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[attr]</td>
+<td>选择所有具有目标属性的元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>[attr=”value”]</td>
+<td>选择所有attr属性值等于value的元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>[attr~=”value”]</td>
+<td>属性是一个词或多个词列表时使用，是词列表时多个词之间用空格分开，只要其中一个词为value即可选中该元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>[attr&#124;=”value”]</td>
+<td>特定属性选择器，选择attr属性值等于value或以value单词开头的元素，value必须是整个词，或value与后面词之间用连字符（”-“）连接</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>[attr^=”value”]</td>
+<td>选择所有attr属性值以value子串开头的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>[attr$=”value”]</td>
+<td>选择所有attr属性值以value子串结尾的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>[attr*=”value”]</td>
+<td>选择所有attr属性值包含value子串的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><blockquote>
+<p>伪类存在的意义是为了通过选择器找到那些不存在与DOM树中的信息以及不能被常规CSS选择器获取到的信息。</p>
+<p>任何常规选择器可以在任何位置使用伪类。伪类语法不区别大小写。一些伪类的作用会互斥，另外一些伪类可以同时被同一个元素使用。并且，为了满足用户在操作DOM时产生的DOM结构改变，伪类也可以是动态的。</p>
+</blockquote>
+<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在于HTML中，只有当用户和页面元素交互的时候才能体现出来，动态伪类包含两种，第一种是我们在链接中常看到的锚点伪类，如 <code>:link</code> 、<code>:visited</code>；另外一种被称作用户行为伪类，如 <code>:hover</code>、<code>:active</code> 和 <code>:focus</code>。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:active</td>
+<td>匹配所有被激活（鼠标点击）的元素，常用于链接和按钮上</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>:focus</td>
+<td>匹配获取焦点的元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>:hover</td>
+<td>匹配鼠标停留在其上的元素</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>:link</td>
+<td>匹配元素定义了超链接且未被访问过，常用于链接锚点上</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>:visited</td>
+<td>匹配元素定义了超链接且已被访问过，常用于链接锚点上</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="状态伪类"><a href="#状态伪类" class="headerlink" title="状态伪类"></a>状态伪类</h2><p>本部分列举的是UI元素的状态伪类，这些主要是针对于HTML中的Form元素的，根据Form元素的状态来选择目标元素。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:checked</td>
+<td>状态伪类，选择checked状态的元素，一般用于checkbox或radio</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:disabled</td>
+<td>状态伪类，选择禁用状态的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:enabled</td>
+<td>状态伪类，选择启动状态的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:optional</td>
+<td>匹配可选的输入元素，即未设置required属性的表单元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:required</td>
+<td>匹配设置了required属性的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:valid</td>
+<td>匹配输入值合法的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:invalid</td>
+<td>匹配输入值非法的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:in-range</td>
+<td>匹配输入值在指定区间内的元素，仅用于input元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:out-of-range</td>
+<td>匹配输入值在指定区间外的元素，仅用于input元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:read-only</td>
+<td>匹配只读的元素，即设置了 readonly 属性的元素，只用于input和textarea元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:read-write</td>
+<td>匹配可读写的元素，即未设置 readonly 属性的元素，只用于input和textarea元素</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<p>required属性是 HTML5 新增的表单元素属性，用于规定必需在提交表单之前填写的字段，表单元素中如果没有特别设置required属性即为可选的。</p>
+<blockquote>
+<p><code>:optional</code> 和 <code>required</code> 选择器只适用于表单元素(input、select 和 textarea）</p>
+<p><code>:valid</code> 和 <code>invalid</code> 选择器只能作用于能指定区间值的元素，例如 input 元素中的 min 和 max 属性，及正确的 email 字段、合法的数字字段等</p>
+</blockquote>
+<h2 id="结构伪类"><a href="#结构伪类" class="headerlink" title="结构伪类"></a>结构伪类</h2><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:first-child</td>
+<td>匹配某元素，该元素是其父元素的第一个子元素</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>:last-child</td>
+<td>匹配某元素，该元素是其父元素的最后一个子元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:nth-child()</td>
+<td>匹配某元素的一个或多个特定子元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:nth-last-child()</td>
+<td>匹配某元素的一个或多个特定子元素，从该元素最后一个子元素开始计算</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:nth-of-type()</td>
+<td>与 <code>:nth-child()</code> 一样，但限定了元素类型</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:nth-last-of-type()</td>
+<td>与 <code>:nth-last-child()</code> 一样，但限定了元素类型</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:first-of-type</td>
+<td>与 <code>:first-child</code> 一样，但是限定了元素类型</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:last-of-type</td>
+<td>与 <code>:last-child</code> 一样，但是限定了元素类型</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:only-child</td>
+<td>匹配某元素，该元素是其父元素唯一的子元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:only-of-type</td>
+<td>与 <code>:only-child</code> 类似，匹配某元素，该元素的父元素可以有很多子元素，但该元素是唯一一个限定类型的元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:empty</td>
+<td>匹配没有任何内容的元素，没有内容指的是一点内容都没有，哪怕是一个空格</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:root</td>
+<td>匹配元素的根元素，在HTML中，根元素始终是html元素</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="nth-child"><a href="#nth-child" class="headerlink" title=":nth-child"></a>:nth-child</h3><p><code>:nth-child()</code> 选择器用来选择某个元素的一个或多个特定的子元素，它在 <a href="https://www.w3.org" target="_blank" rel="external">W3</a> 官网上的完整定义是 <code>:nth-child(an+b)</code>，关于这个语法有以下几点：</p>
+<ul>
+<li>a和b的值必须是整数（正负零）</li>
+<li>子元素索引从1开始计算</li>
+</ul>
+<blockquote>
+<p><code>:nth-child(an+b)</code> 最基本的解释是把所有子元素按每组a个进行分组，直到不够再分时将剩下的子元素作为最后一组，然后选取每组的第b个元素。</p>
+<p>上面的解释要求a大于0，但由于a和b都可以取正数、负数和零，实际情况比较复杂</p>
+</blockquote>
+<p><a href="https://www.w3.org/TR/css3-selectors" target="_blank" rel="external">W3</a> 关于此选择器的解释比较繁琐，很容易令人困惑，在这采用网上常的总结来理解 <code>:nth-child(an+b)</code> 选择器的用法，这几种用法其实都是 an+b 的变化形式，就是a和b取不同值时的组合。</p>
+<blockquote>
+<p>这里的“n”只能是”n”，不能使用其他字母代替，不然会没有任何效果的。</p>
+</blockquote>
+<h4 id="nth-child-number"><a href="#nth-child-number" class="headerlink" title=":nth-child(number)"></a>:nth-child(number)</h4><p>参数为简单的正整数数字（大于0），表示匹配第 number 个子元素，这是最简单的用法。这种情况其实就是a=0，导致an部分被忽略的变体，此时表达式中只剩下b，且要求b必须大于0。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(3)</span>&#123;<span class="attribute">background</span>:orange;&#125; <span class="comment">/* 把第3个li的背景设为橙色 */</span></div></pre></td></tr></table></figure>
+<h4 id="nth-child-an"><a href="#nth-child-an" class="headerlink" title=":nth-child(an)"></a>:nth-child(an)</h4><p>这种情况其实是b=0时，b被忽略的变体。</p>
+<p>匹配所有倍数为a的元素，例如3n会匹配到第3个、第6个、第9个等3的倍数个元素；其实这里会有计算过程，n的值从0开始，依次与3进行乘积运算，然后将结果放到 <code>nth-child()</code> 中用来匹配元素，直到乘积结果大于元素的个数。下面描述一下 <code>:nth-child(3n)</code> 计算过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=0 =&gt; 3*n=0 =&gt; 匹配不到任何元素</div><div class="line">n=1 =&gt; 3*1=3 =&gt; 匹配第3个元素</div><div class="line">n=2 =&gt; 3*2=6 =&gt; 匹配第6个元素</div><div class="line">n=3 =&gt; 3*3=9 =&gt; 匹配第9个元素</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>通过上面的计算过程可以了解到 an 与 an+a 效果是一样的。</p>
+<p>另外当a=1时，该选择器又变为 <code>:nth-child(n)</code> ，根据上面的算法可以得知这会选择所有元素，与不加该伪类选择器一样。</p>
+<h4 id="nth-child-an-b"><a href="#nth-child-an-b" class="headerlink" title=":nth-child(an+b)"></a>:nth-child(an+b)</h4><p>该用法是 <code>:nth-child()</code> 选择器最完整的用法，当b小于等于a时，就是把所有元素每组a个进行分组，匹配每组中的第b个元素，例如3n+2会匹配第2个、第5个、第8个等元素；当b大于a时，其效果是先匹配到第b个元素，然后将b后面的元素每组a个进行分组，匹配每组的第a个元素。</p>
+<p>用计算步骤理解一下，<code>:nth-child(3n+5)</code> 的计算步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n=0 =&gt; 3*0+5=5 =&gt; 匹配第5个元素</div><div class="line">n=1 =&gt; 3*1+5=8 =&gt; 匹配第8个元素</div><div class="line">n=2 =&gt; 3*2+5=11 =&gt; 匹配第11个元素</div><div class="line">n=3 =&gt; 3*3+5=14 =&gt; 匹配第14个元素</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>当b&lt;0时该选择器变成 <code>:nth-child(an-b)</code> 形式，当a=1时会变成 <code>:nth-child(n+b)</code> 形式，表示匹配第b个之后的元素。</p>
+<h4 id="nth-child-an-b-1"><a href="#nth-child-an-b-1" class="headerlink" title=":nth-child(-an+b)"></a>:nth-child(-an+b)</h4><p>由于-an的结果小于等于0，因此当b&lt;=a时，只能匹配第b个元素；当b&gt;a时，首先匹配到第b个元素，然后从第b个元素往前算，每组a个进行分组，匹配每组的第-a个元素（即反向第a个元素）。例如 <code>:nth-child(-3n+8)</code> 的计算过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">n=0 -&gt; -3n+8=8 -&gt; 匹配第8个</div><div class="line">n=1 -&gt; -3n+8=5 -&gt; 跳过第7个和第6个匹配到第5个</div><div class="line">n=2 -&gt; -3n+8=2 -&gt; 跳过第4个和第3个匹配到第2个</div><div class="line">n=3 -&gt; -3n+8=-1 -&gt; 结果开始为负值</div></pre></td></tr></table></figure>
+<p>当a=1时该选择器变成 <code>:nth-child(-n+b)</code> 形式，表示匹配前b个元素。</p>
+<h4 id="nth-child-odd-和-nth-child-even"><a href="#nth-child-odd-和-nth-child-even" class="headerlink" title=":nth-child(odd) 和 :nth-child(even)"></a>:nth-child(odd) 和 :nth-child(even)</h4><p><code>:nth-child()</code> 选择器还可以接受 <code>odd</code> 和 <code>even</code> 两个关键字作为参数:</p>
+<ul>
+<li>:nth-child(odd)：与 <code>:nth-child(2n+1)</code> 效果一样，匹配第奇数个元素</li>
+<li>:nth-child(even)：与 <code>nth-child(2n)</code> 效果一样，匹配第偶数个元素。</li>
+</ul>
+<h3 id="nth-last-child"><a href="#nth-last-child" class="headerlink" title=":nth-last-child"></a>:nth-last-child</h3><p><code>:nth-last-child()</code> 选择器和前面的 <code>:nth-child()</code> 选择器很相似，只是这里多了一个last，该选择器是从最后一个元素开始算（即与 <code>:nth-child()</code> 选择器顺序相反），来选择特定元素，它们的算法是一样的。</p>
+<p>例如 <code>:nth-last-child(2n)</code> 与 <code>:nth-child(2n+1)</code> 是一样的，正好相反。</p>
+<h3 id="nth-of-type"><a href="#nth-of-type" class="headerlink" title=":nth-of-type"></a>:nth-of-type</h3><p><code>:nth-of-type()</code> 选择器与 <code>:nth-child()</code> 选择器类似，它们的可用参数及参数意义完全一样，不同的是 <code>:nth-of-type()</code> 只计算选择器中指定的那个元素，这个选择器对定位元素中包含了好多不同类型的元素是很有用处，下面用一个例子说明。</p>
+<p>看以下HTML代码，我想将第二个p元素的文字颜色设置为红色：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selector-demo-1"</span> <span class="attr">style</span>=<span class="string">"border: 1px dashed green;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>我是第一个span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是第一个p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是第二个p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>首先使用 <code>p:nth-child(2)</code> 选择器，可以看到变色的是第一个p元素，这是div的第二个子元素；也就是说，<code>p:nth-child(2)</code> 选择器的意思是：该元素是p元素，并且该元素是父元素的第二个子元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.selector-demo-1</span> <span class="selector-tag">p</span><span class="selector-pseudo">:nth-child(2)</span> &#123;<span class="attribute">color</span>: red&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .selector-demo-1 p:nth-child(2) {color: red}
+    .selector-demo-2 p:nth-of-type(2) {color: red}
+</style>
+
+<div class="selector-demo-1" style="border: 1px dashed green;"><span>我是第一个span</span><p>我是第一个p</p><p>我是第二个p</p></div>
+
+<p>接下来试一下 <code>p:nth-of-type(2)</code> 选择器，可以看到这次与我们的要求一样了，保证选择的是第二个p元素；也就是说，<code>p:nth-of-type(2)</code> 选择器的意思是：该元素是父元素的第二个p子元素，即匹配所有p元素的第二个，不考虑div下其它类型的子元素。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.selector-demo-2</span> <span class="selector-tag">p</span><span class="selector-pseudo">:nth-of-type(2)</span> &#123;<span class="attribute">color</span>: red&#125;</div></pre></td></tr></table></figure>
+<div class="selector-demo-2" style="border: 1px dashed green;"><span>我是第一个span</span><p>我是第一个p</p><p>我是第二个p</p></div>
+
+<p>参考：<a href="http://www.zhangxinxu.com/wordpress/2011/06/css3%E9%80%89%E6%8B%A9%E5%99%A8nth-child%E5%92%8Cnth-of-type%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82/" target="_blank" rel="external">CSS3选择器:nth-child和:nth-of-type之间的差异</a></p>
+<h3 id="nth-last-of-type"><a href="#nth-last-of-type" class="headerlink" title=":nth-last-of-type"></a>:nth-last-of-type</h3><p><code>:nth-last-of-type()</code> 根据名字容易理解，它与 <code>:nth-last-child()</code> 选择器一样，只不过是它限定了元素的类型。</p>
+<h2 id="其它伪类"><a href="#其它伪类" class="headerlink" title="其它伪类"></a>其它伪类</h2><table>
+<thead>
+<tr>
+<th>伪类</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:lang(language)</td>
+<td>匹配带有以指定值开始的 lang 属性的元素，该值必须是整个单词，即可是单独的词，如 lang=”en”，也可使用连字符（-）分隔的词如 lang=”en-us”</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>:not(selector)</td>
+<td>匹配非指定选择器匹配到的每个元素，可以理解为取反的意思，即除了指定的元素以外所有元素</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td>:target</td>
+<td></td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS1和CSS2中对伪类的伪元素的区别比较模糊，CSS3对这两个概念做了相对较清晰地区分，并且在语法上也很明显地将二者区别开。伪元素用 <code>::</code> 来表示以区分伪类，CSS2中已存的伪元素仍然可以使用一个冒号 <code>:</code> 的语法，但是CSS3新增的伪元素必须使用两个冒号 <code>::</code>。</p>
+<blockquote>
+<p>伪元素在DOM树中创建了一些抽象元素，这些抽象元素是不存在于html文档中的。比如：documen接口不提供访问元素内容的第一个字或者第一行的机制，而伪元素可以使开发者可以提取到这些信息。并且，一些伪元素可以使开发者获取到不存在于源文档中的内容（比如常见的 <code>::before</code> 、<code>::after</code>）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>伪元素</th>
+<th>说明</th>
+<th style="text-align:center">CSS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>::after</td>
+<td>在元素后面插入内容，配合”content”使用，例如清除浮动</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>::before</td>
+<td>在元素前面插入内容</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td>::first-letter</td>
+<td>选择文本块的第一个字母，主要运用于段落排版上，比如首字下沉</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>::first-line</td>
+<td>选择元素的第一行</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td>::selection</td>
+<td>用来改变浏览器网页选中文本的默认效果</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>一个选择器只能使用一个伪元素，并且伪元素必须处于选择器语句的最后。</p>
+</blockquote>
+<h2 id="selection"><a href="#selection" class="headerlink" title="::selection"></a>::selection</h2><blockquote>
+<p>The ::selection selector matches the portion of an element that is selected by a user.</p>
+</blockquote>
+<p><code>::selection</code> 选择器用来匹配一个元素中被用户选中的部分，并设置相应样式；只有很少的CSS属性可以使用在 <code>::selection</code> 选择器 中，包括：color、background、cursor和outline。</p>
+<p>下面是个示例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.selection-demo</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dashed green;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">4px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.selection-demo</span><span class="selector-pseudo">::selection</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">    <span class="attribute">cursor</span>: help;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .selection-demo {
+        border: 2px dashed green;
+        padding: 4px;
+    }
+    .selection-demo::selection {
+        background-color: red;
+        color: white;
+        cursor: help;
+    }
+</style>
+
+<div class="selection-demo">The ::selection pseudo-element was drafted for CSS Selectors Level 3, but removed before the Recommendation status. So, at the moment, the ::selection pseudo-element is not in any specification. (However, it may be re-added to future CSS specifications.)</div>
+
+<p>在上面示例效果中，选中的文本会变成我们设置的样式，这就是 <code>::selection</code> 伪元素的作用。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/20/css3-selectors/">CSS3学习之选择器</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-03-20, 17:33:26</p>
+        <p><span>最后更新:</span>2017-03-21, 17:12:06</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/20/css3-selectors/" title="CSS3学习之选择器">http://zhyihui.github.io/2017/03/20/css3-selectors/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/20/css3-selectors/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/17/css3-animation/">
+                    CSS3学习之Animation
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本选择器"><span class="toc-number">1.</span> <span class="toc-text">基本选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#层次选择器"><span class="toc-number">2.</span> <span class="toc-text">层次选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#属性选择器"><span class="toc-number">3.</span> <span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#伪类选择器"><span class="toc-number">4.</span> <span class="toc-text">伪类选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#动态伪类"><span class="toc-number">4.1.</span> <span class="toc-text">动态伪类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态伪类"><span class="toc-number">4.2.</span> <span class="toc-text">状态伪类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结构伪类"><span class="toc-number">4.3.</span> <span class="toc-text">结构伪类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-child"><span class="toc-number">4.3.1.</span> <span class="toc-text">:nth-child</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nth-child-number"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">:nth-child(number)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nth-child-an"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">:nth-child(an)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nth-child-an-b"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">:nth-child(an+b)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nth-child-an-b-1"><span class="toc-number">4.3.1.4.</span> <span class="toc-text">:nth-child(-an+b)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nth-child-odd-和-nth-child-even"><span class="toc-number">4.3.1.5.</span> <span class="toc-text">:nth-child(odd) 和 :nth-child(even)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-last-child"><span class="toc-number">4.3.2.</span> <span class="toc-text">:nth-last-child</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-of-type"><span class="toc-number">4.3.3.</span> <span class="toc-text">:nth-of-type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nth-last-of-type"><span class="toc-number">4.3.4.</span> <span class="toc-text">:nth-last-of-type</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它伪类"><span class="toc-number">4.4.</span> <span class="toc-text">其它伪类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#伪元素"><span class="toc-number">5.</span> <span class="toc-text">伪元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#selection"><span class="toc-number">5.1.</span> <span class="toc-text">::selection</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+
+    
+        <div class="addthis_sharing_toolbox"></div>
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/20/css3-selectors/" data-title="CSS3学习之选择器" data-url="http://zhyihui.github.io/2017/03/20/css3-selectors/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"zhyihui"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/17/css3-animation/" title="下一篇: CSS3学习之Animation">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/20/css3-selectors/">CSS3学习之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-3d-transform-property/">css3-transform-property</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/css3-2d-transform/">CSS3学习之2D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
