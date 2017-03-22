@@ -44,7 +44,25 @@ CSS filter Reference
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
-<meta property="og:updated_time" content="2017-03-22T05:24:42.394Z">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/21/css3-images/building.jpg">
+<meta property="og:updated_time" content="2017-03-22T05:41:38.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习之Images">
 <meta name="twitter:description" content="CSS Images
@@ -460,7 +478,143 @@ CSS filter Reference
 
 <div><div class="container"><img src="/2017/03/21/css3-images/avatar.png"><div><div>Hello World</div></div></div><div class="container"><img src="/2017/03/21/css3-images/avatar.png"><div><div>Hello World</div></div></div><div class="container"><img src="/2017/03/21/css3-images/avatar.png"><div><div>Hello World</div></div></div><div style="clear: both;"></div></div>
 
-<h2 id="图片滤镜"><a href="#图片滤镜" class="headerlink" title="图片滤镜"></a>图片滤镜</h2><table>
+<h2 id="图片滤镜"><a href="#图片滤镜" class="headerlink" title="图片滤镜"></a>图片滤镜</h2><p>这是本文的重点部分，主要涉及CSS3新增的 <code>filter</code> 属性，该属性作用是为页面中的元素（主要是图片）添加某些可见的效果，例如模糊、高光等。</p>
+<p><code>filter</code> 属性的浏览器兼容情况如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Property</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">filter</td>
+<td style="text-align:center">53.0<br>18.0 -webkit-</td>
+<td style="text-align:center">13.0</td>
+<td style="text-align:center">35.0</td>
+<td style="text-align:center">9.1<br>6.0 -webkit-</td>
+<td style="text-align:center">40.0<br>15.0 -webkit-</td>
+</tr>
+</tbody>
+</table>
+<p><code>filter</code> 属性的语法如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: none | &lt;filter-function&gt; [ &lt;filter-function&gt; ]*</div></pre></td></tr></table></figure>
+<blockquote>
+<p>可以同时应用多个滤镜，滤镜函数之间用空格分隔</p>
+</blockquote>
+<h3 id="blur"><a href="#blur" class="headerlink" title="blur"></a>blur</h3><p>此滤镜用来改变图片的清晰度，<code>blur(px)</code> 函数接受一个具体的像素值（当然要大于0了）为参数，默认值为0，即默认不模糊；参数越大，模糊效果越强。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.blur-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(3px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .blur-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: blur(3px);
+    }
+</style>
+
+<div class="blur-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="模糊效果"></div>
+
+<h3 id="brightness"><a href="#brightness" class="headerlink" title="brightness"></a>brightness</h3><p>brightness滤镜用来改变图片的亮度，<code>brightness(%)</code> 函数接受百分比作为参数，默认值为100%，即原图的亮度；值越小图片变地越暗，0%会将图片完全变黑；反过来，如果参数超过100%，图片会变地更亮。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.brightness-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">brightness</span>(60%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .brightness-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: brightness(60%);
+    }
+</style>
+
+<div class="brightness-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="60%亮度"></div>
+
+<h3 id="contrast"><a href="#contrast" class="headerlink" title="contrast"></a>contrast</h3><p>contrast滤镜用来调整图片的对比度，<code>contrast(%)</code> 函数接受百分比作为参数，默认值为100%，即原图的对比度；0%会使图片变成全黑，而超过100%的参数会使图片对比度更强。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.contrast-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">contrast</span>(60%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .contrast-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: contrast(60%);
+    }
+</style>
+
+<div class="contrast-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="60%对比度"></div>
+
+<h3 id="grayscale"><a href="#grayscale" class="headerlink" title="grayscale"></a>grayscale</h3><p>grayscale滤镜用来转变图片灰度，<code>grayscale(%)</code> 函数接受百分比值为参数，默认值为0%表示不改变原图灰度；100%表示使图片完全变成灰色（只有黑色和白色，即黑白图片）。</p>
+<p><code>grayscale(%)</code> 函数参数不允许为负值。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.grayscale-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .grayscale-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: grayscale(1);
+    }
+</style>
+
+<div class="grayscale-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="黑白图片"></div>
+
+<h3 id="hue-rotate"><a href="#hue-rotate" class="headerlink" title="hue-rotate"></a>hue-rotate</h3><p>hue-rotate滤镜可以理解为“色相旋转”，用来改变图片的色相；<code>hue-rotate(deg)</code> 函数接受一个角度值为参数，表示图片色调在色环上旋转的角度；参数默认值是0度，表示保持原图不变；该函数的参数最大值是360度。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.hue-rotate-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">hue-rotate</span>(90deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .hue-rotate-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: hue-rotate(90deg);
+    }
+</style>
+
+<div class="hue-rotate-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="色调旋转90度"></div>
+
+<h3 id="invert"><a href="#invert" class="headerlink" title="invert"></a>invert</h3><p>invert滤镜作用是反转图片颜色（反色），<code>invert(%)</code> 函数接受百分比为参数，默认值是0%表示保持原图不变，100%表示图片颜色完全反转。</p>
+<p><em><code>invert(%)</code> 函数参数不允许为负值</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.invert</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">invert</span>(1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .invert-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: invert(1);
+    }
+</style>
+
+<div class="invert-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="反色"></div>
+
+<h3 id="opacity"><a href="#opacity" class="headerlink" title="opacity"></a>opacity</h3><p>opacity滤镜容易理解，就是改变图片的透明度；<code>opacity(%)</code> 函数也接受百分比为参数，100%表示完全透明，0%是默认值，表示保持原图不变（完全不透明）。</p>
+<p><em><code>opacity(%)</code> 函数参数不允许为负值</em><br><strong>该滤镜与 <code>opacity</code> 属性的作类似</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.opacity-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">opacity</span>(.3);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .opacity-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: opacity(.3);
+    }
+</style>
+
+<div class="opacity-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="透明度30%"></div>
+
+<h3 id="saturate"><a href="#saturate" class="headerlink" title="saturate"></a>saturate</h3><p>saturate滤镜用来改变图片的饱和度，<code>saturate(%)</code> 函数接受百分比为参数，0%（0）会使图片完全不饱和，默认值为100%（1），表示保持原图饱和度不变，超过100%的参数会使图片更加饱和。</p>
+<p><em><code>saturate(%)</code> 函数参数不允许为负值</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.saturate-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">saturate</span>(1.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .saturate-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: saturate(1.5);
+    }
+</style>
+
+<div class="saturate-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="饱和度150%"></div>
+
+<h3 id="sepia"><a href="#sepia" class="headerlink" title="sepia"></a>sepia</h3><p>sepia滤镜用来实现图片的“老照片”效果，<code>sepia(%)</code> 函数也接受百分比为参数，默认值为0%表示保持原图不变，100%会使图片完全“老照片化”。</p>
+<p><em><code>sepia(%)</code> 函数不接受负值为参数</em></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sepia-demo</span> <span class="selector-tag">a</span><span class="selector-pseudo">:last-of-type</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">4px</span>;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">sepia</span>(1);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .sepia-demo a:last-of-type img {
+        margin-left: 4px;
+        filter: sepia(100%);
+    }
+</style>
+
+<div class="sepia-demo"><img src="/2017/03/21/css3-images/building.jpg" alt="原图"><img src="/2017/03/21/css3-images/building.jpg" alt="老照片"></div>
+
+<h3 id="drop-shadow"><a href="#drop-shadow" class="headerlink" title="drop-shadow"></a>drop-shadow</h3><p>drop-shadow滤镜用来给图片设置一个下沉阴影的效果，类似于 <code>box-shadow</code> 属性；<code>drop-shadow()</code> 函数语法相对其它滤镜来说更复杂一些，下面仔细描述一下。</p>
+<p>函数语法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">drop-shadow</span>(<span class="selector-tag">h-shadow</span> <span class="selector-tag">v-shadow</span> <span class="selector-tag">blur</span> <span class="selector-tag">spread</span> <span class="selector-tag">color</span>)</div></pre></td></tr></table></figure>
+<table>
 <thead>
 <tr>
 <th>属性值</th>
@@ -523,7 +677,7 @@ CSS filter Reference
         <p><span>本文标题:</span><a href="/2017/03/21/css3-images/">CSS3学习之Images</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-21, 17:46:28</p>
-        <p><span>最后更新:</span>2017-03-22, 13:24:42</p>
+        <p><span>最后更新:</span>2017-03-22, 13:41:38</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/21/css3-images/" title="CSS3学习之Images">http://zhyihui.github.io/2017/03/21/css3-images/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/21/css3-images/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -553,7 +707,7 @@ CSS filter Reference
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用图片效果"><span class="toc-number">1.</span> <span class="toc-text">常用图片效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#圆角图片"><span class="toc-number">1.1.</span> <span class="toc-text">圆角图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Thumbnail图片"><span class="toc-number">1.2.</span> <span class="toc-text">Thumbnail图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应式图片"><span class="toc-number">1.3.</span> <span class="toc-text">响应式图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片卡片"><span class="toc-number">1.4.</span> <span class="toc-text">图片卡片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#半透明图片"><span class="toc-number">1.5.</span> <span class="toc-text">半透明图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态覆盖"><span class="toc-number">1.6.</span> <span class="toc-text">动态覆盖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片滤镜"><span class="toc-number">2.</span> <span class="toc-text">图片滤镜</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多滤镜"><span class="toc-number">2.1.</span> <span class="toc-text">多滤镜</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用图片效果"><span class="toc-number">1.</span> <span class="toc-text">常用图片效果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#圆角图片"><span class="toc-number">1.1.</span> <span class="toc-text">圆角图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Thumbnail图片"><span class="toc-number">1.2.</span> <span class="toc-text">Thumbnail图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#响应式图片"><span class="toc-number">1.3.</span> <span class="toc-text">响应式图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片卡片"><span class="toc-number">1.4.</span> <span class="toc-text">图片卡片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#半透明图片"><span class="toc-number">1.5.</span> <span class="toc-text">半透明图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态覆盖"><span class="toc-number">1.6.</span> <span class="toc-text">动态覆盖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片滤镜"><span class="toc-number">2.</span> <span class="toc-text">图片滤镜</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#blur"><span class="toc-number">2.1.</span> <span class="toc-text">blur</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#brightness"><span class="toc-number">2.2.</span> <span class="toc-text">brightness</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#contrast"><span class="toc-number">2.3.</span> <span class="toc-text">contrast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grayscale"><span class="toc-number">2.4.</span> <span class="toc-text">grayscale</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hue-rotate"><span class="toc-number">2.5.</span> <span class="toc-text">hue-rotate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#invert"><span class="toc-number">2.6.</span> <span class="toc-text">invert</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opacity"><span class="toc-number">2.7.</span> <span class="toc-text">opacity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#saturate"><span class="toc-number">2.8.</span> <span class="toc-text">saturate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sepia"><span class="toc-number">2.9.</span> <span class="toc-text">sepia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#drop-shadow"><span class="toc-number">2.10.</span> <span class="toc-text">drop-shadow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多滤镜"><span class="toc-number">2.11.</span> <span class="toc-text">多滤镜</span></a></li></ol></li></ol>
         
     </div>
     <style>
