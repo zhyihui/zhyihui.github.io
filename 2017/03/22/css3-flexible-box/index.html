@@ -49,7 +49,7 @@ Fir">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/22/css3-flexible-box/flex-pack.svg">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/22/css3-flexible-box/flex-align.svg">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/22/css3-flexible-box/align-content-example.svg">
-<meta property="og:updated_time" content="2017-03-23T09:05:25.244Z">
+<meta property="og:updated_time" content="2017-03-23T10:42:49.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3学习之Flexible Box">
 <meta name="twitter:description" content="CSS3 Flexible Box
@@ -823,8 +823,11 @@ Fir">
 <div class="flex-demo flex-demo-18"><div>DIV#1</div><div>DIV#2</div><div>DIV#3</div></div>
 
 <p>上面的示例中，第二个DIV固定不变，第三个DIV的 <code>flex-shrink</code> 属性设置为2，第一个DIV取默认值1，最终第一个DIV和第三个DIV的缩小比例为1:2，也就是说第三个DIV的收缩量是第一个DIV的2倍。从最终效果上也可以看出，第三个DIV更短一些。</p>
-<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p><code>flex-basis</code> 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
-<p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p><code>flex-basis</code> 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小（即 <code>width</code> 属性设置的值，没有设置则是内容撑开的尺寸）。</p>
+<blockquote>
+<p>如果设置了 <code>flex-basis</code> 属性，那么 <code>width</code> 属性会被忽略（覆盖），也就是说 <code>flex-basis</code> 的优先级比 <code>width</code> 要高</p>
+</blockquote>
+<p><code>flex-basis</code> 属性可以设置为跟 width 或 height 属性一样的值（比如350px或20%等），则项目向父容器预约指定尺寸的宽度，然后才会根据情况收缩或扩展。</p>
 <h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p><code>flex</code> 属性是 <code>flex-grow</code> 、<code>flex-shrink</code> 和 <code>flex-basis</code> 的简写属性，默认值为 <code>0 1 auto</code> ，后两个属性是可选的。该属性有两个快捷值：auto（1 1 auto）和 none（0 0 auto）。</p>
 <p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
 <h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p><code>align-self</code> 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 <code>align-items</code> 属性。<code>align-self</code> 属性默认值为auto，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code>。</p>
@@ -838,6 +841,11 @@ Fir">
 <div class="flex-demo flex-demo-19"><div>DIV#1</div><div>DIV#2</div><div>DIV#3</div><div>DIV#4</div></div>
 
 <p>从上面示例可以看出，第一个项目的 <code>align-self</code> 属性设置为 <code>flex-end</code>，其它三个项目没有设置，表示继承父容器的 <code>align-items</code> 属性，而 <code>align-items</code> 属性默认是 <code>flex-start</code> ；这就造成了上面的效果，第一个项目独自向交叉轴底端对齐，而其它三个项目都是向交叉轴起点对齐。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文只是简单地解释了Flexbox布局的基本概念及其相关属性，其实这些属性组合起来使用是很复杂的，比如 <code>flex-basis</code> 等，还需要进一步学习和实践。</p>
+<p>一些资料：</p>
+<ul>
+<li><a href="http://zhoon.github.io/css3/2014/08/23/flex.html" target="_blank" rel="external">深入理解css3中的flex-grow、flex-shrink、flex-basis</a></li>
+</ul>
 
       
     </div>
@@ -849,7 +857,7 @@ Fir">
         <p><span>本文标题:</span><a href="/2017/03/22/css3-flexible-box/">CSS3学习之Flexible Box</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-22, 14:50:13</p>
-        <p><span>最后更新:</span>2017-03-23, 17:05:25</p>
+        <p><span>最后更新:</span>2017-03-23, 18:42:49</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/22/css3-flexible-box/" title="CSS3学习之Flexible Box">http://zhyihui.github.io/2017/03/22/css3-flexible-box/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/22/css3-flexible-box/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -879,7 +887,7 @@ Fir">
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexbox-概念"><span class="toc-number">1.</span> <span class="toc-text">Flexbox 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flex容器的属性"><span class="toc-number">2.</span> <span class="toc-text">Flex容器的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-direction"><span class="toc-number">2.1.</span> <span class="toc-text">flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-wrap"><span class="toc-number">2.2.</span> <span class="toc-text">flex-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-flow"><span class="toc-number">2.3.</span> <span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#justify-content"><span class="toc-number">2.4.</span> <span class="toc-text">justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-items"><span class="toc-number">2.5.</span> <span class="toc-text">align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content"><span class="toc-number">2.6.</span> <span class="toc-text">align-content</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flex项目的属性"><span class="toc-number">3.</span> <span class="toc-text">Flex项目的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#order"><span class="toc-number">3.1.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-grow"><span class="toc-number">3.2.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-shrink"><span class="toc-number">3.3.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-basis"><span class="toc-number">3.4.</span> <span class="toc-text">flex-basis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex"><span class="toc-number">3.5.</span> <span class="toc-text">flex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-self"><span class="toc-number">3.6.</span> <span class="toc-text">align-self</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexbox-概念"><span class="toc-number">1.</span> <span class="toc-text">Flexbox 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flex容器的属性"><span class="toc-number">2.</span> <span class="toc-text">Flex容器的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-direction"><span class="toc-number">2.1.</span> <span class="toc-text">flex-direction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-wrap"><span class="toc-number">2.2.</span> <span class="toc-text">flex-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-flow"><span class="toc-number">2.3.</span> <span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#justify-content"><span class="toc-number">2.4.</span> <span class="toc-text">justify-content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-items"><span class="toc-number">2.5.</span> <span class="toc-text">align-items</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-content"><span class="toc-number">2.6.</span> <span class="toc-text">align-content</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flex项目的属性"><span class="toc-number">3.</span> <span class="toc-text">Flex项目的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#order"><span class="toc-number">3.1.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-grow"><span class="toc-number">3.2.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-shrink"><span class="toc-number">3.3.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-basis"><span class="toc-number">3.4.</span> <span class="toc-text">flex-basis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex"><span class="toc-number">3.5.</span> <span class="toc-text">flex</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#align-self"><span class="toc-number">3.6.</span> <span class="toc-text">align-self</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
         
     </div>
     <style>
