@@ -272,6 +272,96 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-css3-multiple-columns" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/24/css3-multiple-columns/" class="article-date">
+      <time datetime="2017-03-24T03:24:53.000Z" itemprop="datePublished">2017-03-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/24/css3-multiple-columns/">CSS3学习之Multiple Columns</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li><a href="https://www.w3schools.com/css/css3_multiple_columns.asp">CSS3 Multiple Columns</a></li>
+<li><a href="https://www.w3.org/TR/css3-multicol">CSS Multi-column Layout Module</a></li>
+</ul>
+<p>在Web页面中，表格很早就被用来描述多列布局了，那现在在CSS3中引入的多列布局有什么不同呢？其实CSS3中的多列布局最大的好处是具有弹性，如列数可以根据视口大小的变化而改变。从HTML文档中移除table标签既有利于源码的阅读和维护，又可以使页面在不同设置上都有良好的视觉体验。</p>
+<p>而且，CSS3多列布局其实相当简单，不信？看下面：</p>
+<style type="text/css">
+    .multi-column-demo {
+        padding: 8px;
+        border: 1px solid red;
+        column-count: 3;
+        column-rule: 2px dashed green;
+    }
+    .multi-column-demo p {
+        column-span: all;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: red;
+    }
+</style>
+
+<div class="multi-column-demo"><p>CSS3 Multiple Columns</p>CSS3中新出现的多列布局(multi-column)是传统HTML网页中块状布局模式的有力扩充。这种新语法能够让WEB开发人员轻松的让文本呈现多列显示。我们知道，当一行文字太长时，读者读起来就比较费劲，有可能读错行或读串行；人们的视点从文本的一端移到另一端、然后换到下一行的行首，如果眼球移动浮动过大，他们的注意力就会减退，容易读不下去。所以，为了最大效率的使用大屏幕显示器，页面设计中需要限制文本的宽度，让文本按多列呈现，就像报纸上的新闻排版一样。</div>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/03/24/css3-multiple-columns/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-css3-flexible-box" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1120,101 +1210,6 @@
       
         <p class="article-more-link">
           <a href="/2017/03/13/css3-shadows/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css3-fonts-and-text" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/13/css3-fonts-and-text/" class="article-date">
-      <time datetime="2017-03-13T03:23:09.000Z" itemprop="datePublished">2017-03-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><a href="https://www.w3schools.com/css/css3_fonts.asp">CSS3 Web Fonts</a></li>
-<li><a href="https://www.w3schools.com/css/css3_text_effects.asp">CSS3 Text</a></li>
-</ul>
-<h2 id="CSS3-Web-字体"><a href="#CSS3-Web-字体" class="headerlink" title="CSS3 Web 字体"></a>CSS3 Web 字体</h2><h3 id="font-face-规则"><a href="#font-face-规则" class="headerlink" title="@font-face 规则"></a>@font-face 规则</h3><p>Web字体允许设计者使用用户计算机上没有安装的字体。当你找到（或购买到）希望使用的字体，只需要将字体文件放到你的web服务器上，当需要时它会自动下载到用户计算机上。</p>
-<p>你“自己的”字体需要使用 CSS3中的 <code>@font-face</code> 规则来定义。</p>
-<h3 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">Property</th>
-<th style="text-align:center">Chrome</th>
-<th style="text-align:center">IE</th>
-<th style="text-align:center">Firefox</th>
-<th style="text-align:center">Safari</th>
-<th style="text-align:center">Opera</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">@font-face</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">9.0</td>
-<td style="text-align:center">3.5</td>
-<td style="text-align:center">3.2</td>
-<td style="text-align:center">10.0</td>
-</tr>
-</tbody>
-</table>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/03/13/css3-fonts-and-text/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
