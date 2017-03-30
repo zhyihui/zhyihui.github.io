@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="HTML5定义的 &amp;lt;canvas&amp;gt; 元素可以使用 javascript 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 &amp;lt;canvas&amp;gt; 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+&amp;lt;canvas&amp;gt; 元素的浏览器兼容情况：
+
+
+
+元素
+Chrome">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Canvas">
+<meta property="og:url" content="http://zhyihui.github.io/2017/03/30/html5-canvas/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="HTML5定义的 &amp;lt;canvas&amp;gt; 元素可以使用 javascript 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 &amp;lt;canvas&amp;gt; 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+&amp;lt;canvas&amp;gt; 元素的浏览器兼容情况：
+
+
+
+元素
+Chrome">
+<meta property="og:updated_time" content="2017-03-30T10:06:52.322Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 Canvas">
+<meta name="twitter:description" content="HTML5定义的 &amp;lt;canvas&amp;gt; 元素可以使用 javascript 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 &amp;lt;canvas&amp;gt; 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+&amp;lt;canvas&amp;gt; 元素的浏览器兼容情况：
+
+
+
+元素
+Chrome">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>HTML5 Canvas | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-html5-canvas" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/30/html5-canvas/" class="article-date">
+      <time datetime="2017-03-30T02:17:15.000Z" itemprop="datePublished">2017-03-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 Canvas
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/HTML5/">HTML5</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>HTML5定义的 <code>&lt;canvas&gt;</code> 元素可以使用 <code>javascript</code> 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 <code>&lt;canvas&gt;</code> 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。</p>
+<p><code>&lt;canvas&gt;</code> 元素的浏览器兼容情况：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元素</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;canvas&gt;</code></td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">2.0</td>
+<td style="text-align:center">3.1</td>
+<td style="text-align:center">9.0</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="canvas-元素基础知识"><a href="#canvas-元素基础知识" class="headerlink" title="canvas 元素基础知识"></a>canvas 元素基础知识</h2><p><code>&lt;canvas&gt;</code> 元素用起来很简单，但有几个需要注意的地方：</p>
+<ul>
+<li><code>&lt;canvas&gt;</code> 元素默认是没有内容和边框的</li>
+<li><code>&lt;canvas&gt;</code> 元素一般需要设置一个 <code>id</code> 属性，方便 <code>javascript</code> 代码引用</li>
+<li><code>&lt;canvas&gt;</code> 元素需要定义宽度和高度，不然不能正常显示</li>
+</ul>
+<p>我们定义一个带有边框的画布，如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas-1"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"40"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid green"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div></pre></td></tr></table></figure>
+<canvas id="canvas-1" width="300" height="40" style="border: 1px solid green"></canvas>
+
+<p>可以看到，这与使用普通的HTML DOM元素没什么区别，其实除了有绘制能力外，<code>&lt;canvas&gt;</code> 元素就是一个普通的DOM元素；我们也可以同时定义多个画布，使用DOM元素的 <code>id</code> 属性来区分。</p>
+<h2 id="使用-JavaScript-绘制"><a href="#使用-JavaScript-绘制" class="headerlink" title="使用 JavaScript 绘制"></a>使用 JavaScript 绘制</h2><p><code>&lt;canvas&gt;</code> 元素本身没有任何绘制功能，它只是一个绘图的空口；要在 <code>&lt;canvas&gt;</code> 元素上绘制内容必须使用JavaScript，下面通过一个最简单的示例来说明这个过程。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-2'</span>);</div><div class="line"><span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">ctx.fillStyle = <span class="string">"#FF0000"</span>;</div><div class="line">ctx.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">150</span>, <span class="number">45</span>);</div></pre></td></tr></table></figure>
+<canvas id="canvas-2" width="300" height="80" style="border: 1px solid green"></canvas>
+
+<script type="text/javascript">
+    let canvas = document.getElementById('canvas-2');
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(10, 10, 150, 45);
+</script>
+
+<p>可以看到，在 <code>&lt;canvas&gt;</code> 元素中绘制图形的过程共分成三步。</p>
+<p><em>第一步，得到 canvas 元素</em></p>
+<p>要在画布上绘制内容首先要拿到画布元素，这一步跟其它DOM一样，通过文档对象的 <code>getElementById</code> 方法来获取就可以了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-2'</span>);</div></pre></td></tr></table></figure>
+<p><em>第二步，创建绘制对象</em></p>
+<p>拿到画布元素后，我们还需要需要通过调用 <code>&lt;canvas&gt;</code> 元素的 <code>getContext()</code> 方法来获取该元素的绘制对象，绘制对象是一个定义了绘制属性与方法的HTML内置对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
+<p>在 <code>getContext</code> 方法中传了2d字符串作为参数可能会让人误解 <code>&lt;canvas&gt;</code> 元素是否也支持3d绘制，其实它是不支持的，这个方法只能接受2d字符串作为参数。</p>
+<p><em>第三步，开始绘制</em></p>
+<p>经过上面两步准备，我们可以在画布上绘制内容了，这一步很复杂，因为我们可以在画布上绘制任何内容，而绘制对象也包含多种绘制属性和方法，这些内容会在接下来的部分介绍。</p>
+<p>在上面的示例中，我们将绘制对象的填充颜色设置为红色（默认是黑色），然后调用绘制对象的 <code>fillRect(x,y,width,height)</code> 方法绘制了一个矩形。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.fillStyle = <span class="string">"#FF0000"</span>;</div><div class="line">ctx.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">150</span>, <span class="number">45</span>);</div></pre></td></tr></table></figure>
+<h2 id="canvas-坐标系"><a href="#canvas-坐标系" class="headerlink" title="canvas 坐标系"></a>canvas 坐标系</h2><p>canvas元素是一个二维网格，画布的左上角是坐标系原点(0,0)，横轴向右延伸，纵轴向下延伸；在上面的简单示例中，我们调用了 <code>fillRect(10, 10, 150, 45)</code> 这么一个绘制矩形方法，意思是从(10,10)坐标点开始画一个150x45像素的矩形。</p>
+<h2 id="canvas-API-参考"><a href="#canvas-API-参考" class="headerlink" title="canvas API 参考"></a>canvas API 参考</h2><p>下面以分类的形式列举canvas绘图相关的所有API，在上面解释过了，<code>canvas</code> 元素本身没有任何绘制能力，因此这些API主要是绘制对象的属性和各种绘制方法。</p>
+<p>除了列举API，还会对一些比较复杂或难以理解的属性或方法进一步解释，较为简单的API就不再具体介绍了。</p>
+<h3 id="颜色、样式及阴影"><a href="#颜色、样式及阴影" class="headerlink" title="颜色、样式及阴影"></a>颜色、样式及阴影</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fillStyle</td>
+<td>设置或返回用于填充绘制的颜色、渐变和图案</td>
+</tr>
+<tr>
+<td>strokeStyle</td>
+<td>设置或返回用于线条绘制的颜色、渐变和图案</td>
+</tr>
+<tr>
+<td>shadowColor</td>
+<td>设置或返回阴影的颜色</td>
+</tr>
+<tr>
+<td>shadowBlur</td>
+<td>设置或返回阴影的模糊级别</td>
+</tr>
+<tr>
+<td>shadowOffsetX</td>
+<td>设置或返回阴影的水平距离</td>
+</tr>
+<tr>
+<td>shadowOffsetY</td>
+<td>设置或返回阴影的垂直距离</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createLinearGradient()</td>
+<td>创建一个线性渐变</td>
+</tr>
+<tr>
+<td>createPattern()</td>
+<td>在指定方向上重复一个元件</td>
+</tr>
+<tr>
+<td>createRadialGradient()</td>
+<td>创建径向渐变</td>
+</tr>
+<tr>
+<td>addColorStop()</td>
+<td>指定梯度对象的颜色和停止位置</td>
+</tr>
+</tbody>
+</table>
+<h4 id="createLinearGradient-方法"><a href="#createLinearGradient-方法" class="headerlink" title="createLinearGradient()方法"></a>createLinearGradient()方法</h4><p><code>createLinearGradient()</code> 方法可以创建一个线性渐变对象，该对象可以用于填充矩形、圆、线条及文本等形状，也就用于 <code>fillStyle</code> 或 <code>strokeStyle</code> 属性的值。</p>
+<p>使用 <code>addColorStop()</code> 方法指定不同的颜色及该颜色在渐变对象的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.createLinearGradient(x0,y0,x1,y1);</div></pre></td></tr></table></figure>
+<p>上面是 <code>createLinearGradient()</code> 方法的语法，四个参数分别用于指定起点(x0,y0)和终点(x1,y1)。</p>
+<h4 id="createPattern-方法"><a href="#createPattern-方法" class="headerlink" title="createPattern()方法"></a>createPattern()方法</h4><p><code>createPattern()</code> 方法用于在指定的方向上重复一个元件，该元件可以是图像、视频或其它的canvas元素，并可以用于填充矩形、线条等形状。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.createPattern(image,<span class="string">"repeat|repeat-x|repeat-y|no-repeat"</span>);</div></pre></td></tr></table></figure>
+<p>在上面 <code>createPattern()</code> 方法的语法定义中，image用于指定图案要使用的图像、视频或其它的canvas元素，第二个参数指定重复方向。</p>
+<h4 id="createRadialGradient-方法"><a href="#createRadialGradient-方法" class="headerlink" title="createRadialGradient()方法"></a>createRadialGradient()方法</h4><p><code>createRadialGradient()</code> 方法可以创建一个径向渐变对象，其行为及用途与 <code>createLinearGradient()</code> 方法创建的线性渐变一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.createRadialGradient(x0,y0,r0,x1,y1,r1);</div></pre></td></tr></table></figure>
+<p>在上面 <code>createRadialGradient()</code> 方法的语法定义中，x0,y0是径向渐变起始圆形圆心的坐标，r0起始圆形的半径；x1,y1是结束圆形圆心的坐标，r1是结束圆形的半径。</p>
+<h4 id="addColorStop-方法"><a href="#addColorStop-方法" class="headerlink" title="addColorStop() 方法"></a>addColorStop() 方法</h4><p><code>addColorStop()</code> 方法用于指定渐变对象中颜色和其位置，必要要配合 <code>createRadialGradient()</code> 方法或 <code>createLinearGradient()</code> 方法使用；该方法可以调用多次以实现多色渐变（至少调用一次），如果我们创建了渐变对象却没有调用 <code>addColorStop()</code> 方法，则该渐变并不会显示出来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gradient.addColorStop(stop,color);</div></pre></td></tr></table></figure>
+<p>从定义语法上看，<code>addColorStop()</code> 方法接受两个参数：stop是一个[0,1]区间的值，表示从渐变起点到终点之间的位置比例；color就是指的颜色喽！</p>
+<h3 id="线条样式"><a href="#线条样式" class="headerlink" title="线条样式"></a>线条样式</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lineCap</td>
+<td></td>
+</tr>
+<tr>
+<td>lineJoin</td>
+<td>设置或返回当两线会合时产生角的类型</td>
+</tr>
+<tr>
+<td>lineWidth</td>
+<td>设置或返回当前线条的宽度</td>
+</tr>
+<tr>
+<td>miterLimit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rect(x,y,width,height)</td>
+<td>创建一个矩形，该方法不会真正绘制，需要调用 <code>fill()</code> 或 <code>stroke</code> 方法完成绘制</td>
+</tr>
+<tr>
+<td>fillRect(x,y,width,height)</td>
+<td>绘制一个填充的矩形（绘制矩形后使用 <code>fillStyle</code> 属性值填充）</td>
+</tr>
+<tr>
+<td>strokeRect(x,y,width,height)</td>
+<td>绘制一个矩形（不填充，仅是绘制 <code>strokeStyle</code> 定义的边框）</td>
+</tr>
+<tr>
+<td>clearRect(x,y,width,height)</td>
+<td>清除指定矩形区域的像素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fill()</td>
+<td>填充当前的绘图（路径），默认使用黑色</td>
+</tr>
+<tr>
+<td>stroke()</td>
+<td>绘制定义好的路径</td>
+</tr>
+<tr>
+<td>beginPath()</td>
+<td>开始一个路径，或重置当前路径</td>
+</tr>
+<tr>
+<td>moveTo()</td>
+<td>将路径移到画布的指定坐标点，该方法不会绘制线条</td>
+</tr>
+<tr>
+<td>closePath()</td>
+<td>创建一个路径，从当前坐标点回到起始坐标点</td>
+</tr>
+<tr>
+<td>lineTo(x,y)</td>
+<td>添加一个新的坐标点并创建一条到上一个点的线，该方法不会真正绘制线条</td>
+</tr>
+<tr>
+<td>clip()</td>
+<td>从原始画布上裁剪任何形状和尺寸的区域</td>
+</tr>
+<tr>
+<td>quadraticCurveTo()</td>
+<td>创建一个二次贝塞尔曲线</td>
+</tr>
+<tr>
+<td>bezierCurveTo()</td>
+<td>创建一个三次贝塞尔曲线</td>
+</tr>
+<tr>
+<td>arc()</td>
+<td>创建一个弧线，用于创建圆或圆的一部分圆弧</td>
+</tr>
+<tr>
+<td>arcTo()</td>
+<td>在两条切线中间创建弧线</td>
+</tr>
+<tr>
+<td>isPointInPath(x,y)</td>
+<td>判断指定的点是否在当前路径上</td>
+</tr>
+</tbody>
+</table>
+<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scale()</td>
+<td>缩放当前绘制的内容</td>
+</tr>
+<tr>
+<td>rotate()</td>
+<td>旋转当前绘制的内容</td>
+</tr>
+<tr>
+<td>translate()</td>
+<td>重置画布原点(0,0)的位置</td>
+</tr>
+<tr>
+<td>transform()</td>
+<td>Replaces the current transformation matrix for the drawing</td>
+</tr>
+<tr>
+<td>setTransform()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>font</td>
+<td>设置或返回当前的字体</td>
+</tr>
+<tr>
+<td>textAlign</td>
+<td>设置或返回文本内容当前的对齐方式</td>
+</tr>
+<tr>
+<td>textBaseline</td>
+<td>设置或返回当前用于绘制文本的基线</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fillText()</td>
+<td>在画布上绘制填充的文本</td>
+</tr>
+<tr>
+<td>strokeText()</td>
+<td>绘制文本（非填充）</td>
+</tr>
+<tr>
+<td>measureText(text)</td>
+<td>返回一个包含指定文本宽度的对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>drawImage()</td>
+<td>在画布上绘制图片、其它画布或视频</td>
+</tr>
+</tbody>
+</table>
+<h3 id="像素操作"><a href="#像素操作" class="headerlink" title="像素操作"></a>像素操作</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>返回ImageData对象的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>返回ImageData对象的高度</td>
+</tr>
+<tr>
+<td>data</td>
+<td>返回一个指定ImageData对象的包含图像数据的对象</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>createImageData()</td>
+<td>创建一个新的空白ImageData对象</td>
+</tr>
+<tr>
+<td>getImageData()</td>
+<td>返回一个画布上指定矩形像素数据的ImageData对象</td>
+</tr>
+<tr>
+<td>putImageData()</td>
+<td>将指定ImageData对象的图像数据放回到画布上</td>
+</tr>
+</tbody>
+</table>
+<p><code>putImageData(imgData,x,y,dirtyX,dirtyY,dirtyWidth,dirtyHeight)</code></p>
+<h3 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>globalAlpha</td>
+<td>设置或返回当前绘图的透明度</td>
+</tr>
+<tr>
+<td>globalCompositeOperation</td>
+<td>设置或返回如何在已有图像上绘制新图像</td>
+</tr>
+</tbody>
+</table>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save()</td>
+<td>保存当前上下文状态</td>
+</tr>
+<tr>
+<td>restore()</td>
+<td>返回上次保存的路径状态和属性</td>
+</tr>
+<tr>
+<td>createEvent()</td>
+<td></td>
+</tr>
+<tr>
+<td>getContext()</td>
+<td></td>
+</tr>
+<tr>
+<td>toDataURL()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>“纸上得来终觉浅，绝知此事要躬行”，上面一堆都是对canvas相关知识的理论解释，看起来很容易让人烦躁，而且并不能很容易理解其用法与效果，这部分就用一些例子来说明。</p>
+<style type="text/css">
+    canvas {
+        border: 1px green solid;
+        margin-right: 4px;
+    }
+</style>
+
+<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><p>该示例绘制了三个矩形，主要演示了填充矩形及非填充矩形的绘制、线性渐变定义与应用等知识。需要注意 <code>rect()</code> 方法仅是创建一个矩形，还需要调用 <code>fill()</code> 或 <code>stroke()</code> 来完成绘制才能显示在画布上；也就是说 <code>rect() + fill()</code> 两个方法效果等于 <code>fillRect()</code>，<code>rect() + stroke()</code> 两个方法效果等于 <code>strokeRect()</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-3'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.strokeStyle = <span class="string">"red"</span>;</div><div class="line">    ctx.strokeRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">220</span>, <span class="number">60</span>);</div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-4'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> lg = ctx.createLinearGradient(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">0</span>);</div><div class="line">    lg.addColorStop(<span class="number">0</span>, <span class="string">"yellow"</span>);</div><div class="line">    lg.addColorStop(<span class="number">0.5</span>, <span class="string">"blue"</span>);</div><div class="line">    lg.addColorStop(<span class="number">1</span>, <span class="string">"#FF0000"</span>);</div><div class="line"></div><div class="line">    ctx.fillStyle = lg;</div><div class="line">    ctx.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">220</span>, <span class="number">60</span>); <span class="comment">// 也可以先调用rect()再调用fill()完成</span></div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-5'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> lg = ctx.createLinearGradient(<span class="number">20</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">0</span>);</div><div class="line">    lg.addColorStop(<span class="number">0</span>, <span class="string">"yellow"</span>);</div><div class="line">    lg.addColorStop(<span class="number">0.5</span>, <span class="string">"blue"</span>);</div><div class="line">    lg.addColorStop(<span class="number">1</span>, <span class="string">"#FF0000"</span>);</div><div class="line">    ctx.strokeStyle = lg;</div><div class="line">    ctx.lineWidth = <span class="number">12</span>;</div><div class="line">    ctx.rect(<span class="number">20</span>, <span class="number">20</span>, <span class="number">200</span>, <span class="number">40</span>);</div><div class="line">    ctx.stroke();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><canvas id="canvas-3" width="240" height="80"></canvas><canvas id="canvas-4" width="240" height="80"></canvas><canvas id="canvas-5" width="240" height="80"></canvas></p>
+<script type="text/javascript">
+    (function () {
+        let canvas = document.getElementById('canvas-3');
+        let ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "red";
+        ctx.strokeRect(10, 10, 220, 60);
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-4');
+        let ctx = canvas.getContext('2d');
+        let lg = ctx.createLinearGradient(0,0,100,0);
+        lg.addColorStop(0, "yellow");
+        lg.addColorStop(0.5, "blue");
+        lg.addColorStop(1, "#FF0000");
+
+        ctx.fillStyle = lg;
+        ctx.fillRect(10, 10, 220, 60);
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-5');
+        let ctx = canvas.getContext('2d');
+        let lg = ctx.createLinearGradient(0,0,200,0);
+        lg.addColorStop(0, "yellow");
+        lg.addColorStop(0.5, "blue");
+        lg.addColorStop(1, "#FF0000");
+        ctx.strokeStyle = lg;
+        ctx.lineWidth = 12;
+        ctx.rect(20, 20, 200, 40);
+        ctx.stroke();
+    })();
+</script>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/03/30/html5-canvas/">HTML5 Canvas</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-03-30, 10:17:15</p>
+        <p><span>最后更新:</span>2017-03-30, 18:06:52</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/30/html5-canvas/" title="HTML5 Canvas">http://zhyihui.github.io/2017/03/30/html5-canvas/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/30/html5-canvas/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/03/27/css-counters/">
+                    CSS计数器
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-元素基础知识"><span class="toc-number">1.</span> <span class="toc-text">canvas 元素基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-JavaScript-绘制"><span class="toc-number">2.</span> <span class="toc-text">使用 JavaScript 绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-坐标系"><span class="toc-number">3.</span> <span class="toc-text">canvas 坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-API-参考"><span class="toc-number">4.</span> <span class="toc-text">canvas API 参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色、样式及阴影"><span class="toc-number">4.1.</span> <span class="toc-text">颜色、样式及阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createLinearGradient-方法"><span class="toc-number">4.1.1.</span> <span class="toc-text">createLinearGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createPattern-方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">createPattern()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createRadialGradient-方法"><span class="toc-number">4.1.3.</span> <span class="toc-text">createRadialGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#addColorStop-方法"><span class="toc-number">4.1.4.</span> <span class="toc-text">addColorStop() 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线条样式"><span class="toc-number">4.2.</span> <span class="toc-text">线条样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">4.3.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">4.4.</span> <span class="toc-text">路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换"><span class="toc-number">4.5.</span> <span class="toc-text">转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">4.6.</span> <span class="toc-text">文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图片"><span class="toc-number">4.7.</span> <span class="toc-text">绘制图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作"><span class="toc-number">4.8.</span> <span class="toc-text">像素操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合"><span class="toc-number">4.9.</span> <span class="toc-text">混合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">4.10.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制矩形"><span class="toc-number">5.1.</span> <span class="toc-text">绘制矩形</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"HTML5 Canvas　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2128028';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/03/27/css-counters/" title="下一篇: CSS计数器">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/html5-canvas/">HTML5 Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/27/css-counters/">CSS计数器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/css3-user-interface/">CSS3学习之User Interface</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/css3-multiple-columns/">CSS3学习之Multiple Columns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/22/css3-flexible-box/">CSS3学习之Flexible Box</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/css3-images/">CSS3学习之Images</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/20/css3-selectors/">CSS3学习之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-3d-transform-property/">CSS3学习之3D Transform相关属性（占坑）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/css3-2d-transform/">CSS3学习之2D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
