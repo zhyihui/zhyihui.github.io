@@ -33,7 +33,10 @@ Chrome">
 
 元素
 Chrome">
-<meta property="og:updated_time" content="2017-03-30T10:06:52.322Z">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo1.png">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo2.png">
+<meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo3.png">
+<meta property="og:updated_time" content="2017-03-31T09:36:47.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 Canvas">
 <meta name="twitter:description" content="HTML5定义的 &amp;lt;canvas&amp;gt; 元素可以使用 javascript 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 &amp;lt;canvas&amp;gt; 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
@@ -43,6 +46,7 @@ Chrome">
 
 元素
 Chrome">
+<meta name="twitter:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -364,7 +368,7 @@ Chrome">
 <canvas id="canvas-1" width="300" height="40" style="border: 1px solid green"></canvas>
 
 <p>可以看到，这与使用普通的HTML DOM元素没什么区别，其实除了有绘制能力外，<code>&lt;canvas&gt;</code> 元素就是一个普通的DOM元素；我们也可以同时定义多个画布，使用DOM元素的 <code>id</code> 属性来区分。</p>
-<h2 id="使用-JavaScript-绘制"><a href="#使用-JavaScript-绘制" class="headerlink" title="使用 JavaScript 绘制"></a>使用 JavaScript 绘制</h2><p><code>&lt;canvas&gt;</code> 元素本身没有任何绘制功能，它只是一个绘图的空口；要在 <code>&lt;canvas&gt;</code> 元素上绘制内容必须使用JavaScript，下面通过一个最简单的示例来说明这个过程。</p>
+<h2 id="使用-JavaScript-绘制"><a href="#使用-JavaScript-绘制" class="headerlink" title="使用 JavaScript 绘制"></a>使用 JavaScript 绘制</h2><p><code>&lt;canvas&gt;</code> 元素本身没有任何绘制功能，它只是一个绘图的容器；要在 <code>&lt;canvas&gt;</code> 元素上绘制内容必须使用JavaScript，下面通过一个最简单的示例来说明这个过程。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-2'</span>);</div><div class="line"><span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">ctx.fillStyle = <span class="string">"#FF0000"</span>;</div><div class="line">ctx.fillRect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">150</span>, <span class="number">45</span>);</div></pre></td></tr></table></figure>
 <canvas id="canvas-2" width="300" height="80" style="border: 1px solid green"></canvas>
 
@@ -382,7 +386,10 @@ Chrome">
 <p><em>第二步，创建绘制对象</em></p>
 <p>拿到画布元素后，我们还需要需要通过调用 <code>&lt;canvas&gt;</code> 元素的 <code>getContext()</code> 方法来获取该元素的绘制对象，绘制对象是一个定义了绘制属性与方法的HTML内置对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
-<p>在 <code>getContext</code> 方法中传了2d字符串作为参数可能会让人误解 <code>&lt;canvas&gt;</code> 元素是否也支持3d绘制，其实它是不支持的，这个方法只能接受2d字符串作为参数。</p>
+<p>在 <code>getContext</code> 方法中传了2d字符串作为参数可能会让人误解 <code>&lt;canvas&gt;</code> 元素是否也支持3d绘制，其实现阶段它是不支持的，这个方法现在只能接受2d字符串作为参数，但HTML5规范中对此也有说明：</p>
+<blockquote>
+<p>A future version of this specification will probably define a 3d context.</p>
+</blockquote>
 <p><em>第三步，开始绘制</em></p>
 <p>经过上面两步准备，我们可以在画布上绘制内容了，这一步很复杂，因为我们可以在画布上绘制任何内容，而绘制对象也包含多种绘制属性和方法，这些内容会在接下来的部分介绍。</p>
 <p>在上面的示例中，我们将绘制对象的填充颜色设置为红色（默认是黑色），然后调用绘制对象的 <code>fillRect(x,y,width,height)</code> 方法绘制了一个矩形。</p>
@@ -481,7 +488,7 @@ Chrome">
 </tr>
 <tr>
 <td>lineWidth</td>
-<td>设置或返回当前线条的宽度</td>
+<td>设置或返回当前的线条宽度</td>
 </tr>
 <tr>
 <td>miterLimit</td>
@@ -529,7 +536,7 @@ Chrome">
 </tr>
 <tr>
 <td>stroke()</td>
-<td>绘制定义好的路径</td>
+<td>绘制定义好的路径，不填充</td>
 </tr>
 <tr>
 <td>beginPath()</td>
@@ -537,7 +544,7 @@ Chrome">
 </tr>
 <tr>
 <td>moveTo()</td>
-<td>将路径移到画布的指定坐标点，该方法不会绘制线条</td>
+<td>将画笔移到画布的指定坐标点，该方法不会绘制线条</td>
 </tr>
 <tr>
 <td>closePath()</td>
@@ -564,6 +571,10 @@ Chrome">
 <td>创建一个弧线，用于创建圆或圆的一部分圆弧</td>
 </tr>
 <tr>
+<td>ellipse()</td>
+<td>创建椭圆弧线</td>
+</tr>
+<tr>
 <td>arcTo()</td>
 <td>在两条切线中间创建弧线</td>
 </tr>
@@ -573,6 +584,17 @@ Chrome">
 </tr>
 </tbody>
 </table>
+<h4 id="arc-方法"><a href="#arc-方法" class="headerlink" title="arc()方法"></a>arc()方法</h4><p><code>arc()</code> 方法用于创建一段弧线（圆或圆的一部分），但该方法与 <code>rect()</code> 类似，它只是描述了路径并不会真正绘制，因此还是需要调用 <code>fill()</code> 方法填充或 <code>stroke()</code> 方法绘制。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.arc(x,y,r,sAngle,eAngle,anticlockwise);</div></pre></td></tr></table></figure>
+<p>上面的 <code>arc()</code> 方法语法定义中，参数还是比较多的；x和y两个参数组成一个点的坐标指定圆心，r是该圆的半径，sAngle和eAngle分别指定圆弧的起始角度和结束角度（用 <code>弧度</code> 表示，0度在时钟3点位置），anticlockwise是可选的，指定是否逆时针绘制，默认是false即顺时针绘制。</p>
+<h4 id="ellipse-方法"><a href="#ellipse-方法" class="headerlink" title="ellipse()方法"></a>ellipse()方法</h4><p><code>ellipse()</code> 方法用于创建一段椭圆弧线（椭圆或椭圆的一部分），用法与 <code>arc()</code> 方法基本一致，当 <code>ellipse()</code> 方法的两个半径相等时，其结果与 <code>arc()</code> 方法一样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle, anticlockwise)</div></pre></td></tr></table></figure>
+<p><code>ellipse()</code> 方法参数比 <code>arc()</code> 方法要多，其中radiusX和radiusY分别指定X轴和Y轴的半径，rotation指定旋转角度（弧度），其余参数与 <code>arc()</code> 方法一样。</p>
+<h4 id="arcTo-方法"><a href="#arcTo-方法" class="headerlink" title="arcTo()方法"></a>arcTo()方法</h4><p><code>arcTo()</code> 方法理解起来略显复杂，它是向当前子路径添加一个弧线（该弧线会连接到画笔当前位置点上），该弧线由指定的控制点和半径定义，实际上是以通过两个控制点（实际上是三个点）定义的两条直线为切线绘制弧线。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.arcTo(x1, y1, x2, y2, r);</div></pre></td></tr></table></figure>
+<p>在上面的语法定义中，(x1,y1)是第一个控制点坐标，(x2,y2)是第二个控制点坐标，r是圆的半径；这里的两个点必须与画笔当前所在点联合起来，也就是三个点形成两条线，这两条线作为圆弧的切线。</p>
+<p>这个过程描述起来很费劲且难以理解，下面的图示演示了三个点的位置关系及两条切线的形成，以及圆弧最终的效果：</p>
+<p><img src="/2017/03/30/html5-canvas/arcTo1.png" width="280px"><img src="/2017/03/30/html5-canvas/arcTo2.png" width="300px"><img src="/2017/03/30/html5-canvas/arcTo3.png" width="320px"></p>
 <h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><table>
 <thead>
 <tr>
@@ -617,14 +639,17 @@ Chrome">
 </tr>
 <tr>
 <td>textAlign</td>
-<td>设置或返回文本内容当前的对齐方式</td>
+<td>设置或返回文本内容当前的对齐方式，相对绘制时指定珠锚点来说，默认值为start</td>
 </tr>
 <tr>
 <td>textBaseline</td>
-<td>设置或返回当前用于绘制文本的基线</td>
+<td>设置或返回当前用于绘制文本的基线，默认值是alphabetic</td>
 </tr>
 </tbody>
 </table>
+<h4 id="font属性"><a href="#font属性" class="headerlink" title="font属性"></a>font属性</h4><p><code>font</code> 属性用于定义或返回当前绘制文本的字体属性，其语法与CSS中的定义一样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.font=<span class="string">"italic small-caps bold 12px arial"</span>;</div></pre></td></tr></table></figure>
+<p><code>font</code> 属性的默认值是 <code>10px sans-serif</code></p>
 <table>
 <thead>
 <tr>
@@ -634,11 +659,11 @@ Chrome">
 </thead>
 <tbody>
 <tr>
-<td>fillText()</td>
+<td>fillText(text,x,y)</td>
 <td>在画布上绘制填充的文本</td>
 </tr>
 <tr>
-<td>strokeText()</td>
+<td>strokeText(text,x,y)</td>
 <td>绘制文本（非填充）</td>
 </tr>
 <tr>
@@ -661,6 +686,9 @@ Chrome">
 </tr>
 </tbody>
 </table>
+<h4 id="drawImage-方法"><a href="#drawImage-方法" class="headerlink" title="drawImage()方法"></a>drawImage()方法</h4><p><code>drawImage()</code> 方法有三种形式，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 仅指定图像绘制位置</span></div><div class="line">context.drawImage(img,x,y);</div><div class="line"><span class="comment">// 指定图像绘制位置和图像的宽度高度，会导致图像拉伸/压缩</span></div><div class="line">context.drawImage(img,x,y,width,height);</div><div class="line"><span class="comment">// 裁剪图像并将裁剪后的部分绘制到画布上</span></div><div class="line">context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);</div></pre></td></tr></table></figure>
+<p>前两种形式比较简单，这里不再细说；第三种形式参数较多，(sx,sy)是开始裁剪的坐标点，swidth和sheight表示裁剪的宽和高，另外几个参数与第一种形式一样。</p>
 <h3 id="像素操作"><a href="#像素操作" class="headerlink" title="像素操作"></a>像素操作</h3><table>
 <thead>
 <tr>
@@ -759,6 +787,8 @@ Chrome">
     canvas {
         border: 1px green solid;
         margin-right: 4px;
+        width: 240px;
+        height: 80px;
     }
 </style>
 
@@ -797,6 +827,71 @@ Chrome">
     })();
 </script>
 
+<h3 id="绘制弧线-圆形"><a href="#绘制弧线-圆形" class="headerlink" title="绘制弧线/圆形"></a>绘制弧线/圆形</h3><p>该部分示例绘制了三个弧线形状，第一个用 <code>arcTo()</code> 方法，该方法很难控制，需要多查资料；第二个比较简单，直接用 <code>ellipse()</code> 方法绘制半个椭圆并旋转；第三个使用 <code>arc()</code> 方法绘制了一个圆并用径向渐变填充。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-6'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.moveTo(<span class="number">100</span>, <span class="number">5</span>);</div><div class="line">    ctx.arcTo(<span class="number">160</span>, <span class="number">8</span>, <span class="number">120</span>, <span class="number">60</span>, <span class="number">40</span>);</div><div class="line">    ctx.stroke();</div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-7'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.ellipse(<span class="number">120</span>, <span class="number">40</span>, <span class="number">64</span>, <span class="number">24</span>, <span class="number">0.1</span>*<span class="built_in">Math</span>.PI, <span class="number">0.4</span>*<span class="built_in">Math</span>.PI, <span class="number">1.6</span>*<span class="built_in">Math</span>.PI);</div><div class="line">    ctx.fill();</div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-8'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> rg = ctx.createRadialGradient(<span class="number">120</span>, <span class="number">40</span>, <span class="number">0</span>, <span class="number">120</span>, <span class="number">40</span>, <span class="number">32</span>);</div><div class="line">    rg.addColorStop(<span class="number">0</span>, <span class="string">"#F36666"</span>);</div><div class="line">    rg.addColorStop(<span class="number">0.5</span>, <span class="string">'blue'</span>);</div><div class="line">    rg.addColorStop(<span class="number">1</span>, <span class="string">'red'</span>);</div><div class="line">    ctx.fillStyle = rg;</div><div class="line">    ctx.arc(<span class="number">120</span>, <span class="number">40</span>, <span class="number">36</span>, <span class="number">0</span>, <span class="number">2</span>*<span class="built_in">Math</span>.PI);</div><div class="line">    ctx.fill();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><canvas id="canvas-6" width="240" height="80"></canvas><canvas id="canvas-7" width="240" height="80"></canvas><canvas id="canvas-8" width="240" height="80"></canvas></p>
+<script type="text/javascript">
+    (function () {
+        let canvas = document.getElementById('canvas-6');
+        let ctx = canvas.getContext('2d');
+        ctx.moveTo(100, 5);
+        ctx.arcTo(160, 8, 120, 60, 40);
+        ctx.stroke();
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-7');
+        let ctx = canvas.getContext('2d');
+        ctx.ellipse(120, 40, 64, 24, 0.1*Math.PI, 0.4*Math.PI, 1.6*Math.PI);
+        ctx.fill();
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-8');
+        let ctx = canvas.getContext('2d');
+        let rg = ctx.createRadialGradient(120, 40, 0, 120, 40, 32);
+        rg.addColorStop(0, "#F36666");
+        rg.addColorStop(0.5, 'blue');
+        rg.addColorStop(1, 'red');
+        ctx.fillStyle = rg;
+        ctx.arc(120, 40, 36, 0, 2*Math.PI);
+        ctx.fill();
+    })();
+</script>
+
+<h3 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-9'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.font = <span class="string">"32px Arial"</span>;</div><div class="line">    ctx.strokeText(<span class="string">'你好，Canvas'</span>, <span class="number">60</span>, <span class="number">40</span>);</div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-10'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    ctx.font = <span class="string">"36px Comic Sans MS"</span>;</div><div class="line">    ctx.fillStyle = <span class="string">"red"</span>;</div><div class="line">    ctx.textAlign = <span class="string">"center"</span>;</div><div class="line">    ctx.fillText(<span class="string">'Hello Canvas'</span>, canvas.width/<span class="number">2</span>, canvas.height/<span class="number">2</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><canvas id="canvas-9"></canvas><canvas id="canvas-10"></canvas><canvas id="canvas-11"></canvas></p>
+<script type="text/javascript">
+    (function () {
+        let canvas = document.getElementById('canvas-9');
+        let ctx = canvas.getContext('2d');
+        ctx.font = "32px Arial";
+        ctx.strokeText('你好，Canvas', 60, 40);
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-10');
+        let ctx = canvas.getContext('2d');
+        ctx.font = "36px Comic Sans MS";
+        ctx.fillStyle = "red";
+        ctx.textAlign = "center";
+        ctx.fillText('Hello Canvas', canvas.width/2, canvas.height/2);
+    })();
+</script>
+
+<h3 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-12'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> img = <span class="built_in">document</span>.images[<span class="number">0</span>];</div><div class="line">    ctx.drawImage(img, <span class="number">30</span>, <span class="number">0</span>, <span class="number">240</span>, <span class="number">180</span>, <span class="number">10</span>, <span class="number">0</span>, <span class="number">240</span>, <span class="number">180</span>);</div><div class="line">&#125;)();</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-13'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> anotherCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-8'</span>);</div><div class="line">    ctx.drawImage(anotherCanvas, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><canvas id="canvas-12"></canvas><canvas id="canvas-13"></canvas></p>
+<script type="text/javascript">
+    (function () {
+        let canvas = document.getElementById('canvas-12');
+        let ctx = canvas.getContext('2d');
+        let img = document.images[0];
+        ctx.drawImage(img, 30, 0, 240, 180, 10, 0, 240, 180);
+    })();
+    (function () {
+        let canvas = document.getElementById('canvas-13');
+        let ctx = canvas.getContext('2d');
+        let anotherCanvas = document.getElementById('canvas-8');
+        ctx.drawImage(anotherCanvas, 0, 0);
+    })();
+</script>
       
     </div>
     
@@ -807,7 +902,7 @@ Chrome">
         <p><span>本文标题:</span><a href="/2017/03/30/html5-canvas/">HTML5 Canvas</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-30, 10:17:15</p>
-        <p><span>最后更新:</span>2017-03-30, 18:06:52</p>
+        <p><span>最后更新:</span>2017-03-31, 17:36:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/30/html5-canvas/" title="HTML5 Canvas">http://zhyihui.github.io/2017/03/30/html5-canvas/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/30/html5-canvas/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -837,7 +932,7 @@ Chrome">
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-元素基础知识"><span class="toc-number">1.</span> <span class="toc-text">canvas 元素基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-JavaScript-绘制"><span class="toc-number">2.</span> <span class="toc-text">使用 JavaScript 绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-坐标系"><span class="toc-number">3.</span> <span class="toc-text">canvas 坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-API-参考"><span class="toc-number">4.</span> <span class="toc-text">canvas API 参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色、样式及阴影"><span class="toc-number">4.1.</span> <span class="toc-text">颜色、样式及阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createLinearGradient-方法"><span class="toc-number">4.1.1.</span> <span class="toc-text">createLinearGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createPattern-方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">createPattern()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createRadialGradient-方法"><span class="toc-number">4.1.3.</span> <span class="toc-text">createRadialGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#addColorStop-方法"><span class="toc-number">4.1.4.</span> <span class="toc-text">addColorStop() 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线条样式"><span class="toc-number">4.2.</span> <span class="toc-text">线条样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">4.3.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">4.4.</span> <span class="toc-text">路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换"><span class="toc-number">4.5.</span> <span class="toc-text">转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">4.6.</span> <span class="toc-text">文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图片"><span class="toc-number">4.7.</span> <span class="toc-text">绘制图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作"><span class="toc-number">4.8.</span> <span class="toc-text">像素操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合"><span class="toc-number">4.9.</span> <span class="toc-text">混合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">4.10.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制矩形"><span class="toc-number">5.1.</span> <span class="toc-text">绘制矩形</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-元素基础知识"><span class="toc-number">1.</span> <span class="toc-text">canvas 元素基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-JavaScript-绘制"><span class="toc-number">2.</span> <span class="toc-text">使用 JavaScript 绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-坐标系"><span class="toc-number">3.</span> <span class="toc-text">canvas 坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-API-参考"><span class="toc-number">4.</span> <span class="toc-text">canvas API 参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色、样式及阴影"><span class="toc-number">4.1.</span> <span class="toc-text">颜色、样式及阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createLinearGradient-方法"><span class="toc-number">4.1.1.</span> <span class="toc-text">createLinearGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createPattern-方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">createPattern()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createRadialGradient-方法"><span class="toc-number">4.1.3.</span> <span class="toc-text">createRadialGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#addColorStop-方法"><span class="toc-number">4.1.4.</span> <span class="toc-text">addColorStop() 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线条样式"><span class="toc-number">4.2.</span> <span class="toc-text">线条样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">4.3.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">4.4.</span> <span class="toc-text">路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arc-方法"><span class="toc-number">4.4.1.</span> <span class="toc-text">arc()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ellipse-方法"><span class="toc-number">4.4.2.</span> <span class="toc-text">ellipse()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#arcTo-方法"><span class="toc-number">4.4.3.</span> <span class="toc-text">arcTo()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换"><span class="toc-number">4.5.</span> <span class="toc-text">转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">4.6.</span> <span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#font属性"><span class="toc-number">4.6.1.</span> <span class="toc-text">font属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图片"><span class="toc-number">4.7.</span> <span class="toc-text">绘制图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#drawImage-方法"><span class="toc-number">4.7.1.</span> <span class="toc-text">drawImage()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作"><span class="toc-number">4.8.</span> <span class="toc-text">像素操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合"><span class="toc-number">4.9.</span> <span class="toc-text">混合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">4.10.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制矩形"><span class="toc-number">5.1.</span> <span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制弧线-圆形"><span class="toc-number">5.2.</span> <span class="toc-text">绘制弧线/圆形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制文本"><span class="toc-number">5.3.</span> <span class="toc-text">绘制文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图像"><span class="toc-number">5.4.</span> <span class="toc-text">绘制图像</span></a></li></ol></li></ol>
         
     </div>
     <style>
