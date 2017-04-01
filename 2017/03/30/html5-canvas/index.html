@@ -36,7 +36,7 @@ Chrome">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo1.png">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo2.png">
 <meta property="og:image" content="http://zhyihui.github.io/2017/03/30/html5-canvas/arcTo3.png">
-<meta property="og:updated_time" content="2017-03-31T09:36:47.376Z">
+<meta property="og:updated_time" content="2017-04-01T10:16:22.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 Canvas">
 <meta name="twitter:description" content="HTML5定义的 &amp;lt;canvas&amp;gt; 元素可以使用 javascript 在网页上绘制图像，canvas（可以称作“画布”）是网页上的一个矩形区域，我们就是在这个区域内进行绘制；在这个矩形区域内，我们可以控制其每个像素，而且 &amp;lt;canvas&amp;gt; 拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
@@ -733,7 +733,15 @@ Chrome">
 </tr>
 </tbody>
 </table>
-<p><code>putImageData(imgData,x,y,dirtyX,dirtyY,dirtyWidth,dirtyHeight)</code></p>
+<h4 id="createImageData-方法"><a href="#createImageData-方法" class="headerlink" title="createImageData()方法"></a>createImageData()方法</h4><p><code>createImageData()</code> 方法创建一个新的空ImageData对象，该对象包含指定尺寸内所有的像素数据，其中每个像素都包含4条信息，也就是RGBA值（红绿蓝三色加一个alpha通道值，值都是0~255）；新对象的像素数据（RGBA值）默认是黑色透明（即(0,0,0,0)）；这些RGBA值会放在一个数组存储在ImageData对象的 <code>data</code> 属性中，因为数组包含每个像素的4条信息，因此该数组的长度是ImageData对象的4倍： width*height*4。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">context.createImageData(width,height);</div><div class="line">context.createImageData(anotherImageData);</div></pre></td></tr></table></figure>
+<p>由上面的语法定义可以看出 <code>createImageData()</code> 方法有两种形式，第一种是通过指定尺寸（以像素为单位）来创建，第二种是使用与另一个ImageData对象相同的尺寸来创建（并不会复制该对象的像素数据）。</p>
+<h4 id="getImageData-方法"><a href="#getImageData-方法" class="headerlink" title="getImageData()方法"></a>getImageData()方法</h4><p><code>getImageData()</code> 方法可以返回一个ImageData对象，该对象复制了画布上指定矩形区域的像素数据；但ImageData对象并不是图像，它只是持有画布指定区域（矩形）每个像素的信息。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.getImageData(x,y,width,height);</div></pre></td></tr></table></figure>
+<p>在上面的语法定义中，(x,y)是 <code>getImageData()</code> 方法复制起始点坐标，width和height分别是要复制区域的宽和高。</p>
+<h4 id="putImageData"><a href="#putImageData" class="headerlink" title="putImageData()"></a>putImageData()</h4><p><code>putImageData()</code> 方法可以将图像数据（指定的ImageData对象）放回画布上，图像数据一般是由 <code>getImageData()</code> 方法获取或 <code>createImageData()</code> 方法生成。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">context.putImageData(imgData,x,y,dirtyX,dirtyY,dirtyWidth,dirtyHeight)</div></pre></td></tr></table></figure>
+<p>上面的语法定义中，前三个参数是必须的，后面四个参数是可选的；(x,y)是ImageData对象的左上角坐标，以像素为单位；(dirtyX,dirtyY)是ImageData要放置的画布位置坐标；dirtyWidth和dirtyHeight分别指定图像要绘制的宽度和高度。</p>
 <h3 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h3><table>
 <thead>
 <tr>
@@ -744,14 +752,16 @@ Chrome">
 <tbody>
 <tr>
 <td>globalAlpha</td>
-<td>设置或返回当前绘图的透明度</td>
+<td>设置或返回当前绘图的透明度，设置后绘制的内容都应用该透明度，默认值为1.0</td>
 </tr>
 <tr>
 <td>globalCompositeOperation</td>
-<td>设置或返回如何在已有图像上绘制新图像</td>
+<td>设置或返回如何在已有图像上绘制新图像，默认值为“source-over”</td>
 </tr>
 </tbody>
 </table>
+<h4 id="globalCompositeOperation属性"><a href="#globalCompositeOperation属性" class="headerlink" title="globalCompositeOperation属性"></a>globalCompositeOperation属性</h4><p><code>globalCompositeOperation</code> 属性设置或返回源图像（准备绘制到画布上的内容）如何绘制到目标图像（画布上已存在的内容，即原来绘制的内容）上；该属性提供了非常强大的绘图功能，可以让绘制的图片产生诸如互相叠加、互相剪切等效果。</p>
+<p>其取值及其解释参见文档：<a href="https://www.w3schools.com/tags/canvas_globalcompositeoperation.asp" target="_blank" rel="external">HTML canvas globalCompositeOperation Property</a>，该页面的解释比较详细，也有不同取值的演示效果图。</p>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><table>
 <thead>
 <tr>
@@ -787,8 +797,6 @@ Chrome">
     canvas {
         border: 1px green solid;
         margin-right: 4px;
-        width: 240px;
-        height: 80px;
     }
 </style>
 
@@ -892,6 +900,47 @@ Chrome">
         ctx.drawImage(anotherCanvas, 0, 0);
     })();
 </script>
+
+<h3 id="像素操作-1"><a href="#像素操作-1" class="headerlink" title="像素操作"></a>像素操作</h3><p>像素操作是非常复杂也极其强大的功能，它可以在画布上做任何事情，但由于ImageData将所有像素数据放在一个一维数组中，因此使用起来很麻烦。</p>
+<p>下面是一个比较复杂的示例，我想了差不多一天才理清如何实现，具体过程很难用文字描述清楚，因此我在代码中添加了少量注释。我觉得将画布相像成二维网格，每个像素都是一个格子去分析比较简单。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas-14'</span>);</div><div class="line">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</div><div class="line">    <span class="keyword">let</span> imgData = ctx.createImageData(canvas.width, canvas.height);</div><div class="line">    <span class="keyword">let</span> refreshBtn = <span class="built_in">document</span>.getElementById(<span class="string">'refresh-btn'</span>);</div><div class="line">    refreshBtn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// 定义多少个像素同色，这里20的意思是横向10个像素纵向10个像素组成的矩形区域内共100个像素同色</span></div><div class="line">        <span class="keyword">let</span> base = <span class="number">20</span>;</div><div class="line">        <span class="comment">// 循环像素，每经过base个像素换一种颜色</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; canvas.width * canvas.height; i = i + base) &#123;</div><div class="line">            <span class="keyword">let</span> r = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">255</span>);</div><div class="line">            <span class="keyword">let</span> g = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">255</span>);</div><div class="line">            <span class="keyword">let</span> b = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">255</span>);</div><div class="line">            <span class="comment">// 每次外部循环都会有base^2次内部循环，将同色区域填充相同颜色</span></div><div class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; base; j++) &#123;</div><div class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; base; k++) &#123;</div><div class="line">                    imgData.data[<span class="number">4</span> * (i + k + canvas.width * j) + <span class="number">0</span>] = r;</div><div class="line">                    imgData.data[<span class="number">4</span> * (i + k + canvas.width * j) + <span class="number">1</span>] = g;</div><div class="line">                    imgData.data[<span class="number">4</span> * (i + k + canvas.width * j) + <span class="number">2</span>] = b;</div><div class="line">                    imgData.data[<span class="number">4</span> * (i + k + canvas.width * j) + <span class="number">3</span>] = <span class="number">255</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// 横向到头后跳过base - 1行继续循环</span></div><div class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i % canvas.width == <span class="number">0</span>)</div><div class="line">                i = i + (canvas.width * (base - <span class="number">1</span>));</div><div class="line">        &#125;</div><div class="line">        ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);</div><div class="line">        ctx.putImageData(imgData, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">    &#125;);</div><div class="line">    refreshBtn.click();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p><canvas id="canvas-14"></canvas><button id="refresh-btn">刷新</button></p>
+<script type="text/javascript">
+    (function() {
+        let canvas = document.getElementById('canvas-14');
+        let ctx = canvas.getContext('2d');
+        let imgData = ctx.createImageData(canvas.width, canvas.height);
+        let refreshBtn = document.getElementById('refresh-btn');
+        refreshBtn.addEventListener("click", function() {
+            // 定义多少个像素同色，这里20的意思是横向10个像素纵向10个像素组成的矩形区域内共100个像素同色
+            let base = 20;
+            // 循环像素，每经过base个像素换一种颜色
+            for (let i = 0; i < canvas.width * canvas.height; i = i + base) {
+                let r = Math.floor(Math.random() * 255);
+                let g = Math.floor(Math.random() * 255);
+                let b = Math.floor(Math.random() * 255);
+                // 每次外部循环都会有base^2次内部循环，将同色区域填充相同颜色
+                for (let j = 0; j < base; j++) {
+                    for (let k = 0; k < base; k++) {
+                        imgData.data[4 * (i + k + canvas.width * j) + 0] = r;
+                        imgData.data[4 * (i + k + canvas.width * j) + 1] = g;
+                        imgData.data[4 * (i + k + canvas.width * j) + 2] = b;
+                        imgData.data[4 * (i + k + canvas.width * j) + 3] = 255;
+                    }
+                }
+                // 横向到头后跳过base - 1行继续循环
+                if (i > 0 && i % canvas.width == 0)
+                    i = i + (canvas.width * (base - 1));
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.putImageData(imgData, 0, 0);
+        });
+        refreshBtn.click();
+    })();
+</script>
+
+<p>这个示例没有涉及到 <code>getImageData()</code> 方法，由于篇幅关系就不再写相关示例了。</p>
+
       
     </div>
     
@@ -902,7 +951,7 @@ Chrome">
         <p><span>本文标题:</span><a href="/2017/03/30/html5-canvas/">HTML5 Canvas</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
         <p><span>发布时间:</span>2017-03-30, 10:17:15</p>
-        <p><span>最后更新:</span>2017-03-31, 17:36:47</p>
+        <p><span>最后更新:</span>2017-04-01, 18:16:22</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/30/html5-canvas/" title="HTML5 Canvas">http://zhyihui.github.io/2017/03/30/html5-canvas/</a>
             <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/30/html5-canvas/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -932,7 +981,7 @@ Chrome">
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-元素基础知识"><span class="toc-number">1.</span> <span class="toc-text">canvas 元素基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-JavaScript-绘制"><span class="toc-number">2.</span> <span class="toc-text">使用 JavaScript 绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-坐标系"><span class="toc-number">3.</span> <span class="toc-text">canvas 坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-API-参考"><span class="toc-number">4.</span> <span class="toc-text">canvas API 参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色、样式及阴影"><span class="toc-number">4.1.</span> <span class="toc-text">颜色、样式及阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createLinearGradient-方法"><span class="toc-number">4.1.1.</span> <span class="toc-text">createLinearGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createPattern-方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">createPattern()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createRadialGradient-方法"><span class="toc-number">4.1.3.</span> <span class="toc-text">createRadialGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#addColorStop-方法"><span class="toc-number">4.1.4.</span> <span class="toc-text">addColorStop() 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线条样式"><span class="toc-number">4.2.</span> <span class="toc-text">线条样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">4.3.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">4.4.</span> <span class="toc-text">路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arc-方法"><span class="toc-number">4.4.1.</span> <span class="toc-text">arc()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ellipse-方法"><span class="toc-number">4.4.2.</span> <span class="toc-text">ellipse()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#arcTo-方法"><span class="toc-number">4.4.3.</span> <span class="toc-text">arcTo()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换"><span class="toc-number">4.5.</span> <span class="toc-text">转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">4.6.</span> <span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#font属性"><span class="toc-number">4.6.1.</span> <span class="toc-text">font属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图片"><span class="toc-number">4.7.</span> <span class="toc-text">绘制图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#drawImage-方法"><span class="toc-number">4.7.1.</span> <span class="toc-text">drawImage()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作"><span class="toc-number">4.8.</span> <span class="toc-text">像素操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合"><span class="toc-number">4.9.</span> <span class="toc-text">混合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">4.10.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制矩形"><span class="toc-number">5.1.</span> <span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制弧线-圆形"><span class="toc-number">5.2.</span> <span class="toc-text">绘制弧线/圆形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制文本"><span class="toc-number">5.3.</span> <span class="toc-text">绘制文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图像"><span class="toc-number">5.4.</span> <span class="toc-text">绘制图像</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-元素基础知识"><span class="toc-number">1.</span> <span class="toc-text">canvas 元素基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-JavaScript-绘制"><span class="toc-number">2.</span> <span class="toc-text">使用 JavaScript 绘制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-坐标系"><span class="toc-number">3.</span> <span class="toc-text">canvas 坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas-API-参考"><span class="toc-number">4.</span> <span class="toc-text">canvas API 参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色、样式及阴影"><span class="toc-number">4.1.</span> <span class="toc-text">颜色、样式及阴影</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createLinearGradient-方法"><span class="toc-number">4.1.1.</span> <span class="toc-text">createLinearGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createPattern-方法"><span class="toc-number">4.1.2.</span> <span class="toc-text">createPattern()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#createRadialGradient-方法"><span class="toc-number">4.1.3.</span> <span class="toc-text">createRadialGradient()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#addColorStop-方法"><span class="toc-number">4.1.4.</span> <span class="toc-text">addColorStop() 方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线条样式"><span class="toc-number">4.2.</span> <span class="toc-text">线条样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矩形"><span class="toc-number">4.3.</span> <span class="toc-text">矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">4.4.</span> <span class="toc-text">路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arc-方法"><span class="toc-number">4.4.1.</span> <span class="toc-text">arc()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ellipse-方法"><span class="toc-number">4.4.2.</span> <span class="toc-text">ellipse()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#arcTo-方法"><span class="toc-number">4.4.3.</span> <span class="toc-text">arcTo()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转换"><span class="toc-number">4.5.</span> <span class="toc-text">转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本"><span class="toc-number">4.6.</span> <span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#font属性"><span class="toc-number">4.6.1.</span> <span class="toc-text">font属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图片"><span class="toc-number">4.7.</span> <span class="toc-text">绘制图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#drawImage-方法"><span class="toc-number">4.7.1.</span> <span class="toc-text">drawImage()方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作"><span class="toc-number">4.8.</span> <span class="toc-text">像素操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#createImageData-方法"><span class="toc-number">4.8.1.</span> <span class="toc-text">createImageData()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getImageData-方法"><span class="toc-number">4.8.2.</span> <span class="toc-text">getImageData()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#putImageData"><span class="toc-number">4.8.3.</span> <span class="toc-text">putImageData()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合"><span class="toc-number">4.9.</span> <span class="toc-text">混合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#globalCompositeOperation属性"><span class="toc-number">4.9.1.</span> <span class="toc-text">globalCompositeOperation属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它"><span class="toc-number">4.10.</span> <span class="toc-text">其它</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制矩形"><span class="toc-number">5.1.</span> <span class="toc-text">绘制矩形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制弧线-圆形"><span class="toc-number">5.2.</span> <span class="toc-text">绘制弧线/圆形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制文本"><span class="toc-number">5.3.</span> <span class="toc-text">绘制文本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绘制图像"><span class="toc-number">5.4.</span> <span class="toc-text">绘制图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#像素操作-1"><span class="toc-number">5.5.</span> <span class="toc-text">像素操作</span></a></li></ol></li></ol>
         
     </div>
     <style>
