@@ -15,79 +15,25 @@
 
 
 
-<meta name="description" content="参考：CSS3 Rounded Corners
+<meta name="description" content="在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
 
-使用CSS3中的 border-radius 属性，可以在任何元素上实现“圆角效果”。
-
-
-浏览器兼容
-
-
-Chrome
-IE
-Firefox
-Safari
-Opera
-
-
-
-
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+localStorage ：没有时间限制的数据存储
+sessionStorage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS3中的圆角效果">
-<meta property="og:url" content="http://zhyihui.github.io/2017/03/07/css3-rounded-corners/index.html">
+<meta property="og:title" content="html5 本地存储">
+<meta property="og:url" content="http://zhyihui.github.io/2017/04/05/html5-web-storage/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="参考：CSS3 Rounded Corners
+<meta property="og:description" content="在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
 
-使用CSS3中的 border-radius 属性，可以在任何元素上实现“圆角效果”。
-
-
-浏览器兼容
-
-
-Chrome
-IE
-Firefox
-Safari
-Opera
-
-
-
-
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
-<meta property="og:updated_time" content="2017-03-21T10:18:18.003Z">
+localStorage ：没有时间限制的数据存储
+sessionStorage">
+<meta property="og:updated_time" content="2017-04-05T08:15:57.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS3中的圆角效果">
-<meta name="twitter:description" content="参考：CSS3 Rounded Corners
+<meta name="twitter:title" content="html5 本地存储">
+<meta name="twitter:description" content="在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
 
-使用CSS3中的 border-radius 属性，可以在任何元素上实现“圆角效果”。
-
-
-浏览器兼容
-
-
-Chrome
-IE
-Firefox
-Safari
-Opera
-
-
-
-
-5.0+
-9.0+
-4.0+
-5.0+
-10.5+">
+localStorage ：没有时间限制的数据存储
+sessionStorage">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -119,7 +65,7 @@ Opera
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>CSS3中的圆角效果 | 初心</title>
+<title>html5 本地存储 | 初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -329,11 +275,11 @@ Opera
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-css3-rounded-corners" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-html5-web-storage" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/07/css3-rounded-corners/" class="article-date">
-      <time datetime="2017-03-07T01:43:35.000Z" itemprop="datePublished">2017-03-07</time>
+      <a href="/2017/04/05/html5-web-storage/" class="article-date">
+      <time datetime="2017-04-05T02:26:06.000Z" itemprop="datePublished">2017-04-05</time>
 </a>
 
 
@@ -348,7 +294,7 @@ Opera
         
   
     <h1 class="article-title" itemprop="name">
-      CSS3中的圆角效果
+      html5 本地存储
     </h1>
   
 
@@ -357,13 +303,13 @@ Opera
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/CSS3/">CSS3</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/HTML5/">HTML5</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -373,14 +319,18 @@ Opera
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考：<a href="https://www.w3schools.com/css/css3_borders.asp" target="_blank" rel="external">CSS3 Rounded Corners</a></p>
-<blockquote>
-<p>使用CSS3中的 <code>border-radius</code> 属性，可以在任何元素上实现“圆角效果”。</p>
-</blockquote>
-<hr>
-<h2 id="浏览器兼容"><a href="#浏览器兼容" class="headerlink" title="浏览器兼容"></a>浏览器兼容</h2><table>
+        <p>在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：<code>localStorage</code> 和 <code>sessionStorage</code>。</p>
+<ul>
+<li><code>localStorage</code> ：没有时间限制的数据存储</li>
+<li><code>sessionStorage</code> ：针对一个 session 的数据存储（浏览器关闭后数据会丢失）</li>
+</ul>
+<p>相对于Cookie，本地存储更安全并可以存储比较大的数据（至少5M），而且数据永远不会传递到服务器，这样便不会影响网站性能。不同的网站数据存储于不同的区域，并且一个网站只能访问其自身的数据。</p>
+<a id="more"></a>
+<p>下面是本地存储API的浏览器兼容情况：</p>
+<table>
 <thead>
 <tr>
+<th style="text-align:center">API</th>
 <th style="text-align:center">Chrome</th>
 <th style="text-align:center">IE</th>
 <th style="text-align:center">Firefox</th>
@@ -390,107 +340,141 @@ Opera
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">9.0+</td>
-<td style="text-align:center">4.0+</td>
-<td style="text-align:center">5.0+</td>
-<td style="text-align:center">10.5+</td>
+<td style="text-align:center">Web Storage</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">8.0</td>
+<td style="text-align:center">3.5</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">11.5</td>
 </tr>
 </tbody>
 </table>
-<a id="more"></a>
-<h2 id="CSS3-border-radius-属性"><a href="#CSS3-border-radius-属性" class="headerlink" title="CSS3 border-radius 属性"></a>CSS3 border-radius 属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-radius: 1-4 length|% / 1-4 length|%|initial|inherit;</div></pre></td></tr></table></figure>
-<p>下面是几个圆角效果示例：</p>
-<style type="text/css">
-    .corner {
-        border-radius: 15px;
-        width: 160px;
-        height: 80px;
-        text-align: center !important;
-    }
-    .corner-1 {        
-        background: green !important;
-        color: white !important;
-    }
-    .corner-2 {
-        border: 1px green solid;
-    }
-    .corner-3 {
-        background: url(paper.gif);
-        background-repeat: repeat;
-    }
-</style>
-
-<p class="corner corner-1">圆角一</p><br><p class="corner corner-2">圆角二</p><br><p class="corner corner-3">圆角三</p>
-
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-1"</span>&gt;</span>圆角一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-2"</span>&gt;</span>圆角二<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner corner-3"</span>&gt;</span>圆角三<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-1</span> &#123;        </div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-2</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> green solid;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-3</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(paper.gif);</div><div class="line">    <span class="attribute">background-repeat</span>: repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p><code>border-radius</code> 属性实际上是 <code>border-top-left-radius</code> 、<code>border-top-right-radius</code> 、<code>border-bottom-right-radius</code> 及 <code>border-bottom-left-radius</code> 这几个属性的缩写属性。</p>
-</blockquote>
-<h2 id="设置每个角"><a href="#设置每个角" class="headerlink" title="设置每个角"></a>设置每个角</h2><p>如果我们只给 <code>border-radius</code> 属性设置一个值，则圆角效果会应用到全部的四个角上。然而如果我们需要，也可以分开指定每个角的圆角属性。</p>
-<p>下面是规则：</p>
+<p>可以看到，HTML5本地存储的浏览器兼容情况良好，甚至IE8都支持，因此在不考虑IE6~7的项目中我们可以放心地使用HTML5本地存储API。</p>
+<p>从上面的描述中了解到HTML5本地存储包含两种方式：<code>localStorage</code> 和 <code>sessionStorage</code>，其实它们分别对象两个javascript对象：<code>window.localStorage</code> 和 <code>window.sessionStorage</code>，下面分别学习一下。</p>
+<h2 id="localStorage对象"><a href="#localStorage对象" class="headerlink" title="localStorage对象"></a>localStorage对象</h2><p><code>localStorage</code> 对象存储的数据永远不会过期，浏览器关闭时也不会被删除。它具有以下几个方法：</p>
 <ul>
-<li>四个值：四个值分别应用到左上、右上、右下、左下（顺时针方向）四个角。</li>
-<li>三个值：第一个值应用到左上角，第二个值应用到右上角和左下角，第三个值应用到右下角。</li>
-<li>两个值：第一个值应用到左上角和右下角，第二个值应用到右上角和左下角。</li>
-<li>一个值：四个角全部应用该值。</li>
+<li><strong>setItem(key, value)</strong>：将value以key为键值存储</li>
+<li><strong>getItem(key)</strong>：取出key键对应的值</li>
+<li><strong>removeItem(key)</strong>：删除key键值对应的值</li>
+<li><strong>clear()</strong>：清除所有的本地 <code>localStorage</code> 存储</li>
+<li><strong>key(index)</strong>：获取指定位置的键值</li>
 </ul>
-<p>下面是几个示例：</p>
+<p>除了上面介绍的几个方外外，<code>localStorage</code> 对象还可以使用点（.）操作符或者中括号（[]）来操作数据，这与javascript中的对象操作是一致的。</p>
+<blockquote>
+<p><code>localStorage</code> 对象存储的数据value必须是字符串，或者可以变成字符串的数据</p>
+</blockquote>
+<p>另外，<code>localStorage</code> 对象还有一个length属性，可用配合key()方法来遍历对象数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    localStorage.setItem(<span class="string">'myKey-1'</span>, <span class="string">'春天来了.'</span>);</div><div class="line">    localStorage[<span class="string">'myKey-2'</span>] = <span class="string">'你还在等什么?'</span>;</div><div class="line">    <span class="keyword">if</span> (!localStorage.myKey3) &#123;</div><div class="line">        localStorage.myKey3 = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    localStorage.myKey3 = <span class="built_in">parseInt</span>(localStorage.myKey3) + <span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'local-storage-p1'</span>).innerText = <span class="string">`访问了<span class="subst">$&#123;localStorage.myKey3&#125;</span>次本页面。`</span>;</div><div class="line">    <span class="keyword">let</span> str = <span class="string">''</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = localStorage.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">let</span> key = localStorage.key(i);</div><div class="line">        str += <span class="string">`<span class="subst">$&#123;key&#125;</span>：<span class="subst">$&#123;localStorage[key]&#125;</span>\n`</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'local-storage-p2'</span>).innerText = str;</div><div class="line">    <span class="built_in">console</span>.log(localStorage);</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        localStorage.clear();</div><div class="line">        <span class="built_in">console</span>.log(localStorage);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 <style type="text/css">
-    .corner-x {
-        width: 240px;
-        height: 80px;
-        background: green !important;
-        text-align: center !important;
-        color: white !important;
-    }
-    .corner-x1 {
-        border-radius: 15px 40px 25px 5px
-    }
-    .corner-x2 {
-        border-radius: 15px 40px 25px
-    }
-    .corner-x3 {
-        border-radius: 15px 40px
+    .storage-p {
+        border: 1px solid green; 
+        padding: 2px;
     }
 </style>
 
-<p class="corner-x corner-x1">四个值15px 40px 25px 5px</p><br><p class="corner-x corner-x2">三个值15px 40px 25px</p><br><p class="corner-x corner-x3">两个值15px 40px</p>
+<p id="local-storage-p1" class="storage-p"></p><p id="local-storage-p2" class="storage-p"></p>
 
-<p>HTML代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x1"</span>&gt;</span>四个值15px 40px 25px 5px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x2"</span>&gt;</span>三个值15px 40px 25px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"corner-x corner-x3"</span>&gt;</span>两个值15px 40px<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>CSS代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.corner-x</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">240px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">80px</span>;</div><div class="line">    <span class="attribute">background</span>: green <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">text-align</span>: center <span class="meta">!important</span>;</div><div class="line">    <span class="attribute">color</span>: white <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x1</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span> <span class="number">5px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x2</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span> <span class="number">25px</span></div><div class="line">&#125;</div><div class="line"><span class="selector-class">.corner-x3</span> &#123;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span> <span class="number">40px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="CSS3-圆角属性"><a href="#CSS3-圆角属性" class="headerlink" title="CSS3 圆角属性"></a>CSS3 圆角属性</h2><table>
+<script type="text/javascript">
+    (function () {
+        localStorage.setItem('myKey-1', '春天来了.');
+        localStorage['myKey-2'] = '你还在等什么?';
+        if (!localStorage.myKey3) {
+            localStorage.myKey3 = 0;
+        }
+        localStorage.myKey3 = parseInt(localStorage.myKey3) + 1;
+
+        document.getElementById('local-storage-p1').innerText = `访问了${localStorage.myKey3}次本页面。`;
+        let str = '';
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = localStorage.key(i);
+            str += `${key}：${localStorage[key]}\n`
+        }
+        document.getElementById('local-storage-p2').innerText = str;
+        console.log(localStorage);
+        setTimeout(function() {
+            localStorage.clear();
+            console.log(localStorage);
+        }, 500);
+    })();
+</script>
+
+<p>上面是一段测试代码，刷新页面访问次数一直累加，即使关闭浏览器再重新打开，该次数依然累计；另外，可以打开浏览器开发者工具查看 <code>localStorage</code> 对象的结构及clear()方法的作用。</p>
+<h2 id="sessionStorage对象"><a href="#sessionStorage对象" class="headerlink" title="sessionStorage对象"></a>sessionStorage对象</h2><p><code>sessionStorage</code> 对象针对一个session进行数据存储，当用户关闭浏览器后，存储的数据将被删除，<code>sessionStorage</code> 对象的API与 <code>localStorage</code> 对象完全一致。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    sessionStorage.setItem(<span class="string">'myKey-1'</span>, <span class="string">'北京欢迎你.'</span>);</div><div class="line">    sessionStorage[<span class="string">'myKey-2'</span>] = <span class="string">'为你开天辟地.'</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (!sessionStorage.myKey3) &#123;</div><div class="line">        sessionStorage.myKey3 = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    sessionStorage.myKey3 = <span class="built_in">parseInt</span>(sessionStorage.myKey3) + <span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'session-storage-p2'</span>).innerText = <span class="string">`您访问了<span class="subst">$&#123;sessionStorage.myKey3&#125;</span>次本页面。`</span>;</div><div class="line">    <span class="keyword">let</span> str = <span class="string">''</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; sessionStorage.length; i++) &#123;</div><div class="line">        <span class="keyword">let</span> key = sessionStorage.key(i);</div><div class="line">        str += <span class="string">`<span class="subst">$&#123;key&#125;</span>：<span class="subst">$&#123;sessionStorage[key]&#125;</span>\n`</span></div><div class="line">    &#125;</div><div class="line">     <span class="built_in">document</span>.getElementById(<span class="string">'session-storage-p1'</span>).innerText = str;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p id="session-storage-p1" class="storage-p"></p><p id="session-storage-p2" class="storage-p"></p>
+
+<script type="text/javascript">
+    (function() {
+        sessionStorage.setItem('myKey-1', '北京欢迎你.');
+        sessionStorage['myKey-2'] = '为你开天辟地.';
+
+        if (!sessionStorage.myKey3) {
+            sessionStorage.myKey3 = 0;
+        }
+        sessionStorage.myKey3 = parseInt(sessionStorage.myKey3) + 1;
+
+        document.getElementById('session-storage-p2').innerText = `您访问了${sessionStorage.myKey3}次本页面。`;
+        let str = '';
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            str += `${key}：${sessionStorage[key]}\n`
+        }
+         document.getElementById('session-storage-p1').innerText = str;
+    })();
+</script>
+
+<p>可以看到 <code>sessionStorage</code> 对象的API与 <code>localStorage</code> 一致的，只是存储数据的过期时间不同；如果我们关闭浏览器（标签页），myKey3将会重置。</p>
+<h2 id="onstorage事件"><a href="#onstorage事件" class="headerlink" title="onstorage事件"></a>onstorage事件</h2><p>HTML5还提供了 <code>onstorage</code> 事件，对 <code>localStorage</code> 对象或者 <code>sessionStorage</code> 对象的任何修改都会在window对象上触发该事件。</p>
+<p>事件对象的属性如下：</p>
+<table>
 <thead>
 <tr>
 <th>属性</th>
-<th>描述</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>border-radius</td>
-<td>四个border-*-*-radius属性的缩写属性</td>
+<td>key</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
+<td>发生改变数据的键名</td>
 </tr>
 <tr>
-<td>border-top-left-radius</td>
-<td>定义左上角边框形状</td>
+<td>oldValue</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
+<td>改变之前的数据，添加操作的话为null</td>
 </tr>
 <tr>
-<td>border-top-right-radius</td>
-<td>定义右上角边框形状</td>
+<td>newValue</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
+<td>改变后的数据，删除操作的话为null</td>
 </tr>
 <tr>
-<td>border-bottom-right-radius</td>
-<td>定义左下角边框形状</td>
+<td>storageArea</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIDOMStorage" target="_blank" rel="external">nsIDOMStorage</a></td>
+<td>受影响的Storage对象</td>
 </tr>
 <tr>
-<td>border-bottom-left-radius</td>
-<td>定义右下角边框形状</td>
+<td>url</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
+<td>键值发生改变文档的URL</td>
 </tr>
 </tbody>
 </table>
-
+<blockquote>
+<p>事件监听测试不成功，不知原因</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(e);</div><div class="line">    &#125;, <span class="literal">false</span>);</div><div class="line">    localStorage.setItem(<span class="string">'event-1'</span>, <span class="string">'hello, storage.'</span>);</div><div class="line">    localStorage.clear();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<script type="text/javascript">
+    (function() {
+        window.addEventListener('storage', function(e) {
+            console.log(e);
+        }, false);
+        localStorage.setItem('event-1', 'hello, storage.');
+        localStorage.clear();
+    })();
+</script>
       
     </div>
     
@@ -498,13 +482,13 @@ Opera
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/05/html5-web-storage/">html5 本地存储</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
-        <p><span>发布时间:</span>2017-03-07, 09:43:35</p>
-        <p><span>最后更新:</span>2017-03-21, 18:18:18</p>
+        <p><span>发布时间:</span>2017-04-05, 10:26:06</p>
+        <p><span>最后更新:</span>2017-04-05, 16:15:57</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/07/css3-rounded-corners/" title="CSS3中的圆角效果">http://zhyihui.github.io/2017/03/07/css3-rounded-corners/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/03/07/css3-rounded-corners/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/05/html5-web-storage/" title="html5 本地存储">http://zhyihui.github.io/2017/04/05/html5-web-storage/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/04/05/html5-web-storage/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -516,16 +500,10 @@ Opera
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/07/css3-background/">
-                    CSS3 背景
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/06/learn-css-box-shadow/">
-                    学习创建CSS盒子阴影效果
+                <a href="/2017/03/30/html5-canvas/">
+                    HTML5 Canvas
                 </a>
             </div>
         
@@ -537,7 +515,7 @@ Opera
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器兼容"><span class="toc-number">1.</span> <span class="toc-text">浏览器兼容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-border-radius-属性"><span class="toc-number">2.</span> <span class="toc-text">CSS3 border-radius 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置每个角"><span class="toc-number">3.</span> <span class="toc-text">设置每个角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS3-圆角属性"><span class="toc-number">4.</span> <span class="toc-text">CSS3 圆角属性</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage对象"><span class="toc-number">1.</span> <span class="toc-text">localStorage对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage对象"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#onstorage事件"><span class="toc-number">3.</span> <span class="toc-text">onstorage事件</span></a></li></ol>
         
     </div>
     <style>
@@ -573,7 +551,7 @@ Opera
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"CSS3中的圆角效果　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"html5 本地存储　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -607,15 +585,13 @@ Opera
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/07/css3-background/" title="上一篇: CSS3 背景">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/06/learn-css-box-shadow/" title="下一篇: 学习创建CSS盒子阴影效果">
+            <a href="/2017/03/30/html5-canvas/" title="下一篇: HTML5 Canvas">
                 <i class="fa fa-angle-right"></i>
             </a>
         
