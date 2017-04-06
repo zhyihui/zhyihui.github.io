@@ -15,25 +15,73 @@
 
 
 
-<meta name="description" content="Dive into HTML5
-在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
+<meta name="description" content="Dive into HTML5HTML5 GeolocationGeolocation背后的基本原理
+HTML定位API用于获取用户的地理位置（经纬度），但由于涉及隐私，除非用户同意，否则我们无法得到用户的位置。
 
-localStorage ：没有时间限制的数据存储">
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Geolocation
+5.0 - 49.0 (http)50.0 (https)
+9.0
+3.5
+5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="html5 本地存储">
-<meta property="og:url" content="http://zhyihui.github.io/2017/04/05/html5-web-storage/index.html">
+<meta property="og:title" content="HTML5 定位">
+<meta property="og:url" content="http://zhyihui.github.io/2017/04/05/html5-geolocation/index.html">
 <meta property="og:site_name" content="初心">
-<meta property="og:description" content="Dive into HTML5
-在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
+<meta property="og:description" content="Dive into HTML5HTML5 GeolocationGeolocation背后的基本原理
+HTML定位API用于获取用户的地理位置（经纬度），但由于涉及隐私，除非用户同意，否则我们无法得到用户的位置。
 
-localStorage ：没有时间限制的数据存储">
-<meta property="og:updated_time" content="2017-04-05T09:11:23.319Z">
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Geolocation
+5.0 - 49.0 (http)50.0 (https)
+9.0
+3.5
+5">
+<meta property="og:updated_time" content="2017-04-06T08:11:04.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="html5 本地存储">
-<meta name="twitter:description" content="Dive into HTML5
-在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：localStorage 和 sessionStorage。
+<meta name="twitter:title" content="HTML5 定位">
+<meta name="twitter:description" content="Dive into HTML5HTML5 GeolocationGeolocation背后的基本原理
+HTML定位API用于获取用户的地理位置（经纬度），但由于涉及隐私，除非用户同意，否则我们无法得到用户的位置。
 
-localStorage ：没有时间限制的数据存储">
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Geolocation
+5.0 - 49.0 (http)50.0 (https)
+9.0
+3.5
+5">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +113,7 @@ localStorage ：没有时间限制的数据存储">
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>html5 本地存储 | 初心</title>
+<title>HTML5 定位 | 初心</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +323,11 @@ localStorage ：没有时间限制的数据存储">
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-html5-web-storage" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-html5-geolocation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/05/html5-web-storage/" class="article-date">
-      <time datetime="2017-04-05T02:26:06.000Z" itemprop="datePublished">2017-04-05</time>
+      <a href="/2017/04/05/html5-geolocation/" class="article-date">
+      <time datetime="2017-04-05T08:21:51.000Z" itemprop="datePublished">2017-04-05</time>
 </a>
 
 
@@ -294,7 +342,7 @@ localStorage ：没有时间限制的数据存储">
         
   
     <h1 class="article-title" itemprop="name">
-      html5 本地存储
+      HTML5 定位
     </h1>
   
 
@@ -319,15 +367,8 @@ localStorage ：没有时间限制的数据存储">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><a href="http://diveintohtml5.info/storage.html" target="_blank" rel="external">Dive into HTML5</a></p>
-<p>在HTML5之前，Web应用一般只能使用Cookie将数据存储在用户计算机，每次请求都携带被存储的数据，这使得Cookie的性能并不好；而且Cookie的使用有限制，比如最多只能存储4K的数据，于是HTML5引入了两种在客户端存储数据（本地存储）的方法：<code>localStorage</code> 和 <code>sessionStorage</code>。</p>
-<ul>
-<li><code>localStorage</code> ：没有时间限制的数据存储</li>
-<li><code>sessionStorage</code> ：针对一个 session 的数据存储（浏览器关闭后数据会丢失）</li>
-</ul>
-<p>相对于Cookie，本地存储更安全并可以存储比较大的数据（至少5M），而且数据永远不会传递到服务器，这样便不会影响网站性能。不同的网站数据存储于不同的区域，并且一个网站只能访问其自身的数据。</p>
-<a id="more"></a>
-<p>下面是本地存储API的浏览器兼容情况：</p>
+        <p><a href="http://diveintohtml5.info/geolocation.html" target="_blank" rel="external">Dive into HTML5</a><br><a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_blank" rel="external">HTML5 Geolocation</a><br><a href="http://blog.csdn.net/cutesource/article/details/7299372" target="_blank" rel="external">Geolocation背后的基本原理</a></p>
+<p>HTML<a href="http://www.w3.org/TR/geolocation-API/" target="_blank" rel="external">定位API</a>用于获取用户的地理位置（经纬度），但由于涉及隐私，除非用户同意，否则我们无法得到用户的位置。</p>
 <table>
 <thead>
 <tr>
@@ -341,139 +382,203 @@ localStorage ：没有时间限制的数据存储">
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Web Storage</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">8.0</td>
+<td style="text-align:center">Geolocation</td>
+<td style="text-align:center">5.0 - 49.0 (http)<br>50.0 (https)</td>
+<td style="text-align:center">9.0</td>
 <td style="text-align:center">3.5</td>
-<td style="text-align:center">4.0</td>
-<td style="text-align:center">11.5</td>
+<td style="text-align:center">5.0</td>
+<td style="text-align:center">16.0</td>
 </tr>
 </tbody>
 </table>
-<p>可以看到，HTML5本地存储的浏览器兼容情况良好，甚至IE8都支持，因此在不考虑IE6~7的项目中我们可以放心地使用HTML5本地存储API。</p>
-<p>从上面的描述中了解到HTML5本地存储包含两种方式：<code>localStorage</code> 和 <code>sessionStorage</code>，其实它们分别对象两个javascript对象：<code>window.localStorage</code> 和 <code>window.sessionStorage</code>，下面分别学习一下。</p>
-<h2 id="localStorage对象"><a href="#localStorage对象" class="headerlink" title="localStorage对象"></a>localStorage对象</h2><p><code>localStorage</code> 对象存储的数据永远不会过期，浏览器关闭时也不会被删除。它具有以下几个方法：</p>
-<ul>
-<li><strong>setItem(key, value)</strong>：将value以key为键值存储</li>
-<li><strong>getItem(key)</strong>：取出key键对应的值</li>
-<li><strong>removeItem(key)</strong>：删除key键值对应的值</li>
-<li><strong>clear()</strong>：清除所有的本地 <code>localStorage</code> 存储</li>
-<li><strong>key(index)</strong>：获取指定位置的键值</li>
-</ul>
-<p>除了上面介绍的几个方外外，<code>localStorage</code> 对象还可以使用点（.）操作符或者中括号（[]）来操作数据，这与javascript中的对象操作是一致的。</p>
+<p>从Chrome50开始，定位API只能用于HTTPS的站点，也就是说如果我们的站点不是HTTPS（如HTTP站点），那么获取用户位置的功能无法使用。</p>
+<a id="more"></a>
+<h2 id="使用HTML定位"><a href="#使用HTML定位" class="headerlink" title="使用HTML定位"></a>使用HTML定位</h2><p>定位API的使用要围绕全局对象 <code>navigator</code> 的一个新属性 <code>navigator.geolocation</code> 对象（<code>Geolocation</code> 对象）展开，<code>Geolocation</code> 对象有一个获取位置的方法，其定义如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">geolocation.getCurrentPosition(locationSuccess, locationError, options);</div></pre></td></tr></table></figure>
+<p><code>getCurrentPosition()</code> 方法可以接受三个参数，locationSuccess和locationError都是函数，分别是定位成功和失败时的回调函数，options是一个 <a href="http://www.w3.org/TR/geolocation-API/#position-options" target="_blank" rel="external">PositionOptions</a> 对象，用来定义定位选项；其中只有第一个参数是必须的，也就是说最简单的使用定位API的代码类似于下面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(locationSuccess);</div></pre></td></tr></table></figure>
+<p>但我们不能这么简单地使用，这段代码里没有定位API支持情况的检测，没有错误处理，也没有定位选项，一般情况下，我们需要包含API支持检测和错误处理才行。</p>
+<p>API支持检测可以使用<a href="https://modernizr.com/" target="_blank" rel="external">Modernizr</a></p>
 <blockquote>
-<p><code>localStorage</code> 对象存储的数据value必须是字符串，或者可以变成字符串的数据</p>
+<p>鉴于浏览器支持情况良好，本文不进行定位API支持情况检测</p>
 </blockquote>
-<p>另外，<code>localStorage</code> 对象还有一个length属性，可用配合key()方法来遍历对象数据。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    localStorage.setItem(<span class="string">'myKey-1'</span>, <span class="string">'春天来了.'</span>);</div><div class="line">    localStorage[<span class="string">'myKey-2'</span>] = <span class="string">'你还在等什么?'</span>;</div><div class="line">    <span class="keyword">if</span> (!localStorage.myKey3) &#123;</div><div class="line">        localStorage.myKey3 = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    localStorage.myKey3 = <span class="built_in">parseInt</span>(localStorage.myKey3) + <span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'local-storage-p1'</span>).innerText = <span class="string">`访问了<span class="subst">$&#123;localStorage.myKey3&#125;</span>次本页面。`</span>;</div><div class="line">    <span class="keyword">let</span> str = <span class="string">''</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = localStorage.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">        <span class="keyword">let</span> key = localStorage.key(i);</div><div class="line">        str += <span class="string">`<span class="subst">$&#123;key&#125;</span>：<span class="subst">$&#123;localStorage[key]&#125;</span>\n`</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'local-storage-p2'</span>).innerText = str;</div><div class="line">    <span class="built_in">console</span>.log(localStorage);</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        localStorage.clear();</div><div class="line">        <span class="built_in">console</span>.log(localStorage);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<style type="text/css">
-    .storage-p {
-        border: 1px solid green; 
-        padding: 2px;
-    }
-</style>
-
-<p id="local-storage-p1" class="storage-p"></p><p id="local-storage-p2" class="storage-p"></p>
-
-<script type="text/javascript">
-    (function () {
-        localStorage.setItem('myKey-1', '春天来了.');
-        localStorage['myKey-2'] = '你还在等什么?';
-        if (!localStorage.myKey3) {
-            localStorage.myKey3 = 0;
-        }
-        localStorage.myKey3 = parseInt(localStorage.myKey3) + 1;
-
-        document.getElementById('local-storage-p1').innerText = `访问了${localStorage.myKey3}次本页面。`;
-        let str = '';
-        for (let i = 0; i < sessionStorage.length; i++) {
-            let key = localStorage.key(i);
-            str += `${key}：${localStorage[key]}\n`
-        }
-        document.getElementById('local-storage-p2').innerText = str;
-        console.log(localStorage);
-        setTimeout(function() {
-            localStorage.clear();
-            console.log(localStorage);
-        }, 500);
-    })();
-</script>
-
-<p>上面是一段测试代码，刷新页面访问次数一直累加，即使关闭浏览器再重新打开，该次数依然累计；另外，可以打开浏览器开发者工具查看 <code>localStorage</code> 对象的结构及clear()方法的作用。</p>
-<h2 id="sessionStorage对象"><a href="#sessionStorage对象" class="headerlink" title="sessionStorage对象"></a>sessionStorage对象</h2><p><code>sessionStorage</code> 对象针对一个session进行数据存储，当用户关闭浏览器后，存储的数据将被删除，<code>sessionStorage</code> 对象的API与 <code>localStorage</code> 对象完全一致。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    sessionStorage.setItem(<span class="string">'myKey-1'</span>, <span class="string">'北京欢迎你.'</span>);</div><div class="line">    sessionStorage[<span class="string">'myKey-2'</span>] = <span class="string">'为你开天辟地.'</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (!sessionStorage.myKey3) &#123;</div><div class="line">        sessionStorage.myKey3 = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    sessionStorage.myKey3 = <span class="built_in">parseInt</span>(sessionStorage.myKey3) + <span class="number">1</span>;</div><div class="line">    </div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'session-storage-p2'</span>).innerText = <span class="string">`您访问了<span class="subst">$&#123;sessionStorage.myKey3&#125;</span>次本页面。`</span>;</div><div class="line">    <span class="keyword">let</span> str = <span class="string">''</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; sessionStorage.length; i++) &#123;</div><div class="line">        <span class="keyword">let</span> key = sessionStorage.key(i);</div><div class="line">        str += <span class="string">`<span class="subst">$&#123;key&#125;</span>：<span class="subst">$&#123;sessionStorage[key]&#125;</span>\n`</span></div><div class="line">    &#125;</div><div class="line">     <span class="built_in">document</span>.getElementById(<span class="string">'session-storage-p1'</span>).innerText = str;</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
-<p id="session-storage-p1" class="storage-p"></p><p id="session-storage-p2" class="storage-p"></p>
-
-<script type="text/javascript">
-    (function() {
-        sessionStorage.setItem('myKey-1', '北京欢迎你.');
-        sessionStorage['myKey-2'] = '为你开天辟地.';
-
-        if (!sessionStorage.myKey3) {
-            sessionStorage.myKey3 = 0;
-        }
-        sessionStorage.myKey3 = parseInt(sessionStorage.myKey3) + 1;
-
-        document.getElementById('session-storage-p2').innerText = `您访问了${sessionStorage.myKey3}次本页面。`;
-        let str = '';
-        for (let i = 0; i < sessionStorage.length; i++) {
-            let key = sessionStorage.key(i);
-            str += `${key}：${sessionStorage[key]}\n`
-        }
-         document.getElementById('session-storage-p1').innerText = str;
-    })();
-</script>
-
-<p>可以看到 <code>sessionStorage</code> 对象的API与 <code>localStorage</code> 一致的，只是存储数据的过期时间不同；如果我们关闭浏览器（标签页），myKey3将会重置。</p>
-<h2 id="onstorage事件"><a href="#onstorage事件" class="headerlink" title="onstorage事件"></a>onstorage事件</h2><p>HTML5还提供了 <code>onstorage</code> 事件，对 <code>localStorage</code> 对象或者 <code>sessionStorage</code> 对象的任何修改都会在window对象上触发该事件。</p>
-<p>事件对象的属性如下：</p>
+<p>定位成功后，浏览器会调用 <code>getCurrentPosition()</code> 的第一个函数参数，并传入一个 <a href="https://www.w3.org/TR/geolocation-API/#coordinates" target="_blank" rel="external">Coordinates</a>参数，该参数对象有两个属性：coords和timestamp，说明如下：</p>
 <table>
 <thead>
 <tr>
 <th>属性</th>
 <th>类型</th>
-<th>说明</th>
+<th>备注</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>key</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
-<td>发生改变数据的键名</td>
+<td>coords.latitude</td>
+<td>double</td>
+<td>定位结果的纬度，十进制小数</td>
 </tr>
 <tr>
-<td>oldValue</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
-<td>改变之前的数据，添加操作的话为null</td>
+<td>coords.longitude</td>
+<td>double</td>
+<td>定位结果的经度，十进制小数</td>
 </tr>
 <tr>
-<td>newValue</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
-<td>改变后的数据，删除操作的话为null</td>
+<td>coords.altitude</td>
+<td>double/null</td>
+<td>海拔（米）</td>
 </tr>
 <tr>
-<td>storageArea</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIDOMStorage" target="_blank" rel="external">nsIDOMStorage</a></td>
-<td>受影响的Storage对象</td>
+<td>coords.accuracy</td>
+<td>double</td>
+<td>定位结果的精确度（米）</td>
 </tr>
 <tr>
-<td>url</td>
-<td><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString" target="_blank" rel="external">DOMString</a></td>
-<td>键值发生改变文档的URL</td>
+<td>coords.altitudeAccuracy</td>
+<td>double/null</td>
+<td>海拔精确度（米）</td>
+</tr>
+<tr>
+<td>coords.heading</td>
+<td>double/null</td>
+<td>朝向，偏向正北方顺时针角度</td>
+</tr>
+<tr>
+<td>coords.speed</td>
+<td>double/null</td>
+<td>速度（米/秒）</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>DOMTimeStamp</td>
+<td>定位时间，与Date()结果一样</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>事件监听测试不成功，不知原因</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(e);</div><div class="line">    &#125;, <span class="literal">false</span>);</div><div class="line">    localStorage.setItem(<span class="string">'event-1'</span>, <span class="string">'hello, storage.'</span>);</div><div class="line">    localStorage.clear();</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>上面表格中coords对象所有属性只有三个能保证一定有数据：coords.latitude、coords.longitude和coords.accuracy，其它的都有可能为null，这取决于设备的定位能力；另外heading和speed属性是基于用户上次定位的结果来计算的。</p>
+<h2 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h2><p>定位过程是很复杂的，因此容易产生错误，而且用户也不一定会同意我们获取其位置信息，这就要求我们需要对一些无法成功定位的情况进行处理；这时我们就需要关注 <code>getCurrentPosition()</code> 函数的第二个参数了。</p>
+<p>如果定位过程产生错误，错误回调函数会被调用并传入一个 <code>PositionError</code> 的对象。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>short</td>
+<td>枚举类型的错误代码</td>
+</tr>
+<tr>
+<td>message</td>
+<td>DOMString</td>
+<td>错误消息，该信息是用来调试的，不适合给最终用户看</td>
+</tr>
+</tbody>
+</table>
+<p>其中code是个枚举类型，其可用的值如下所示：</p>
+<ul>
+<li>PERMISSION_DENIED(1)：用户不允许应用获取其位置信息</li>
+<li>POSITION_UNAVAILABLE(2)：网络不通或定位卫星无法连接</li>
+<li>TIMEOUT(3)：网络通畅但获取位置超时，至于多长时间算超时，定位选项部分会提到</li>
+</ul>
+<h2 id="定位选项"><a href="#定位选项" class="headerlink" title="定位选项"></a>定位选项</h2><p>一般手机都支持两种定位方式，第一种是通过网络基站计算位置，这不需要GPS参与，因此定位准确度不够，结果的准确性取决于所在区域内基站的数量；另一种方式就是直接使用GPS硬件来定位了，这种方式的精确度可以达到几米范围，但比较耗费电量，因此一般情况下默认会关闭GPS。</p>
+<p><code>getCurrentPosition()</code> 函数的第三个可选参数是一个 <a href="http://www.w3.org/TR/geolocation-API/#position-options" target="_blank" rel="external">PositionOptions</a> 对象，我可以设置三个属性，这三个属性都是可选的，我们可以设置任意一个或全部设置。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enableHighAccuracy</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否启用高精度定位，启用的话可能更慢</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>long</td>
+<td>没有默认值</td>
+<td>超时时间（毫秒）</td>
+</tr>
+<tr>
+<td>maximumAge</td>
+<td>long</td>
+<td>0</td>
+<td>允许使用缓存的时间范围（毫秒），0表示禁用缓存</td>
+</tr>
+</tbody>
+</table>
+<p><code>enableHighAccuracy</code> 属性用来定义是否启用高精度定位，在我们请求用户位置信息前应该先判断我们需要的精度，用该属性去指定；苹果和Android手机都区分低精度和精度定位的权限，因此有可能会产生使用低精度定位成功而使用高精度定位不成功的情况。</p>
+<p><code>timeout</code> 属性定义web应用等待定位的时间，超过该时间不管定位是否成功都将返回，根据情况调用成功或错误回调函数；这里说的等待时间是从用户允许定位开始计时，也就是说我们不是等用户，而是等网络。</p>
+<p><code>maximumAge</code> 属性允许设备使用缓存位置信息立即应答，该属性就是以毫秒为单位定义允许使用多久以前的缓存位置；比如我们在10点时成功定位用户位置，在1分钟后又发起定位请求，<code>maximumAge</code> 属性设置为7500，这时设备就会返回1分钟前的那次定位结果，而不是再次去计算用户当前位置。</p>
+<h2 id="其它方法"><a href="#其它方法" class="headerlink" title="其它方法"></a>其它方法</h2><p>上面的内容一直都是针对 <code>Geolocation</code> 对象的 <code>getCurrentPosition()</code> 方法来讲解的，其实 <code>Geolocation</code> 对象还有两个其它的方法，它们分别是：</p>
+<ul>
+<li>watchPosition()：连续地请求用户位置信息（跟踪/监视用户位置）</li>
+<li>clearWatch()：停止监视用户位置</li>
+</ul>
+<p><code>watchPosition()</code> 方法的定义与 <code>getCurrentPosition()</code> 方法定义是一样的，不同的是回调函数会一直在用户位置有变化时被调用；我们也不需要主动去轮询用户位置，设备会确定最佳的轮询间隔，并在用户位置变化时调用我们的回调函数。</p>
+<p><code>watchPosition()</code> 方法会返回一个数字，我们应该将数字记下来，并在需要停止监视用户位置时调用 <code>clearWatch()</code> 方法，这个数字就是其参数；调用 <code>clearWatch()</code> 方法后设备就会停止调用回调方法，这与javascript中的 <code>setInterval()</code> 和 <code>clearInterval()</code> 两个方法是一样的。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>下面是一个简单的定位示例，但并不能保证总是定位成功，我用Chrome试了下如果翻墙会成功，不翻墙就超时；Firefox不翻墙有时也能成功，其它浏览器没试。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">locationSuccess</span>(<span class="params">pos</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> p = <span class="built_in">document</span>.getElementById(<span class="string">'geo-p'</span>);</div><div class="line">    p.innerHTML = <span class="string">`纬度: <span class="subst">$&#123;pos.coords.latitude&#125;</span>&lt;br&gt;经度: <span class="subst">$&#123;pos.coords.longitude&#125;</span>`</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">locationError</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error.code + <span class="string">':'</span> + error.message);</div><div class="line">&#125;</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'get-location-btn'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        navigator.geolocation.getCurrentPosition(locationSuccess, locationError, &#123;</div><div class="line">            <span class="attr">enableHighAccuracy</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">timeout</span>: <span class="number">3000</span></div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<style type="text/css">
+    .geo-p {
+        border: 1px solid green;
+        padding: 4px;
+    }
+</style>
+
+<p></p><p class="geo-p" id="geo-p">&nbsp;</p><button id="get-location-btn">获取位置</button><p></p>
 <script type="text/javascript">
-    (function() {
-        window.addEventListener('storage', function(e) {
-            console.log(e);
-        }, false);
-        localStorage.setItem('event-1', 'hello, storage.');
-        localStorage.clear();
+    function locationSuccess(pos) {
+        let p = document.getElementById('geo-p');
+        p.innerHTML = `纬度: ${pos.coords.latitude}<br>经度: ${pos.coords.longitude}`;
+    }
+    function locationError(error) {
+        console.log(error.code + ':' + error.message);
+    }
+    (function () {
+        document.getElementById('get-location-btn').addEventListener('click', function(e) {
+            navigator.geolocation.getCurrentPosition(locationSuccess, locationError, {
+                enableHighAccuracy: true,
+                timeout: 5000
+            });
+        });
+    })();
+</script>
+
+<p>接下来是一个结合高德地图的示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> map = <span class="keyword">new</span> AMap.Map(<span class="string">'map-container'</span>,&#123;</div><div class="line">       <span class="attr">zoom</span>: <span class="number">15</span>,</div><div class="line">       <span class="attr">center</span>: [<span class="number">116.39</span>, <span class="number">39.9</span>]</div><div class="line">    &#125;);</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">locationSuccess</span>(<span class="params">pos</span>) </span>&#123;</div><div class="line">        map.panTo(<span class="keyword">new</span> AMap.LngLat(pos.coords.longitude, pos.coords.latitude));</div><div class="line">        <span class="keyword">var</span> marker = <span class="keyword">new</span> AMap.Marker(&#123;</div><div class="line">            <span class="attr">map</span> : map</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">locationError</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(error.code + <span class="string">':'</span> + error.message);</div><div class="line">    &#125;</div><div class="line">    navigator.geolocation.getCurrentPosition(locationSuccess, locationError, &#123;</div><div class="line">        <span class="attr">enableHighAccuracy</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">timeout</span>: <span class="number">5000</span></div><div class="line">    &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<script src="https://webapi.amap.com/maps?v=1.3&key=a0a3adfe3198b8c5264765151a1e4588"></script>
+
+<div id="map-container" style="height: 300px;"></div>
+
+<script type="text/javascript">
+    (function () {
+        let map = new AMap.Map('map-container',{
+           zoom: 15,
+           center: [116.39, 39.9]
+        });
+        function locationSuccess(pos) {
+            map.panTo(new AMap.LngLat(pos.coords.longitude, pos.coords.latitude));
+            var marker = new AMap.Marker({
+                map : map
+            });
+        }
+        function locationError(error) {
+            console.log(error.code + ':' + error.message);
+        }
+        navigator.geolocation.getCurrentPosition(locationSuccess, locationError, {
+            enableHighAccuracy: true,
+            timeout: 5000
+        });
     })();
 </script>
       
@@ -483,13 +588,13 @@ localStorage ：没有时间限制的数据存储">
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/04/05/html5-web-storage/">html5 本地存储</a></p>
+        <p><span>本文标题:</span><a href="/2017/04/05/html5-geolocation/">HTML5 定位</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
-        <p><span>发布时间:</span>2017-04-05, 10:26:06</p>
-        <p><span>最后更新:</span>2017-04-05, 17:11:23</p>
+        <p><span>发布时间:</span>2017-04-05, 16:21:51</p>
+        <p><span>最后更新:</span>2017-04-06, 16:11:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/04/05/html5-web-storage/" title="html5 本地存储">http://zhyihui.github.io/2017/04/05/html5-web-storage/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/04/05/html5-web-storage/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/05/html5-geolocation/" title="HTML5 定位">http://zhyihui.github.io/2017/04/05/html5-geolocation/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/04/05/html5-geolocation/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -501,16 +606,10 @@ localStorage ：没有时间限制的数据存储">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/05/html5-geolocation/">
-                    HTML5 定位
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/03/30/html5-canvas/">
-                    HTML5 Canvas
+                <a href="/2017/04/05/html5-web-storage/">
+                    html5 本地存储
                 </a>
             </div>
         
@@ -522,7 +621,7 @@ localStorage ：没有时间限制的数据存储">
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage对象"><span class="toc-number">1.</span> <span class="toc-text">localStorage对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sessionStorage对象"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#onstorage事件"><span class="toc-number">3.</span> <span class="toc-text">onstorage事件</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用HTML定位"><span class="toc-number">1.</span> <span class="toc-text">使用HTML定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理错误"><span class="toc-number">2.</span> <span class="toc-text">处理错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位选项"><span class="toc-number">3.</span> <span class="toc-text">定位选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它方法"><span class="toc-number">4.</span> <span class="toc-text">其它方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a></li></ol>
         
     </div>
     <style>
@@ -558,7 +657,7 @@ localStorage ：没有时间限制的数据存储">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"html5 本地存储　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HTML5 定位　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -592,15 +691,13 @@ localStorage ：没有时间限制的数据存储">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/05/html5-geolocation/" title="上一篇: HTML5 定位">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/03/30/html5-canvas/" title="下一篇: HTML5 Canvas">
+            <a href="/2017/04/05/html5-web-storage/" title="下一篇: html5 本地存储">
                 <i class="fa fa-angle-right"></i>
             </a>
         
