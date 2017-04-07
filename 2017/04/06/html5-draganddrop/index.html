@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="zhyihui" />
+
+
+
+<meta name="description" content="HTML5 Drag and Drop全面理解Drag &amp;amp; Drop API
+元素的拖放（Drag and Drop）在Web页面上也是一个常见的特性，即抓取一个对象拖动并将其放到另一个位置；HTML5将其标准化：任何页面元素都可以被拖动。
+HTML5拖放的浏览器支持情况如下：
+
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Drag and Drop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 拖放">
+<meta property="og:url" content="http://zhyihui.github.io/2017/04/06/html5-draganddrop/index.html">
+<meta property="og:site_name" content="初心">
+<meta property="og:description" content="HTML5 Drag and Drop全面理解Drag &amp;amp; Drop API
+元素的拖放（Drag and Drop）在Web页面上也是一个常见的特性，即抓取一个对象拖动并将其放到另一个位置；HTML5将其标准化：任何页面元素都可以被拖动。
+HTML5拖放的浏览器支持情况如下：
+
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Drag and Drop">
+<meta property="og:updated_time" content="2017-04-07T09:52:14.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 拖放">
+<meta name="twitter:description" content="HTML5 Drag and Drop全面理解Drag &amp;amp; Drop API
+元素的拖放（Drag and Drop）在Web页面上也是一个常见的特性，即抓取一个对象拖动并将其放到另一个位置；HTML5将其标准化：任何页面元素都可以被拖动。
+HTML5拖放的浏览器支持情况如下：
+
+
+
+API
+Chrome
+IE
+Firefox
+Safari
+Opera
+
+
+
+
+Drag and Drop">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="初心" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>HTML5 拖放 | 初心</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">zhyihui</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">竹叶青的个人博客</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">大龄菜鸟程序员，Java/Android/Node.js</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">zhyihui</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">zhyihui</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">竹叶青的个人博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:zhyihui1986@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/zhyihui" title="GitHub"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/zhyihui" title="知乎"></a>
+                            
+                                <a class="fa CSDN" target="_blank" href="http://blog.csdn.net/zhyh1986" title="CSDN"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-html5-draganddrop" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/06/html5-draganddrop/" class="article-date">
+      <time datetime="2017-04-06T08:54:44.000Z" itemprop="datePublished">2017-04-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML5 拖放
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a><a class="article-category-link" href="/categories/前端/HTML5/">HTML5</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://www.w3schools.com/html/html5_draganddrop.asp" target="_blank" rel="external">HTML5 Drag and Drop</a><br><a href="http://www.cnblogs.com/fsjohnhuang/p/3961066.html" target="_blank" rel="external">全面理解Drag &amp; Drop API</a></p>
+<p>元素的拖放（Drag and Drop）在Web页面上也是一个常见的特性，即抓取一个对象拖动并将其放到另一个位置；HTML5将其标准化：任何页面元素都可以被拖动。</p>
+<p>HTML5拖放的浏览器支持情况如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">API</th>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">Safari</th>
+<th style="text-align:center">Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Drag and Drop</td>
+<td style="text-align:center">4.0</td>
+<td style="text-align:center">9.0</td>
+<td style="text-align:center">3.5</td>
+<td style="text-align:center">6.0</td>
+<td style="text-align:center">12.0</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="draggable-属性"><a href="#draggable-属性" class="headerlink" title="draggable 属性"></a>draggable 属性</h2><p><code>draggable</code> 属性是HTML5新增的一个属性，指定一个元素是否可以被拖动，所有HTML元素都可以设置该属性；<code>draggable</code> 属性可以设置的值如下所示：</p>
+<ul>
+<li>true：元素可以拖动</li>
+<li>false：元素不可以拖动</li>
+<li>auto：使用浏览器默认行为</li>
+</ul>
+<blockquote>
+<p>默认情况下，图片和链接两种元素是可以拖动的</p>
+</blockquote>
+<style type="text/css">
+    .dd-p {
+        border: 1px solid green;
+        padding: 4px;
+    }
+</style>
+
+<p>下面两个段落中的第二个将 <code>draggable</code> 属性设置为true后，可以看到该段落可以拖动了，鼠标移到上面后指针也不再变化，只是好像不能再选择文字了。</p>
+<p class="dd-p">不可拖动的段落</p><p draggable="true" class="dd-p">可以拖动的段落</p>
+
+<h2 id="拖放相关事件"><a href="#拖放相关事件" class="headerlink" title="拖放相关事件"></a>拖放相关事件</h2><p>在元素的拖放过程会触发一系列事件，我们正是使用这些事件来响应拖放操作的；这些事件可以分为两类：拖动元素（拖放源）事件和放置元素（拖放目标）事件。</p>
+<p><strong>被拖动元素上触发的事件</strong></p>
+<ul>
+<li><code>dragstart</code>：用户开始拖动一个元素时触发</li>
+<li><code>drag</code>：元素正在被拖动时触发</li>
+<li><code>dragend</code>：用户结束元素拖动时触发</li>
+</ul>
+<p>触发dragstart事件后，其他元素的鼠标事件诸如 mousemove、mouseover、mouseout 等事件均不会被触发了。</p>
+<blockquote>
+<p>注意，拖动元素时，drag事件每350毫秒触发一次</p>
+</blockquote>
+<p><strong>放置元素上触发的事件</strong></p>
+<ul>
+<li><code>dragenter</code>：当被拖动元素进入目标元素时触发</li>
+<li><code>dragover</code>：被拖动元素在目标元素上移动时触发</li>
+<li><code>dragleave</code>：被拖动元素离开目标元素时触发</li>
+<li><code>drop</code>：被拖动元素放在目标元素时触发（在目标元素上松开鼠标）</li>
+</ul>
+<p>dragover事件是被拖拽元素在目标元素上移动一段时间后才触发，因此该事件并不会与dragenter事件一起被触发。</p>
+<p>从上面的解释可以了解到，一个拖放过程应该是这样的：dragstart –&gt; dragenter –&gt; dragover –&gt; drop –&gt; dragend</p>
+<h2 id="DataTransfer-对象"><a href="#DataTransfer-对象" class="headerlink" title="DataTransfer 对象"></a>DataTransfer 对象</h2><p><code>DataTransfer</code> 对象用于配置拖拽行为效果，并且在拖拽过程的各事件间传递数据，传递的数据类型被限定为字符串和文件类型；<code>DataTransfer</code> 对象作为一个属性存储在拖拽事件对象（DragEvent）中，DragEvent继承自MouseEvent，其实就比MouseEvent多了一个 <code>DataTransfer</code> 对象属性。</p>
+<h3 id="DataTransfer的属性"><a href="#DataTransfer的属性" class="headerlink" title="DataTransfer的属性"></a>DataTransfer的属性</h3><h4 id="effectAllowed"><a href="#effectAllowed" class="headerlink" title="effectAllowed"></a>effectAllowed</h4><p><code>effectAllowed</code> 属性用于设置被拖拽元素可执行的操作。</p>
+<p>该属性可以设置的值如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可用值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">copy</td>
+<td>限定dropEffect的属性值为copy，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">link</td>
+<td>限定dropEffect的属性值为link，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">move</td>
+<td>限定dropEffect的属性值为move，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">copyLink</td>
+<td>限定dropEffect的属性值为copy和link，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">copyMove</td>
+<td>限定dropEffect的属性值为copy和move，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">linkMove</td>
+<td>限定dropEffect的属性值为link和move，否则会鼠标指针为禁止样式</td>
+</tr>
+<tr>
+<td style="text-align:center">all</td>
+<td>允许dropEffect的属性值为任意值</td>
+</tr>
+<tr>
+<td style="text-align:center">none</td>
+<td>鼠标指针一直为禁止样式，不管dropEffect的属性值是什么</td>
+</tr>
+<tr>
+<td style="text-align:center">uninitialized</td>
+<td>没有限定dropEffect属性的值，效果和 all 一样</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>仅能在 dragstart 事件中设置该属性，其他事件中设置均无效。</p>
+</blockquote>
+<h4 id="dropEffect"><a href="#dropEffect" class="headerlink" title="dropEffect"></a>dropEffect</h4><p><code>dropEffect</code> 属性用于设置目标元素将执行的操作，若属性值属于 <code>effectAllowed</code> 范围内，则鼠标指针将显示对应的指针样式，否则则显示禁止的指针样式。</p>
+<p>该属性的取值及意义如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">可用值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">copy</td>
+<td>被拖拽元素将被复制到目标元素内，若属于 effectAllowed 范围内时，则鼠标指针显示复制的样式，否则则显示禁止的指针样式。</td>
+</tr>
+<tr>
+<td style="text-align:center">link</td>
+<td>被拖拽元素将以超链接的形式打开资源，若属于 effectAllowed  范围内时，则鼠标指针显示超链接的样式，否则则显示禁止的指针样式。</td>
+</tr>
+<tr>
+<td style="text-align:center">move</td>
+<td>被拖拽元素将被移动到目标元素内，若属于 effectAllowed   范围内时，则鼠标指针显示移动的样式，否则则显示禁止的指针样式。</td>
+</tr>
+<tr>
+<td style="text-align:center">none</td>
+<td>被拖拽元素不能在目标元素上作任何操作，一直显示禁止的指针样式。除了文本框外其他元素的默认值均为none</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>仅能在 dragover 事件中设置该属性值，其他事件中设置均无效<br>当显示禁止的指针样式时，将无法触发目标元素的 drop 事件。</p>
+</blockquote>
+<h4 id="items"><a href="#items" class="headerlink" title="items"></a>items</h4><p><code>items</code> 属性数据类型为 <code>DataTransferItemList</code>，存储 <code>DataTransfer</code> 对象中所有的数据项。目前只有Chrome浏览器支持该属性。</p>
+<p><code>DataTransferItemList</code> 是个类数组的类型，可以使用索引引用数据项，也有length属性；另外还有clear()和add()方法。</p>
+<h4 id="files"><a href="#files" class="headerlink" title="files"></a>files</h4><p><code>files</code> 属性数据类型为FileList</p>
+<h4 id="types"><a href="#types" class="headerlink" title="types"></a>types</h4><p><code>types</code> 属性数据类型为DOMStringList，存储DataTransfer对象中所有数据项的数据类型。</p>
+<blockquote>
+<p>仅能在dragenter，dragover和drop中获取该属性</p>
+</blockquote>
+<h3 id="DataTransfer的方法"><a href="#DataTransfer的方法" class="headerlink" title="DataTransfer的方法"></a>DataTransfer的方法</h3><h4 id="addElement"><a href="#addElement" class="headerlink" title="addElement()"></a>addElement()</h4><p><code>void addElement({HTMLElement} element)</code> 方法用于添加一起跟随鼠标移动的元素。</p>
+<p><code>addElement()</code> 方法仅在 <code>dragstart</code> 事件中可以调用。</p>
+<h4 id="setDragImage"><a href="#setDragImage" class="headerlink" title="setDragImage()"></a>setDragImage()</h4><p><code>void setDragImage({Element} image, {long} x, {long} y)</code> 方法用于设置拖动时跟随鼠标移动的图片，用来替代默认的元素；若image参数不是图片元素则会将元素临时转换为图片；x和y分别用于设置图标与鼠标指针在水平方向和垂直方向上的距离。</p>
+<p><code>setDragImage()</code> 方法仅在 <code>dragstart</code> 事件中可以调用。</p>
+<blockquote>
+<p>image参数必须在DOM树中，而且在渲染树中为有效元素，即display不为none，否则会导致没有元素跟随鼠标移动</p>
+</blockquote>
+<h4 id="setData"><a href="#setData" class="headerlink" title="setData()"></a>setData()</h4><p><code>boolean setData({DOMString} format, {DOMString} data)</code> 方法将指定格式的数据赋值给dataTransfer或clipboardData，format值范围为URL、Text（或text）和各种MIME类型，其实Text会被自动映射为text/plain，URL会被自动映射为text/uri-list类型。</p>
+<p><code>setData()</code> 方法仅在 <code>dragstart</code> 事件中可以调用。</p>
+<blockquote>
+<p>当没有填写第二个入参时，则会根据format来删除相应的数据项</p>
+</blockquote>
+<h4 id="getData"><a href="#getData" class="headerlink" title="getData()"></a>getData()</h4><p><code>DOMString getData({DOMString} format)</code> 方法从DataTransfer对象或ClipboardData对象中获取指定格式的数据。</p>
+<h4 id="clearData"><a href="#clearData" class="headerlink" title="clearData()"></a>clearData()</h4><p><code>void clearData([{DOMString} format])</code> 方法从DataTransfer对象或ClipboardData对象中删除指定格式或全部kind值为string的数据。</p>
+<p>仅在 <code>dragstart</code> 事件中调用，在其他事件中调用会抛InvalidStateError。</p>
+<h3 id="数据存储模式"><a href="#数据存储模式" class="headerlink" title="数据存储模式"></a>数据存储模式</h3><ul>
+<li>Read/Write（读写）模式：<code>dragstart</code> 事件为该模式，可读写数据</li>
+<li>Read-only(只读)模式：在 <code>drop</code> 事件为该模式，仅能读取数据</li>
+<li>Protected（保护）模式：其他事件为该模式，仅能枚举数据</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="简单的拖放"><a href="#简单的拖放" class="headerlink" title="简单的拖放"></a>简单的拖放</h3><p>下面是一个简单的元素拖放示例，仅仅是将一个p元素拖到div元素中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> p = <span class="built_in">document</span>.getElementById(<span class="string">'drag-p'</span>);</div><div class="line">    <span class="keyword">let</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'div-1'</span>);</div><div class="line">    p.addEventListener(<span class="string">'dragstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        e.dataTransfer.setData(<span class="string">'text'</span>, e.target.id);</div><div class="line">    &#125;);</div><div class="line">    div.addEventListener(<span class="string">'dragover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault();</div><div class="line">    &#125;);</div><div class="line">    div.addEventListener(<span class="string">'drop'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault();</div><div class="line">        <span class="keyword">let</span> id = e.dataTransfer.getData(<span class="string">'text'</span>);</div><div class="line">        <span class="keyword">let</span> dragEl = <span class="built_in">document</span>.getElementById(id);</div><div class="line">        <span class="keyword">if</span> (dragEl <span class="keyword">instanceof</span> Node) &#123;</div><div class="line">            dragEl.removeAttribute(<span class="string">'draggable'</span>);</div><div class="line">            dragEl.innerHTML = <span class="string">'我不允许再拖动了噢'</span>;</div><div class="line">            e.target.appendChild(dragEl);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p></p><p id="drag-p" draggable="true">把我拖到下面方框试试</p><div id="div-1" style="width: 350px; min-height: 40px; border: 1px solid green;"></div><p></p>
+<script type="text/javascript">
+    (function () {
+        let p = document.getElementById('drag-p');
+        let div = document.getElementById('div-1');
+
+        p.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text', e.target.id);
+        });
+
+        div.addEventListener('dragover', function(e) {
+            e.preventDefault();
+        });
+        div.addEventListener('drop', function (e) {
+            e.preventDefault();
+            let id = e.dataTransfer.getData('text');
+            let dragEl = document.getElementById(id);
+            if (dragEl instanceof Node) {
+                dragEl.removeAttribute('draggable');
+                dragEl.innerHTML = '我不允许再拖动了噢';
+                e.target.appendChild(dragEl);
+            }
+        });
+    })();
+</script>
+
+<p>首先给p元素添加一个 <code>dragstart</code> 事件监听，在监听函数中向 <code>DataTransfer</code> 对象设置了Text类型的数据，值是被拖动元素的ID。</p>
+<p>接下来给目标元素添加了 <code>dragover</code> 事件监听，默认情况下，无法将数据/元素放置到其他元素中，如果设置为允许放置，我们必须阻止对元素的默认处理方式，也就是调用 <code>DragEvent</code> 事件对象的 <code>preventDefault()</code> 方法。</p>
+<p>最后又给目标元素设置了 <code>drop</code> 事件监听，用来响应拖动元素放下的动作；调用事件对象的 <code>preventDefault()</code> 方法来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）；接着获取存在 <code>DataTransfer</code> 对象中的数据（拖动元素的ID），然后将该元素追加到目标元素中。</p>
+<h3 id="复制元素"><a href="#复制元素" class="headerlink" title="复制元素"></a>复制元素</h3><p>接下来再写一个示例，也很简单，与上一个示例区别就是这次不是移动元素，而是将元素复制一份加入目标元素，拖动过程中注意看鼠标指针的变化。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> p = <span class="built_in">document</span>.getElementById(<span class="string">'drag-p2'</span>);</div><div class="line">    <span class="keyword">let</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'div-2'</span>);</div><div class="line"></div><div class="line">    p.addEventListener(<span class="string">'dragstart'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        e.dataTransfer.setData(<span class="string">'text'</span>, e.target.id);</div><div class="line">        e.dataTransfer.effectAllowed = <span class="string">'copyMove'</span>;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    div.addEventListener(<span class="string">'dragover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault();</div><div class="line">        e.dataTransfer.dropEffect = <span class="string">'copy'</span>;</div><div class="line">    &#125;);</div><div class="line">    div.addEventListener(<span class="string">'drop'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault();</div><div class="line">        <span class="keyword">let</span> id = e.dataTransfer.getData(<span class="string">'text'</span>);</div><div class="line">        <span class="keyword">let</span> dragEl = <span class="built_in">document</span>.getElementById(id);</div><div class="line">        <span class="keyword">if</span> (dragEl <span class="keyword">instanceof</span> Node) &#123;</div><div class="line">            <span class="keyword">let</span> cloneEl = dragEl.cloneNode(<span class="literal">true</span>);</div><div class="line">            cloneEl.removeAttribute(<span class="string">'draggable'</span>);</div><div class="line">            cloneEl.innerHTML = <span class="string">'我是不允许拖动的噢'</span>;</div><div class="line">            e.target.appendChild(cloneEl);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p></p><p id="drag-p2" draggable="true">把我拖到下面方框试试</p><div id="div-2" style="width: 350px; min-height: 40px; border: 1px solid green;"></div><p></p>
+<script type="text/javascript">
+    (function () {
+        let p = document.getElementById('drag-p2');
+        let div = document.getElementById('div-2');
+
+        p.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text', e.target.id);
+            e.dataTransfer.effectAllowed = 'copyMove';
+        });
+
+        div.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'copy';
+        });
+        div.addEventListener('drop', function (e) {
+            e.preventDefault();
+            let id = e.dataTransfer.getData('text');
+            let dragEl = document.getElementById(id);
+            if (dragEl instanceof Node) {
+                let cloneEl = dragEl.cloneNode(true);
+                cloneEl.removeAttribute('draggable');
+                cloneEl.innerHTML = '我是不允许拖动的噢';
+                e.target.appendChild(cloneEl);
+            }
+        });
+    })();
+</script>
+
+<p>代码与上一个示例相差无几，主要区别在于以下两点：</p>
+<ol>
+<li><code>dragstart</code> 事件监听函数中将 <code>DataTransfer</code> 对象的 <code>effectAllowed</code> 属性设置为 copyMove；</li>
+<li><code>dragover</code> 事件监听函数中将 <code>DataTransfer</code> 对象的 <code>dropEffect</code> 属性设置为copy；</li>
+</ol>
+<p>这样就可以在拖拽元素拖到目标元素上时改变鼠标指针，最后在 <code>drop</code> 事件监听函数中复制一份拖拽元素并加入目标元素中。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/04/06/html5-draganddrop/">HTML5 拖放</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">zhyihui</a></p>
+        <p><span>发布时间:</span>2017-04-06, 16:54:44</p>
+        <p><span>最后更新:</span>2017-04-07, 17:52:14</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/04/06/html5-draganddrop/" title="HTML5 拖放">http://zhyihui.github.io/2017/04/06/html5-draganddrop/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://zhyihui.github.io/2017/04/06/html5-draganddrop/　　作者: zhyihui" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/04/05/html5-geolocation/">
+                    HTML5 定位
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#draggable-属性"><span class="toc-number">1.</span> <span class="toc-text">draggable 属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拖放相关事件"><span class="toc-number">2.</span> <span class="toc-text">拖放相关事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataTransfer-对象"><span class="toc-number">3.</span> <span class="toc-text">DataTransfer 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DataTransfer的属性"><span class="toc-number">3.1.</span> <span class="toc-text">DataTransfer的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#effectAllowed"><span class="toc-number">3.1.1.</span> <span class="toc-text">effectAllowed</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dropEffect"><span class="toc-number">3.1.2.</span> <span class="toc-text">dropEffect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#items"><span class="toc-number">3.1.3.</span> <span class="toc-text">items</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#files"><span class="toc-number">3.1.4.</span> <span class="toc-text">files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#types"><span class="toc-number">3.1.5.</span> <span class="toc-text">types</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataTransfer的方法"><span class="toc-number">3.2.</span> <span class="toc-text">DataTransfer的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#addElement"><span class="toc-number">3.2.1.</span> <span class="toc-text">addElement()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#setDragImage"><span class="toc-number">3.2.2.</span> <span class="toc-text">setDragImage()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#setData"><span class="toc-number">3.2.3.</span> <span class="toc-text">setData()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getData"><span class="toc-number">3.2.4.</span> <span class="toc-text">getData()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clearData"><span class="toc-number">3.2.5.</span> <span class="toc-text">clearData()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据存储模式"><span class="toc-number">3.3.</span> <span class="toc-text">数据存储模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">4.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单的拖放"><span class="toc-number">4.1.</span> <span class="toc-text">简单的拖放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制元素"><span class="toc-number">4.2.</span> <span class="toc-text">复制元素</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"HTML5 拖放　| 初心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2128028';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/04/05/html5-geolocation/" title="下一篇: HTML5 定位">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/06/html5-draganddrop/">HTML5 拖放</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/html5-geolocation/">HTML5 定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/05/html5-web-storage/">html5 本地存储</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/30/html5-canvas/">HTML5 Canvas</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/27/css-counters/">CSS计数器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/css3-user-interface/">CSS3学习之User Interface</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/24/css3-multiple-columns/">CSS3学习之Multiple Columns</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/22/css3-flexible-box/">CSS3学习之Flexible Box</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/21/css3-images/">CSS3学习之Images</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/20/css3-selectors/">CSS3学习之选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/css3-animation/">CSS3学习之Animation</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-transition/">CSS3学习之Transition</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/16/css3-3d-transform-property/">CSS3学习之3D Transform相关属性（占坑）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/css3-3d-transform/">CSS3学习之3D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/14/css3-2d-transform/">CSS3学习之2D Transform</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-shadows/">CSS3学习之阴影</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/13/css3-fonts-and-text/">CSS3学习之字体与文本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/10/css3-gradients/">CSS3学习之渐变</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/09/css3-border-images/">CSS3学习之边框图片</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/css3-colors/">CSS3 中的颜色</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-background/">CSS3 背景</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/css3-rounded-corners/">CSS3中的圆角效果</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/learn-css-box-shadow/">学习创建CSS盒子阴影效果</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 zhyihui
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
